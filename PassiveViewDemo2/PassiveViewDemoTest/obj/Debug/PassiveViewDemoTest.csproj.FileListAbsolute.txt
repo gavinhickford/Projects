@@ -1,0 +1,8 @@
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemoTest\bin\Debug\PassiveViewDemoTest.dll
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemoTest\bin\Debug\PassiveViewDemoTest.pdb
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemoTest\bin\Debug\Moq.dll
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemoTest\bin\Debug\PassiveViewDemo2.exe
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemoTest\bin\Debug\PassiveViewDemo2.pdb
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemoTest\obj\Debug\PassiveViewDemoTest.csprojResolveAssemblyReference.cache
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemoTest\obj\Debug\PassiveViewDemoTest.dll
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemoTest\obj\Debug\PassiveViewDemoTest.pdb
