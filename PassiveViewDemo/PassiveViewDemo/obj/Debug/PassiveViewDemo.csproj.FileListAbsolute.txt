@@ -1,0 +1,10 @@
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\bin\Debug\PassiveViewDemo.exe.config
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\obj\Debug\PassiveViewDemo.csprojResolveAssemblyReference.cache
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\obj\Debug\PassiveViewDemo.Properties.Resources.resources
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\obj\Debug\PassiveViewDemo.csproj.GenerateResource.Cache
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\bin\Debug\PassiveViewDemo.exe
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\bin\Debug\PassiveViewDemo.pdb
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\obj\Debug\PassiveViewDemo.exe
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\obj\Debug\PassiveViewDemo.pdb
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\obj\Debug\PassiveViewDemo.PrintDialogView.resources
+c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\obj\Debug\PassiveViewDemo.Form1.resources
