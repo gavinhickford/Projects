@@ -1,0 +1,24 @@
+C:\Projects\MVCArticle\MVCArticle.UI\bin\Debug\MVCArticle.UI.exe
+C:\Projects\MVCArticle\MVCArticle.UI\bin\Debug\MVCArticle.UI.pdb
+C:\Projects\MVCArticle\MVCArticle.UI\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\MVCArticle\MVCArticle.UI\obj\Debug\MVCArticle.UI.Properties.Resources.resources
+C:\Projects\MVCArticle\MVCArticle.UI\obj\Debug\MVCArticle.UI.csproj.GenerateResource.Cache
+C:\Projects\MVCArticle\MVCArticle.UI\obj\Debug\MVCArticle.UI.exe
+C:\Projects\MVCArticle\MVCArticle.UI\obj\Debug\MVCArticle.UI.pdb
+C:\Projects\MVCArticle\MVCArticle.UI\bin\Debug\MVCArticle.dll
+C:\Projects\MVCArticle\MVCArticle.UI\bin\Debug\MVCArticle.pdb
+C:\Projects\MVCArticle\MVCArticle.UI\obj\Debug\MVCArticle.UI.CatView1.resources
+C:\Projects\MVCArticle\MVCArticle.UI\obj\Debug\MVCArticle.UI.CatView2.resources
+C:\Projects\MVCArticle\MVCArticle.UI\obj\Debug\MVCArticle.UI.Form1.resources
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\MVCArticle.UI.exe
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\MVCArticle.UI.pdb
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\bin\Debug\MVCArticle.UI.exe
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\bin\Debug\MVCArticle.UI.pdb
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\bin\Debug\MVCArticle.dll
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\bin\Debug\MVCArticle.pdb
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\MVCArticle.UI.csprojResolveAssemblyReference.cache
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\MVCArticle.UI.CatView1.resources
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\MVCArticle.UI.CatView2.resources
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\MVCArticle.UI.Form1.resources
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\MVCArticle.UI.Properties.Resources.resources
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\MVCArticle.UI.csproj.GenerateResource.Cache

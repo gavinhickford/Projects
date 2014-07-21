@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="MVCArticle.CatControl" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAQAAAAAAAAQAAAAAAAAAQAoAAAAAAAAAA=</HashCode>
+      <FileName>CatControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVCArticle.CatModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAEAAAAQAgAAAAAABAABAAAAAAAA=</HashCode>
+      <FileName>CatModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MVCArticle.ChangeRequestEvents">
+    <Position X="4.75" Y="2.25" Width="6.75" />
+    <NestedTypes>
+      <Class Name="MVCArticle.ChangeRequestEvents.EventHolder&lt;T&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ChangeRequestEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEAAAAAAAAAAAEAAAAAAABAAQAAAA=</HashCode>
+      <FileName>ChangeRequestEvents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVCArticle.MvcControlBase&lt;TModel, TView&gt;" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAEAAAACAQAQAAAAAAAAAAAAABAAAAgAgAABAAAAA=</HashCode>
+      <FileName>MvcControlBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MVCArticle.PropertyChangeRequestEventArgs&lt;T&gt;">
+    <Position X="5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>PropertyChangeRequestEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MVCArticle.ICatView" Collapsed="true">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAABAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICatView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft Sans Serif" Size="8.25" />
+</ClassDiagram>

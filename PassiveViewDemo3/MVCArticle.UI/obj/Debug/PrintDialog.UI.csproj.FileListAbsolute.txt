@@ -1,0 +1,24 @@
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\PrintDialog.UI.csprojResolveAssemblyReference.cache
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\PrintDialog.UI.PrintSettingsView.resources
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\PrintDialog.UI.PrintPreviewView.resources
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\PrintDialog.UI.Form1.resources
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\PrintDialog.UI.Properties.Resources.resources
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\PrintDialog.UI.csproj.GenerateResource.Cache
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\bin\Debug\PrintDialog.UI.exe
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\bin\Debug\PrintDialog.UI.pdb
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\bin\Debug\PrintDialog.dll
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\bin\Debug\PrintDialog.pdb
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\PrintDialog.UI.exe
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle.UI\obj\Debug\PrintDialog.UI.pdb
+C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle.UI\obj\Debug\PrintDialog.UI.exe
+C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle.UI\obj\Debug\PrintDialog.UI.pdb
+C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle.UI\bin\Debug\PrintDialog.UI.exe
+C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle.UI\bin\Debug\PrintDialog.UI.pdb
+C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle.UI\bin\Debug\PrintDialog.dll
+C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle.UI\bin\Debug\PrintDialog.pdb
+C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle.UI\obj\Debug\PrintDialog.UI.csprojResolveAssemblyReference.cache
+C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle.UI\obj\Debug\PrintDialog.UI.PrintPreviewView.resources
+C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle.UI\obj\Debug\PrintDialog.UI.PrintSettingsView.resources
+C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle.UI\obj\Debug\PrintDialog.UI.Form1.resources
+C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle.UI\obj\Debug\PrintDialog.UI.Properties.Resources.resources
+C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle.UI\obj\Debug\PrintDialog.UI.csproj.GenerateResource.Cache

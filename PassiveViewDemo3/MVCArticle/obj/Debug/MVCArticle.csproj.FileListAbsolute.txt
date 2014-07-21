@@ -1,0 +1,10 @@
+C:\Projects\MVCArticle\MVCArticle\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\MVCArticle\MVCArticle\bin\Debug\MVCArticle.dll
+C:\Projects\MVCArticle\MVCArticle\bin\Debug\MVCArticle.pdb
+C:\Projects\MVCArticle\MVCArticle\obj\Debug\MVCArticle.dll
+C:\Projects\MVCArticle\MVCArticle\obj\Debug\MVCArticle.pdb
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle\bin\Debug\MVCArticle.dll
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle\bin\Debug\MVCArticle.pdb
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle\obj\Debug\MVCArticle.csprojResolveAssemblyReference.cache
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle\obj\Debug\MVCArticle.dll
+C:\Users\Gavin\Documents\Visual Studio 2013\Projects\MVC_PassiveViewSample\MVCArticle\obj\Debug\MVCArticle.pdb
