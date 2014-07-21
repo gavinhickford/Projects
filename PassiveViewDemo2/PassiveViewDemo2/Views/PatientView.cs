@@ -21,7 +21,7 @@ namespace PassiveViewDemo2.Views
             InitializeComponent();
             patientViewPresenter = new PatientViewPresenter(this);
 
-            GetPatientButton.Click += (sender, e) => patientViewPresenter.OnGetPatientButtonClick();
+            //GetPatientButton.Click += (sender, e) => patientViewPresenter.OnGetPatientButtonClick();
             PatientIdTextbox.TextChanged += (sender, e) => patientViewPresenter.OnTextChanged();
         }
 
@@ -54,5 +54,15 @@ namespace PassiveViewDemo2.Views
             get { return GetPatientButton.Enabled; }
             set { GetPatientButton.Enabled = value; }
         }
+
+		public void FireGetPatientButtonClick(object sender, EventArgs e)
+		{
+			GetPatientButton_Click(sender, e);
+		}
+
+		private void GetPatientButton_Click(object sender, EventArgs e)
+		{
+			patientViewPresenter.OnGetPatientButtonClick();
+		}
     }
  }

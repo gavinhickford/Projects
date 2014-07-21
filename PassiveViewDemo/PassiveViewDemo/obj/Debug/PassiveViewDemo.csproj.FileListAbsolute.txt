@@ -8,3 +8,6 @@ c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveView
 c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\obj\Debug\PassiveViewDemo.pdb
 c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\obj\Debug\PassiveViewDemo.PrintDialogView.resources
 c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo\PassiveViewDemo\obj\Debug\PassiveViewDemo.Form1.resources
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo\PassiveViewDemo\bin\Debug\PassiveViewDemo.exe.config
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo\PassiveViewDemo\obj\Debug\PassiveViewDemo.exe
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo\PassiveViewDemo\obj\Debug\PassiveViewDemo.pdb

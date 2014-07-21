@@ -1,0 +1,45 @@
+,RŠ,
+ªR¥
+ R›é¢ŞÜèSPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()(2[	"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2["SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2["SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2["SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2["SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2["SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2	8U@sc:\users\gavin hickford\documents\github\projects\passiveviewdemo2\passiveviewdemotest\patientviewpresentertests.csœ¤æı¡ø1
+…R€qc:\users\gavin hickford\documents\github\projects\passiveviewdemo2\passiveviewdemotest\properties\assemblyinfo.csè”·Ğ°¡ø1
+¡Rœ
+MRI8PassiveViewDemo2.Views.IPatientView.get_PatientIdInput()8ÿÿÿÿÿÿÿÿÿPX
+JRF5PassiveViewDemo2.Views.IPatientView.get_PatientName()8ÿÿÿÿÿÿÿÿÿPX
+PRL;PassiveViewDemo2.Views.IPatientView.set_PatientName(String)8ÿÿÿÿÿÿÿÿÿPX
+V	RRAPassiveViewDemo2.Views.IPatientView.get_GetPatientButtonEnabled()8ÿÿÿÿÿÿÿÿÿPX
+]
+RYHPassiveViewDemo2.Views.IPatientView.set_GetPatientButtonEnabled(Boolean)8ÿÿÿÿÿÿÿÿÿPXic:\users\gavin hickford\documents\github\projects\passiveviewdemo2\passiveviewdemo2\views\ipatientview.csÈğĞ°¡ø1
+šR•
+KRG6PassiveViewDemo2.Views.PatientView.ShowMessage(String)(8ÿÿÿÿÿÿÿÿÿP
+NRJ7PassiveViewDemo2.Views.PatientView.get_PatientIdInput()(8ÿÿÿÿÿÿÿÿÿPX
+KRG4PassiveViewDemo2.Views.PatientView.get_PatientName()(8ÿÿÿÿÿÿÿÿÿPX
+QRM:PassiveViewDemo2.Views.PatientView.set_PatientName(String)(8ÿÿÿÿÿÿÿÿÿPX
+WRS@PassiveViewDemo2.Views.PatientView.get_GetPatientButtonEnabled()(8ÿÿÿÿÿÿÿÿÿPX
+^RZGPassiveViewDemo2.Views.PatientView.set_GetPatientButtonEnabled(Boolean)(8ÿÿÿÿÿÿÿÿÿPX
+KRGŞ¤Ö¾ß•Üè*PassiveViewDemo2.Views.PatientView..ctor()(8ÿÿÿÿÿÿÿÿÿ@P
+hRd»¸®êß•ÜèKPassiveViewDemo2.Views.PatientView.GetPatientButton_Click(Object,EventArgs)8ÿÿÿÿÿÿÿÿÿ@
+oRk»·÷ªã•ÜèNPassiveViewDemo2.Views.PatientView.FireGetPatientButtonClick(Object,EventArgs)(8ÿÿÿÿÿÿÿÿÿ@Phc:\users\gavin hickford\documents\github\projects\passiveviewdemo2\passiveviewdemo2\views\patientview.cs¶ò–‹ˆ®ø1
+„Rÿ
+ R›DPassiveViewDemo2.Presenters.PatientViewPresenter..ctor(IPatientView)2[	"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2["SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2["SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2["SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2[	"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()8dP
+ 	R›	>PassiveViewDemo2.Presenters.PatientViewPresenter.LoadPatient()2[	"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2["SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2["SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2222[##"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2[$$"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2[%%"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2&&2''2((2))2[--"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2[.."SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2[//"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2002112222332[66"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2[7	7"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()82P
+]RYJPassiveViewDemo2.Presenters.PatientViewPresenter.OnGetPatientButtonClick()8ÿÿÿÿÿÿÿÿÿP
+SRO@PassiveViewDemo2.Presenters.PatientViewPresenter.OnTextChanged()8ÿÿÿÿÿÿÿÿÿPvc:\users\gavin hickford\documents\github\projects\passiveviewdemo2\passiveviewdemo2\presenters\patientviewpresenter.csæ˜Á¬ş¡ø1
+ÿRú
+AR=0PassiveViewDemo2.Model.PatientRepository..ctor()8ÿÿÿÿÿÿÿÿÿ
+·R²:PassiveViewDemo2.Model.PatientRepository.GetPatient(Int32)2[	"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2["SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2[("SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()2[	"SPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient()8dnc:\users\gavin hickford\documents\github\projects\passiveviewdemo2\passiveviewdemo2\model\patientrepository.csÈ¬ûÏ°¡ø1
+†R
+?R;ë¾§Ùà•ÜèPassiveViewDemo2.Form1..ctor()(8ÿÿÿÿÿÿÿÿÿ@P
+SROËŸĞìã•Üè6PassiveViewDemo2.Form1.button1_Click(Object,EventArgs)8ÿÿÿÿÿÿÿÿÿ@\c:\users\gavin hickford\documents\github\projects\passiveviewdemo2\passiveviewdemo2\form1.csöİº¡‰®ø1
+… R€qc:\users\gavin hickford\documents\github\projects\passiveviewdemo2\passiveviewdemo2\views\patientview.designer.cs–ÆÌÇ®ø1
+x!Rtec:\users\gavin hickford\documents\github\projects\passiveviewdemo2\passiveviewdemo2\form1.designer.csöû°¡‰®ø1µ"R°
+­#R¨
+
+
+
+
+w$RsC:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemoTest\PatientViewPresenterTests.csQPassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient 2@Assert.AreEqual failed. Expected:<(null)>. Actual:<Will Smith>. :¸   at Microsoft.VisualStudio.TestTools.UnitTesting.Assert.HandleFail(String assertionName, String message, Object[] parameters)
+   at Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual[T](T expected, T actual, String message, Object[] parameters)
+   at Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual[T](T expected, T actual)
+   at PassiveViewDemoTest.PatientViewPresenterTests.LoadPatient_returns_correct_patient() in c:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemoTest\PatientViewPresenterTests.cs:line 26B2%R.PassiveViewDemoTest\PassiveViewDemoTest.csprojRÂ%h€ÿÿÿÿÿÿÿÿÿ"«&R¦
+,'R(PassiveViewDemo2\PassiveViewDemo2.csprojkC:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemo2\PassiveViewDemo2.csproj ¼Ûîşúÿÿÿÿ"(R}
+%qC:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemoTest\PassiveViewDemoTest.csproj ı¤Âè*j)RfC:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemo2.IsolatorCache.user

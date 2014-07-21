@@ -6,3 +6,11 @@ c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveVie
 c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemoTest\obj\Debug\PassiveViewDemoTest.csprojResolveAssemblyReference.cache
 c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemoTest\obj\Debug\PassiveViewDemoTest.dll
 c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemoTest\obj\Debug\PassiveViewDemoTest.pdb
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemoTest\obj\Debug\PassiveViewDemoTest.csprojResolveAssemblyReference.cache
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemoTest\obj\Debug\PassiveViewDemoTest.dll
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemoTest\bin\Debug\PassiveViewDemoTest.dll
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemoTest\bin\Debug\PassiveViewDemoTest.pdb
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemoTest\bin\Debug\Moq.dll
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemoTest\bin\Debug\PassiveViewDemo2.exe
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemoTest\bin\Debug\PassiveViewDemo2.pdb
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemoTest\obj\Debug\PassiveViewDemoTest.pdb

@@ -8,3 +8,13 @@ c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveVie
 c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemo2\obj\Debug\PassiveViewDemo2.exe
 c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemo2\obj\Debug\PassiveViewDemo2.pdb
 c:\users\gavin\documents\visual studio 2013\Projects\PassiveViewDemo2\PassiveViewDemo2\obj\Debug\PassiveViewDemo2.Form1.resources
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemo2\bin\Debug\PassiveViewDemo2.exe.config
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemo2\obj\Debug\PassiveViewDemo2.exe
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemo2\obj\Debug\PassiveViewDemo2.pdb
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemo2\bin\Debug\PassiveViewDemo2.exe
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemo2\bin\Debug\PassiveViewDemo2.pdb
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemo2\obj\Debug\PassiveViewDemo2.csprojResolveAssemblyReference.cache
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemo2\obj\Debug\PassiveViewDemo2.Form1.resources
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemo2\obj\Debug\PassiveViewDemo2.Properties.Resources.resources
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemo2\obj\Debug\PassiveViewDemo2.Views.PatientView.resources
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo2\PassiveViewDemo2\obj\Debug\PassiveViewDemo2.csproj.GenerateResource.Cache
