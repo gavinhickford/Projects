@@ -24,8 +24,8 @@ namespace PrintDialog.UI
                 SelectedPrinter = "Printer 1" 
             };
 
-            new PrinterSettingsPresenter(model, PrintPreviewView); // wire up cat view 1
-            new PrinterSettingsPresenter(model, PrinterSettingsView); // wire up cat view 2
+            new PrinterSettingsPresenter(model, PrintPreviewView); 
+            new PrinterSettingsPresenter(model, PrinterSettingsView); 
         }
     }
 }
