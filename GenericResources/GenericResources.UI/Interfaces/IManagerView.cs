@@ -12,9 +12,9 @@ namespace GenericResources.UI.Interfaces
     public interface IManagerView : IView<IManagerViewPresenterCallbacks>
     {
         ResourceType ResourceType { get; set; }
-        List<IFolder> Folders { get; set; }
+        //List<IFolder> Folders { get; set; }
         event EventHandler<EventArgs> ResourceTypeChanged;
         string HeaderText { get; set; }
-        void Display();
+        void DisplayFolders(List<IFolder> folders);
     }
 }

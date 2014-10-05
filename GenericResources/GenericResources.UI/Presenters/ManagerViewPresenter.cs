@@ -28,7 +28,7 @@ namespace GenericResources.UI.Presenters
         {
             _managerView.Attach(this);
             _managerView.HeaderText = GetHeaderText();
-            _managerView.Folders = GetFolders();
+            _managerView.DisplayFolders(GetFolders());
         }
 
         private string GetHeaderText()
@@ -38,9 +38,8 @@ namespace GenericResources.UI.Presenters
 
         public void OnResourceTypeChanged()
         {
-            _managerView.Folders = GetFolders();
             _managerView.HeaderText = GetHeaderText();
-            _managerView.Display();
+            _managerView.DisplayFolders(GetFolders());
         }
 
         private List<IFolder> GetFolders()

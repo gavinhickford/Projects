@@ -1,9 +1,6 @@
 ﻿using GenericResources.Common.Enums;
 using GenericResources.Common.Interfaces;
-//using GenericResources.Common.Interfaces;
-using GenericResources.Domain.Services;
 using GenericResources.UI.Interfaces;
-using GenericResources.UI.Presenters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,23 +44,11 @@ namespace GenericResources.UI.Views
                 OnResourceTypeChanged(this, new EventArgs());
             }
         }
-        private List<IFolder> _folders;
         
-        public List<IFolder> Folders
-        {
-            get { return _folders; }
-            set { _folders = value; }
-        }
-
-        public void Display()
-        {
-            DisplayFolders();
-        }
-
-        private void DisplayFolders()
+        public void DisplayFolders(List<IFolder> folders)
         {
             treeView1.Nodes.Clear();
-            foreach (IFolder folder in Folders)
+            foreach (IFolder folder in folders)
             {
                 TreeNode parentNode = AddParentFolder(folder);
                 TreeNode node = AddNode(folder, parentNode);
