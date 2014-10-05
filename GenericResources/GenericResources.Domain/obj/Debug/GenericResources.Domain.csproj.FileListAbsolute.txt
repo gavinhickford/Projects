@@ -1,0 +1,5 @@
+C:\Users\Gavin\documents\visual studio 2013\Projects\GenericResources\GenericResources.Domain\bin\Debug\GenericResources.Domain.dll
+C:\Users\Gavin\documents\visual studio 2013\Projects\GenericResources\GenericResources.Domain\bin\Debug\GenericResources.Domain.pdb
+C:\Users\Gavin\documents\visual studio 2013\Projects\GenericResources\GenericResources.Domain\obj\Debug\GenericResources.Domain.dll
+C:\Users\Gavin\documents\visual studio 2013\Projects\GenericResources\GenericResources.Domain\obj\Debug\GenericResources.Domain.pdb
+C:\Users\Gavin\documents\visual studio 2013\Projects\GenericResources\GenericResources.Domain\obj\Debug\GenericResources.Domain.csprojResolveAssemblyReference.cache

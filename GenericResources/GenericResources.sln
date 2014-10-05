@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericResources", "GenericResources\GenericResources.csproj", "{F5BD99B2-8A26-4B5B-A5F0-D9A54BF8611C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericResources.Domain", "GenericResources.Domain\GenericResources.Domain.csproj", "{C132B74E-1831-4AAF-B051-FC7B8C2638C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation Layer", "1. Presentation Layer", "{E8F217DD-6A51-4A7B-8157-0B4B5D7B1426}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain Layer", "2. Domain Layer", "{C6D4C47C-6125-45DE-9981-CEC5B4FE1CD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericResources.UI", "GenericResources.UI\GenericResources.UI.csproj", "{F5BD99B2-8A26-4B5B-A5F0-D9A54BF8611C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +17,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C132B74E-1831-4AAF-B051-FC7B8C2638C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C132B74E-1831-4AAF-B051-FC7B8C2638C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C132B74E-1831-4AAF-B051-FC7B8C2638C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C132B74E-1831-4AAF-B051-FC7B8C2638C1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F5BD99B2-8A26-4B5B-A5F0-D9A54BF8611C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F5BD99B2-8A26-4B5B-A5F0-D9A54BF8611C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5BD99B2-8A26-4B5B-A5F0-D9A54BF8611C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -18,5 +28,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C132B74E-1831-4AAF-B051-FC7B8C2638C1} = {C6D4C47C-6125-45DE-9981-CEC5B4FE1CD1}
+		{F5BD99B2-8A26-4B5B-A5F0-D9A54BF8611C} = {E8F217DD-6A51-4A7B-8157-0B4B5D7B1426}
 	EndGlobalSection
 EndGlobal
