@@ -1,26 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Windows.Forms;
-using GenericResources.Domain.Enums;
-using GenericResources.Domain.Entities;
-using GenericResources.Domain.Interfaces;
+﻿using GenericResources.Common.Enums;
+using GenericResources.Common.Interfaces;
+//using GenericResources.Common.Interfaces;
 using GenericResources.Domain.Services;
 using GenericResources.UI.Interfaces;
 using GenericResources.UI.Presenters;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace GenericResources.UI.Views
 {
     public partial class ManagerView : UserControl, IManagerView
     {
-        private IManagerViewPresenter _presenter;
         public ManagerView()
         {
             InitializeComponent();
-            _presenter = new ManagerViewPresenter(this);
         }
         
         public event EventHandler<EventArgs> ResourceTypeChanged;
@@ -35,6 +30,13 @@ namespace GenericResources.UI.Views
             }
         }
 
+        [Description("Header Text"), Category("Data")]
+        public string HeaderText
+        {
+            get { return HeaderLabel.Text; }
+            set { HeaderLabel.Text = value; }
+        }
+     
         [Description("Type of Resource"), Category("Data")]
         public ResourceType ResourceType
         {
@@ -45,20 +47,31 @@ namespace GenericResources.UI.Views
                 OnResourceTypeChanged(this, new EventArgs());
             }
         }
+        private List<IFolder> _folders;
+        
+        public List<IFolder> Folders
+        {
+            get { return _folders; }
+            set { _folders = value; }
+        }
 
-        public void Initialize(List<IFolder> folders) 
+        public void Display()
+        {
+            DisplayFolders();
+        }
+
+        private void DisplayFolders()
         {
             treeView1.Nodes.Clear();
-            foreach (IFolder folder in folders)
+            foreach (IFolder folder in Folders)
             {
                 TreeNode parentNode = AddParentFolder(folder);
                 TreeNode node = AddNode(folder, parentNode);
                 AddChildNodes(folder, node);
             }
-
             treeView1.ExpandAll();
         }
-
+                
         private static void AddChildNodes(IFolder folder, TreeNode node)
         {
             foreach (IFolder childFolder in folder.ChildFolders)
@@ -90,6 +103,11 @@ namespace GenericResources.UI.Views
                 parentNode = treeView1.Nodes.Add(folder.ParentFolder.Name);
             }
             return parentNode;
+        }
+
+        public void Attach(IManagerViewPresenterCallbacks callback)
+        {
+            ResourceTypeChanged += (sender, e) => callback.OnResourceTypeChanged();
         }
     }
 }

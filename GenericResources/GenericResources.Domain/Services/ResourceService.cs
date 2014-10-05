@@ -1,9 +1,10 @@
 ﻿using GenericResources.Domain.Business;
-using GenericResources.Domain.Entities;
-using GenericResources.Domain.Interfaces;
+using GenericResources.Common.Entities;
+using GenericResources.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using GenericResources.Common.Enums;
 
 namespace GenericResources.Domain.Services
 {
@@ -16,7 +17,7 @@ namespace GenericResources.Domain.Services
             _resourceBusiness = new ResourceBusiness();
         }
 
-        public List<IFolder> GetFolders(Enums.ResourceType resourceType)
+        public List<IFolder> GetFolders(ResourceType resourceType)
         {
             return _resourceBusiness.GetFolders(resourceType);
         }

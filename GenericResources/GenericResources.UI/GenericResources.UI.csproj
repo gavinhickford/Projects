@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Interfaces\IManagerView.cs" />
     <Compile Include="Interfaces\IManagerViewPresenter.cs" />
+    <Compile Include="Interfaces\IManagerViewPresenterCallbacks.cs" />
+    <Compile Include="Interfaces\IPresenter.cs" />
+    <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Presenters\ManagerViewPresenter.cs" />
     <Compile Include="Views\ManagerView.cs">
       <SubType>UserControl</SubType>
@@ -91,6 +94,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\GenericResources.Common\GenericResources.Common.csproj">
+      <Project>{a228ab52-0216-4c73-84d9-4dab42be2509}</Project>
+      <Name>GenericResources.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GenericResources.Domain\GenericResources.Domain.csproj">
       <Project>{c132b74e-1831-4aaf-b051-fc7b8c2638c1}</Project>
       <Name>GenericResources.Domain</Name>

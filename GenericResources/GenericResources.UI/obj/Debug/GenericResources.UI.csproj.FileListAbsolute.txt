@@ -17,3 +17,19 @@ C:\Users\Gavin\documents\visual studio 2013\Projects\GenericResources\GenericRes
 C:\Users\Gavin\documents\visual studio 2013\Projects\GenericResources\GenericResources.UI\obj\Debug\GenericResources.UI.csproj.GenerateResource.Cache
 C:\Users\Gavin\documents\visual studio 2013\Projects\GenericResources\GenericResources.UI\obj\Debug\GenericResources.UI.exe
 C:\Users\Gavin\documents\visual studio 2013\Projects\GenericResources\GenericResources.UI\obj\Debug\GenericResources.UI.pdb
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\bin\Debug\GenericResources.UI.exe.config
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\bin\Debug\GenericResources.UI.exe
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\bin\Debug\GenericResources.UI.pdb
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\bin\Debug\GenericResources.Common.dll
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\bin\Debug\GenericResources.Domain.dll
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\bin\Debug\GenericResources.Data.dll
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\bin\Debug\GenericResources.Common.pdb
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\bin\Debug\GenericResources.Domain.pdb
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\bin\Debug\GenericResources.Data.pdb
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\obj\Debug\GenericResources.UI.csprojResolveAssemblyReference.cache
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\obj\Debug\GenericResources.UI.Views.ManagerView.resources
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\obj\Debug\GenericResources.UI.Form1.resources
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\obj\Debug\GenericResources.UI.Properties.Resources.resources
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\obj\Debug\GenericResources.UI.csproj.GenerateResource.Cache
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\obj\Debug\GenericResources.UI.exe
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.UI\obj\Debug\GenericResources.UI.pdb

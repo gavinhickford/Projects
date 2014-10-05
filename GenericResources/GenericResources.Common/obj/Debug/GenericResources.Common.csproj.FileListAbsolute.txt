@@ -1,0 +1,5 @@
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.Common\bin\Debug\GenericResources.Common.dll
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.Common\bin\Debug\GenericResources.Common.pdb
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.Common\obj\Debug\GenericResources.Common.csprojResolveAssemblyReference.cache
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.Common\obj\Debug\GenericResources.Common.dll
+C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.Common\obj\Debug\GenericResources.Common.pdb
