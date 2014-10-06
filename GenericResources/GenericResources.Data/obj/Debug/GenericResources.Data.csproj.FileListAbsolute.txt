@@ -1,7 +1,0 @@
-C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.Data\bin\Debug\GenericResources.Data.dll
-C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.Data\bin\Debug\GenericResources.Data.pdb
-C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.Data\bin\Debug\GenericResources.Common.dll
-C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.Data\bin\Debug\GenericResources.Common.pdb
-C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.Data\obj\Debug\GenericResources.Data.csprojResolveAssemblyReference.cache
-C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.Data\obj\Debug\GenericResources.Data.dll
-C:\Users\Gavin\Documents\GitHub\Projects\GenericResources\GenericResources.Data\obj\Debug\GenericResources.Data.pdb
