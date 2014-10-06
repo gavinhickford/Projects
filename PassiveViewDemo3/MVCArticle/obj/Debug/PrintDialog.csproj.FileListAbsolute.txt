@@ -8,3 +8,8 @@ C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle\bin\Debug\P
 C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle\obj\Debug\PrintDialog.csprojResolveAssemblyReference.cache
 C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle\obj\Debug\PrintDialog.dll
 C:\Users\Gavin\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle\obj\Debug\PrintDialog.pdb
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle\bin\Debug\PrintDialog.dll
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle\bin\Debug\PrintDialog.pdb
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle\obj\Debug\PrintDialog.csprojResolveAssemblyReference.cache
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle\obj\Debug\PrintDialog.dll
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\PassiveViewDemo3\MVCArticle\obj\Debug\PrintDialog.pdb

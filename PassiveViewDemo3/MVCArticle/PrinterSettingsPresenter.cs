@@ -15,15 +15,15 @@ namespace PrintDialog
         protected override void WireEvents()
         {
             Model.PropertyChanged += Model_PropertyChanged;
-            View.RegisterChangRequestListener<String>("SelectedPrinter", View_OnSelectedPrinterChangeRequest);
-            View.RegisterChangRequestListener<Int32>("NumberOfCopies", View_OnNumberOfCopiesChangeRequest);
+            View.RegisterChangeRequestListener<String>("SelectedPrinter", View_OnSelectedPrinterChangeRequest);
+            View.RegisterChangeRequestListener<Int32>("NumberOfCopies", View_OnNumberOfCopiesChangeRequest);
         }
 
         protected override void UnwireEvents()
         {
             Model.PropertyChanged -= Model_PropertyChanged;
-            View.UnRegisterChangRequestListener<String>("SelectedPrinter", View_OnSelectedPrinterChangeRequest);
-            View.UnRegisterChangRequestListener<Int32>("NumberOfCopies", View_OnNumberOfCopiesChangeRequest);
+            View.UnRegisterChangeRequestListener<String>("SelectedPrinter", View_OnSelectedPrinterChangeRequest);
+            View.UnRegisterChangeRequestListener<Int32>("NumberOfCopies", View_OnNumberOfCopiesChangeRequest);
         }
 
         private void View_OnSelectedPrinterChangeRequest(Object sender, PropertyChangeRequestEventArgs<String> args)

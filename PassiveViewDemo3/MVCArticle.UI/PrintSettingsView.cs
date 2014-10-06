@@ -50,12 +50,12 @@ namespace PrintDialog.UI
         }
 
 
-        public void RegisterChangRequestListener<T>(string propertyName, EventHandler<PropertyChangeRequestEventArgs<T>> handler)
+        public void RegisterChangeRequestListener<T>(string propertyName, EventHandler<PropertyChangeRequestEventArgs<T>> handler)
         {
             _changeRequestedEvents.RegisterListener<T>(propertyName, handler);
         }
 
-        public void UnRegisterChangRequestListener<T>(string propertyName, EventHandler<PropertyChangeRequestEventArgs<T>> handler)
+        public void UnRegisterChangeRequestListener<T>(string propertyName, EventHandler<PropertyChangeRequestEventArgs<T>> handler)
         {
             _changeRequestedEvents.UnRegisterListener<T>(propertyName, handler);
         }

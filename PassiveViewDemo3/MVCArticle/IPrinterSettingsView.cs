@@ -10,7 +10,7 @@ namespace PrintDialog
         String SelectedPrinter { set; }
         Int32 NumberOfCopies { set; }
 
-        void RegisterChangRequestListener<T>(String propertyName, EventHandler<PropertyChangeRequestEventArgs<T>> handler);
-        void UnRegisterChangRequestListener<T>(String propertyName, EventHandler<PropertyChangeRequestEventArgs<T>> handler);
+        void RegisterChangeRequestListener<T>(String propertyName, EventHandler<PropertyChangeRequestEventArgs<T>> handler);
+        void UnRegisterChangeRequestListener<T>(String propertyName, EventHandler<PropertyChangeRequestEventArgs<T>> handler);
     }
 }
