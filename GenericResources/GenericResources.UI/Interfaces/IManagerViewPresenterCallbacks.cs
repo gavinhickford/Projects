@@ -9,5 +9,6 @@ namespace GenericResources.UI.Interfaces
     public interface IManagerViewPresenterCallbacks
     {
         void OnResourceTypeChanged();
+        void OnAfterSelect();
     }
 }

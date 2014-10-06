@@ -244,6 +244,27 @@ namespace GenericResources.Tests.UI
             mockView.Verify(v => v.DisplayFolders(fakeFolders), Times.Exactly(2));
         }
 
+        [TestMethod]
+        public void AfterSelect_View_DisplayFolderItemsCalled()
+        {
+            // Arrange
+            var type = ResourceType.Concept;
+            var mockView = GenerateMockView(type);
+
+            List<IFolder> fakeFolders = new List<IFolder> { new Folder { Name = "Folder" } };
+            Mock mockService = GenerateFakeService(fakeFolders, type);
+
+            IManagerViewPresenterCallbacks presenter = new ManagerViewPresenter(
+                (IManagerView)mockView.Object,
+                (IResourceService)mockService.Object);
+
+            // Act
+            presenter.OnAfterSelect();
+
+            // Assert
+            mockView.Verify(v => v.DisplaySelectedFolderItems(), Times.Once);
+        }
+
 
         private static Mock<IManagerView> GenerateMockView(ResourceType type)
         {

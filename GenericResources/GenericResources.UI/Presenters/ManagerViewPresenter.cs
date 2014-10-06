@@ -9,8 +9,14 @@ namespace GenericResources.UI.Presenters
 {
     public class ManagerViewPresenter : IManagerViewPresenter, IManagerViewPresenterCallbacks
     {
+        #region Private fields
+
         private readonly IManagerView _managerView;
-        IResourceService _resourceService;
+        private IResourceService _resourceService;
+
+        #endregion
+
+        #region Constructor
 
         public ManagerViewPresenter(IManagerView managerView, IResourceService service)
         {
@@ -19,10 +25,18 @@ namespace GenericResources.UI.Presenters
             Initialize();
         }
 
+        #endregion
+
+        #region Properties 
+
         public object UI
         {
             get { return _managerView; }
         }
+
+        #endregion
+
+        #region Public methods
 
         public void Initialize()
         {
@@ -31,21 +45,32 @@ namespace GenericResources.UI.Presenters
             _managerView.DisplayFolders(GetFolders());
         }
 
-        private string GetHeaderText()
-        {
-            return this._managerView.ResourceType.ToString();
-        }
-
         public void OnResourceTypeChanged()
         {
             _managerView.HeaderText = GetHeaderText();
             _managerView.DisplayFolders(GetFolders());
         }
 
+        public void OnAfterSelect()
+        {
+            _managerView.DisplaySelectedFolderItems();
+        }
+
+        #endregion
+
+        #region Private methods
+
+        private string GetHeaderText()
+        {
+            return this._managerView.ResourceType.ToString();
+        }
+        
         private List<IFolder> GetFolders()
         {
             return _resourceService.GetFolders(_managerView.ResourceType);
         }
+
+        #endregion
     }
 }
 

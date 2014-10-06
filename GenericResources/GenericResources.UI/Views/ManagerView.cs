@@ -10,14 +10,24 @@ namespace GenericResources.UI.Views
 {
     public partial class ManagerView : UserControl, IManagerView
     {
+        #region private fields
+
+        private ResourceType _resourceType;
+
+        #endregion
+
+        #region constructor
+
         public ManagerView()
         {
             InitializeComponent();
         }
-        
-        public event EventHandler<EventArgs> ResourceTypeChanged;
 
-        private ResourceType _resourceType;
+        #endregion
+
+        #region Event handlers
+
+        public event EventHandler<EventArgs> ResourceTypeChanged;
 
         public virtual void OnResourceTypeChanged(object sender, EventArgs e)
         {
@@ -26,6 +36,10 @@ namespace GenericResources.UI.Views
                 ResourceTypeChanged(sender, e);
             }
         }
+
+        #endregion
+
+        #region Properties
 
         [Description("Header Text"), Category("Data")]
         public string HeaderText
@@ -44,7 +58,17 @@ namespace GenericResources.UI.Views
                 OnResourceTypeChanged(this, new EventArgs());
             }
         }
-        
+
+        #endregion
+
+        #region Public methods
+
+        public void Attach(IManagerViewPresenterCallbacks callback)
+        {
+            ResourceTypeChanged += (sender, e) => callback.OnResourceTypeChanged();
+            this.treeView1.AfterSelect += (sender, e) => callback.OnAfterSelect();
+        }
+
         public void DisplayFolders(List<IFolder> folders)
         {
             treeView1.Nodes.Clear();
@@ -56,12 +80,23 @@ namespace GenericResources.UI.Views
             }
             treeView1.ExpandAll();
         }
-                
+
+        // TODO - pass in a list of folder itesm to be displayed
+        public void DisplaySelectedFolderItems()
+        {
+            MessageBox.Show("folder selected");
+        }
+
+        #endregion
+
+        #region Private methods
+
         private static void AddChildNodes(IFolder folder, TreeNode node)
         {
             foreach (IFolder childFolder in folder.ChildFolders)
             {
-                node.Nodes.Add(childFolder.Name);
+                TreeNode childnode = node.Nodes.Add(childFolder.Name);
+                childnode.ImageIndex = 0;
             }
         }
 
@@ -71,10 +106,12 @@ namespace GenericResources.UI.Views
             if (parentNode != null)
             {
                 node = parentNode.Nodes.Add(folder.Name);
+                node.ImageIndex = 0;
             }
             else
             {
                 node = treeView1.Nodes.Add(folder.Name);
+                node.ImageIndex = 0;
             }
             return node;
         }
@@ -90,9 +127,6 @@ namespace GenericResources.UI.Views
             return parentNode;
         }
 
-        public void Attach(IManagerViewPresenterCallbacks callback)
-        {
-            ResourceTypeChanged += (sender, e) => callback.OnResourceTypeChanged();
-        }
+        #endregion
     }
 }
