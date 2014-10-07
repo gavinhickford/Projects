@@ -7,7 +7,7 @@ using GenericResources.Data.DataStores;
 
 namespace GenericResources.Data.Factories
 {
-    public class DataStoreFactory
+    public class DataStoreFactory : IDataStoreFactory
     {
         public IResourceDataStore CreateDataStore(ResourceType resourceType)
         {

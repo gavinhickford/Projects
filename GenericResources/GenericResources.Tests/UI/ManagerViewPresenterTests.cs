@@ -23,7 +23,8 @@ namespace GenericResources.Tests.UI
             var mockView = GenerateMockView(type);
 
             List<IFolder> fakeFolders = new List<IFolder> { new Folder { Name = "Folder" } };
-            Mock mockService = GenerateFakeService(fakeFolders, type);
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetFolders(type)).Returns(fakeFolders);
                                     
             // Act
             IManagerViewPresenter presenter = new ManagerViewPresenter(
@@ -45,8 +46,9 @@ namespace GenericResources.Tests.UI
             var mockView = GenerateMockView(type);
                         
             List<IFolder> fakeFolders = new List<IFolder> { new Folder { Name = "Folder" } };
-            Mock mockService = GenerateFakeService(fakeFolders, type);
-
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetFolders(type)).Returns(fakeFolders);
+        
             // Act
             IManagerViewPresenter presenter = new ManagerViewPresenter(
                 (IManagerView)mockView.Object,
@@ -67,8 +69,9 @@ namespace GenericResources.Tests.UI
             var mockView = GenerateMockView(type);
 
             List<IFolder> fakeFolders = new List<IFolder> { new Folder { Name = "Folder" } };
-            Mock mockService = GenerateFakeService(fakeFolders, type);
-
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetFolders(type)).Returns(fakeFolders);
+        
             // Act
             IManagerViewPresenter presenter = new ManagerViewPresenter(
                 (IManagerView)mockView.Object,
@@ -89,8 +92,9 @@ namespace GenericResources.Tests.UI
             var mockView = GenerateMockView(type);
 
             List<IFolder> fakeFolders = new List<IFolder> { new Folder { Name = "Folder" } };
-            Mock mockService = GenerateFakeService(fakeFolders, type);
-
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetFolders(type)).Returns(fakeFolders);
+        
             // Act
             IManagerViewPresenter presenter = new ManagerViewPresenter(
                 (IManagerView)mockView.Object,
@@ -111,8 +115,9 @@ namespace GenericResources.Tests.UI
             var mockView = GenerateMockView(type);
 
             List<IFolder> fakeFolders = new List<IFolder> { new Folder { Name = "Folder" } };
-            Mock mockService = GenerateFakeService(fakeFolders, type);
-
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetFolders(type)).Returns(fakeFolders);
+        
             // Act
             IManagerViewPresenter presenter = new ManagerViewPresenter(
                 (IManagerView)mockView.Object,
@@ -133,7 +138,8 @@ namespace GenericResources.Tests.UI
             var mockView = GenerateMockView(type);
 
             List<IFolder> fakeFolders = new List<IFolder> { new Folder { Name = "Folder" } };
-            Mock mockService = GenerateFakeService(fakeFolders, type);
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetFolders(type)).Returns(fakeFolders);
             
             IManagerViewPresenterCallbacks presenter = new ManagerViewPresenter(
                 (IManagerView)mockView.Object,
@@ -157,8 +163,9 @@ namespace GenericResources.Tests.UI
             var mockView = GenerateMockView(type);
 
             List<IFolder> fakeFolders = new List<IFolder> { new Folder { Name = "Folder" } };
-            Mock mockService = GenerateFakeService(fakeFolders, type);
-
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetFolders(type)).Returns(fakeFolders);
+        
             IManagerViewPresenterCallbacks presenter = new ManagerViewPresenter(
                 (IManagerView)mockView.Object,
                 (IResourceService)mockService.Object);
@@ -181,8 +188,9 @@ namespace GenericResources.Tests.UI
             var mockView = GenerateMockView(type);
 
             List<IFolder> fakeFolders = new List<IFolder> { new Folder { Name = "Folder" } };
-            Mock mockService = GenerateFakeService(fakeFolders, type);
-
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetFolders(type)).Returns(fakeFolders);
+        
             IManagerViewPresenterCallbacks presenter = new ManagerViewPresenter(
                 (IManagerView)mockView.Object,
                 (IResourceService)mockService.Object);
@@ -205,8 +213,9 @@ namespace GenericResources.Tests.UI
             var mockView = GenerateMockView(type);
 
             List<IFolder> fakeFolders = new List<IFolder> { new Folder { Name = "Folder" } };
-            Mock mockService = GenerateFakeService(fakeFolders, type);
-
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetFolders(type)).Returns(fakeFolders);
+        
             IManagerViewPresenterCallbacks presenter = new ManagerViewPresenter(
                 (IManagerView)mockView.Object,
                 (IResourceService)mockService.Object);
@@ -229,8 +238,9 @@ namespace GenericResources.Tests.UI
             var mockView = GenerateMockView(type);
 
             List<IFolder> fakeFolders = new List<IFolder> { new Folder { Name = "Folder" } };
-            Mock mockService = GenerateFakeService(fakeFolders, type);
-
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetFolders(type)).Returns(fakeFolders);
+        
             IManagerViewPresenterCallbacks presenter = new ManagerViewPresenter(
                 (IManagerView)mockView.Object,
                 (IResourceService)mockService.Object);
@@ -245,15 +255,16 @@ namespace GenericResources.Tests.UI
         }
 
         [TestMethod]
-        public void AfterSelect_View_DisplayFolderItemsCalled()
+        public void AfterSelect_View_DisplayFolderItemsCalled_Concepts()
         {
             // Arrange
             var type = ResourceType.Concept;
             var mockView = GenerateMockView(type);
 
-            List<IFolder> fakeFolders = new List<IFolder> { new Folder { Name = "Folder" } };
-            Mock mockService = GenerateFakeService(fakeFolders, type);
-
+            List<IResource> fakeResources = new List<IResource> { new Concept { Name = "Concept" } };
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetResources(type, 1)).Returns(fakeResources);
+        
             IManagerViewPresenterCallbacks presenter = new ManagerViewPresenter(
                 (IManagerView)mockView.Object,
                 (IResourceService)mockService.Object);
@@ -262,9 +273,96 @@ namespace GenericResources.Tests.UI
             presenter.OnAfterSelect();
 
             // Assert
-            mockView.Verify(v => v.DisplaySelectedFolderItems(), Times.Once);
+            mockView.Verify(v => v.DisplaySelectedFolderItems(fakeResources), Times.Once);
         }
 
+        [TestMethod]
+        public void AfterSelect_View_DisplayFolderItemsCalled_Protocols()
+        {
+            // Arrange
+            var type = ResourceType.Protocol;
+            var mockView = GenerateMockView(type);
+
+            List<IResource> fakeResources = new List<IResource> { new Protocol{ Name = "Protocol" } };
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetResources(type, 1)).Returns(fakeResources);
+       
+            IManagerViewPresenterCallbacks presenter = new ManagerViewPresenter(
+                (IManagerView)mockView.Object,
+                (IResourceService)mockService.Object);
+
+            // Act
+            presenter.OnAfterSelect();
+
+            // Assert
+            mockView.Verify(v => v.DisplaySelectedFolderItems(fakeResources), Times.Once);
+        }
+
+        [TestMethod]
+        public void AfterSelect_View_DisplayFolderItemsCalled_Templates()
+        {
+            // Arrange
+            var type = ResourceType.Template;
+            var mockView = GenerateMockView(type);
+
+            List<IResource> fakeResources = new List<IResource> { new Template { Name = "Template" } };
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetResources(type, 1)).Returns(fakeResources);
+       
+            IManagerViewPresenterCallbacks presenter = new ManagerViewPresenter(
+                (IManagerView)mockView.Object,
+                (IResourceService)mockService.Object);
+
+            // Act
+            presenter.OnAfterSelect();
+
+            // Assert
+            mockView.Verify(v => v.DisplaySelectedFolderItems(fakeResources), Times.Once);
+        }
+
+        [TestMethod]
+        public void AfterSelect_View_DisplayFolderItemsCalled_DocumentTemplates()
+        {
+            // Arrange
+            var type = ResourceType.DocumentTemplate;
+            var mockView = GenerateMockView(type);
+
+            List<IResource> fakeResources = new List<IResource> { new DocumentTemplate { Name = "Document Template" } };
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetResources(type, 1)).Returns(fakeResources);
+       
+            IManagerViewPresenterCallbacks presenter = new ManagerViewPresenter(
+                (IManagerView)mockView.Object,
+                (IResourceService)mockService.Object);
+
+            // Act
+            presenter.OnAfterSelect();
+
+            // Assert
+            mockView.Verify(v => v.DisplaySelectedFolderItems(fakeResources), Times.Once);
+        }
+
+        [TestMethod]
+        public void AfterSelect_View_DisplayFolderItemsCalled_LibraryItems()
+        {
+            // Arrange
+            var type = ResourceType.LibraryItem;
+            var mockView = GenerateMockView(type);
+
+            List<IResource> fakeResources = new List<IResource> { new LibraryItem { Name = "Library Item" } };
+            var mockService = GenerateFakeService(type);
+            mockService.Setup(s => s.GetResources(type, 1)).Returns(fakeResources);
+       
+            IManagerViewPresenterCallbacks presenter = new ManagerViewPresenter(
+                (IManagerView)mockView.Object,
+                (IResourceService)mockService.Object);
+
+            // Act
+            presenter.OnAfterSelect();
+
+            // Assert
+            mockView.Verify(v => v.DisplaySelectedFolderItems(fakeResources), Times.Once);
+        }
 
         private static Mock<IManagerView> GenerateMockView(ResourceType type)
         {
@@ -273,10 +371,9 @@ namespace GenericResources.Tests.UI
             return mockView;
         }
 
-        private static Mock<IResourceService> GenerateFakeService(List<IFolder> fakeFolders, ResourceType type)
+        private static Mock<IResourceService> GenerateFakeService(ResourceType type)
         {
             var mockService = new Mock<IResourceService>();
-            mockService.Setup(s => s.GetFolders(type)).Returns(fakeFolders);
             return mockService;
         }
 

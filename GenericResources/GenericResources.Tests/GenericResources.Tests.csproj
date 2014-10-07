@@ -54,6 +54,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Domain\Business\ResourceBusinessTest.cs" />
+    <Compile Include="Domain\Service\ResourceServiceTest.cs" />
     <Compile Include="UI\ManagerViewPresenterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +63,10 @@
     <ProjectReference Include="..\GenericResources.Common\GenericResources.Common.csproj">
       <Project>{a228ab52-0216-4c73-84d9-4dab42be2509}</Project>
       <Name>GenericResources.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenericResources.Data\GenericResources.Data.csproj">
+      <Project>{f5135b33-6f8c-4e68-b277-049ad372244e}</Project>
+      <Name>GenericResources.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\GenericResources.Domain\GenericResources.Domain.csproj">
       <Project>{c132b74e-1831-4aaf-b051-fc7b8c2638c1}</Project>

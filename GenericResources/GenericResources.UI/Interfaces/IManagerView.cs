@@ -15,6 +15,6 @@ namespace GenericResources.UI.Interfaces
         event EventHandler<EventArgs> ResourceTypeChanged;
         string HeaderText { get; set; }
         void DisplayFolders(List<IFolder> folders);
-        void DisplaySelectedFolderItems();
+        void DisplaySelectedFolderItems(List<IResource> resources);
     }
 }

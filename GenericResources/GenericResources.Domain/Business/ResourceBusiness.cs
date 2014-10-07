@@ -9,11 +9,26 @@ namespace GenericResources.Domain.Business
 {
     public class ResourceBusiness : IResourceBusiness 
     {
+        private IDataStoreFactory _dataStoreFactory;
+
+        public ResourceBusiness(IDataStoreFactory dataStoreFactory)
+        {
+            _dataStoreFactory = dataStoreFactory;
+        }
+
         public List<IFolder> GetFolders(ResourceType resourceType)
         {
-            return new DataStoreFactory()
+            return _dataStoreFactory
                 .CreateDataStore(resourceType)
                 .GetFolders();
         }
+
+        public List<IResource> GetResources(ResourceType resourceType, int folderId)
+        {
+            return _dataStoreFactory
+               .CreateDataStore(resourceType)
+               .GetResources(folderId);
+        }
+   
     }
 }

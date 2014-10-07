@@ -23,5 +23,15 @@ namespace GenericResources.Data.DataStores
             
             return new List<IFolder>{ folder1, folder2 };
         }
+
+        public List<IResource> GetResources(int folderId)
+        {
+            IResource concept1 = new Concept { Name = "Concept 1", Description = "Concept 1 description" };
+            IResource concept2 = new Concept { Name = "Concept 2", Description = "Concept 2 description" };
+            IResource concept3 = new Concept { Name = "Concept 3", Description = "Concept 3 description" };
+
+            // Just return a List of simple concepts for now
+            return new List<IResource> { concept1, concept2, concept3 };
+        }
     }
 }

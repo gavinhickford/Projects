@@ -82,9 +82,13 @@ namespace GenericResources.UI.Views
         }
 
         // TODO - pass in a list of folder itesm to be displayed
-        public void DisplaySelectedFolderItems()
+        public void DisplaySelectedFolderItems(List<IResource> resources)
         {
-            MessageBox.Show("folder selected");
+            listView1.Items.Clear();
+            foreach (IResource resource in resources)
+            {
+                listView1.Items.Add(resource.Name);
+            }
         }
 
         #endregion
@@ -93,6 +97,9 @@ namespace GenericResources.UI.Views
 
         private static void AddChildNodes(IFolder folder, TreeNode node)
         {
+            if (folder == null || folder.ChildFolders == null)
+                return;
+
             foreach (IFolder childFolder in folder.ChildFolders)
             {
                 TreeNode childnode = node.Nodes.Add(childFolder.Name);

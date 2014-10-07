@@ -19,7 +19,8 @@ namespace GenericResources.UI
         public Form1()
         {
             InitializeComponent();
-            _presenter = new ManagerViewPresenter(this.managerView1, new ResourceService());
+            _presenter = new ManagerViewPresenter(
+                this.managerView1, new ResourceService());
         }
 
         private void ConceptsRadioButton_CheckedChanged(object sender, EventArgs e)

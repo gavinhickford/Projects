@@ -45,6 +45,7 @@
     <Compile Include="DataStores\ProtocolDataStore.cs" />
     <Compile Include="DataStores\TemplateDataStore.cs" />
     <Compile Include="Factories\DataStoreFactory.cs" />
+    <Compile Include="Factories\IDataStoreFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

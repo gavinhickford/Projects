@@ -53,7 +53,9 @@ namespace GenericResources.UI.Presenters
 
         public void OnAfterSelect()
         {
-            _managerView.DisplaySelectedFolderItems();
+            // Just use hard codeed value for folder id for now
+            List<IResource> resources = _resourceService.GetResources(_managerView.ResourceType, 1);
+            _managerView.DisplaySelectedFolderItems(resources);
         }
 
         #endregion

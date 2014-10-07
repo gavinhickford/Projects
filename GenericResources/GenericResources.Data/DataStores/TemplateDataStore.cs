@@ -17,5 +17,13 @@ namespace GenericResources.Data.DataStores
             folder.ChildFolders = new List<IFolder> { childFolder };
             return new List<IFolder> { folder };
         }
+
+        public List<IResource> GetResources(int folderId)
+        {
+            IResource template1 = new Template { Name = "Template1", Description = "Template1 description" };
+
+            // Just return a List of simple templates for now
+            return new List<IResource> { template1 };
+        }
     }
 }

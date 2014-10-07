@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using GenericResources.Common.Enums;
+using GenericResources.Data.Factories;
 
 namespace GenericResources.Domain.Services
 {
@@ -14,12 +15,19 @@ namespace GenericResources.Domain.Services
 
         public ResourceService()
         {
-            _resourceBusiness = new ResourceBusiness();
+            // TODO - use dependency injection to set the datastorefactory
+            _resourceBusiness = new ResourceBusiness(new DataStoreFactory());
         }
-
+        
         public List<IFolder> GetFolders(ResourceType resourceType)
         {
             return _resourceBusiness.GetFolders(resourceType);
         }
+
+        public List<IResource> GetResources(ResourceType resourceType, int folderId)
+        {
+            return _resourceBusiness.GetResources(resourceType, folderId);
+        }
+    
     }
 }

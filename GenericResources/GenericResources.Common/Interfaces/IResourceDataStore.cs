@@ -8,5 +8,6 @@ namespace GenericResources.Common.Interfaces
     public interface IResourceDataStore
     {
         List<IFolder> GetFolders();
+        List<IResource> GetResources(int folderId);
     }
 }
