@@ -1,0 +1,44 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wpfToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
+        xmlns:views="clr-namespace:WpfToolkit.Main" x:Class="WpfToolkit.MainWindow"
+        xmlns:vm="clr-namespace:WpfToolkit.VM" 
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <vm:MainVM></vm:MainVM>
+    </Window.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+
+        </Grid.ColumnDefinitions>
+        <wpfToolkit:Accordion 
+			HorizontalAlignment="Stretch"
+			ExpandDirection="Up"
+			VerticalAlignment="Stretch">
+            <wpfToolkit:AccordionItem Header="Concepts">
+                <views:FolderTreeView 
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    DataContext="{Binding ChildVM, Mode=Oneway}">
+                </views:FolderTreeView>
+            </wpfToolkit:AccordionItem>
+            <wpfToolkit:AccordionItem Header="Protocols and Templates">
+                <TreeView  
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"/>
+
+            </wpfToolkit:AccordionItem>
+            <wpfToolkit:AccordionItem Header="Library Items">
+                <TreeView VerticalAlignment="Stretch"/>
+
+            </wpfToolkit:AccordionItem>
+            <wpfToolkit:AccordionItem Header="Document Templates">
+                <TreeView  VerticalAlignment="Stretch"/>
+            </wpfToolkit:AccordionItem>
+        </wpfToolkit:Accordion>
+    </Grid>
+</Window>
