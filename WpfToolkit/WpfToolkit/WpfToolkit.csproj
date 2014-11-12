@@ -97,11 +97,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Folder.cs" />
+    <Compile Include="FolderService.cs" />
+    <Compile Include="IFolderService.cs" />
     <Compile Include="Main\FolderTreeView.xaml.cs">
       <DependentUpon>FolderTreeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="VM\FolderTreeVM.cs" />
     <Compile Include="VM\MainVM.cs" />
+    <Compile Include="VM\ViewModelLocator.cs" />
     <Page Include="Main\FolderTreeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

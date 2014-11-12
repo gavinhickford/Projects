@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfToolkit", "WpfToolkit\WpfToolkit.csproj", "{DFA23614-C3A2-459B-800B-292B7EEC828E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfToolkit.Tests", "WpfToolkit.Tests\WpfToolkit.Tests.csproj", "{3EDB7C0D-2A72-4417-BDF9-477CD8FE657D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DFA23614-C3A2-459B-800B-292B7EEC828E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFA23614-C3A2-459B-800B-292B7EEC828E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFA23614-C3A2-459B-800B-292B7EEC828E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EDB7C0D-2A72-4417-BDF9-477CD8FE657D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EDB7C0D-2A72-4417-BDF9-477CD8FE657D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EDB7C0D-2A72-4417-BDF9-477CD8FE657D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EDB7C0D-2A72-4417-BDF9-477CD8FE657D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

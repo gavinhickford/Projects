@@ -9,11 +9,11 @@
     <UserControl.DataContext>
         <vm:FolderTreeVM></vm:FolderTreeVM>
     </UserControl.DataContext>
-    <Grid HorizontalAlignment="Stretch">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="20">
             </RowDefinition>
-            <RowDefinition Height="Auto">
+            <RowDefinition>
             </RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock 
@@ -27,11 +27,14 @@
 
         <TreeView 
             Grid.Row="1"
-            ItemsSource="{Binding Folders}">
+            ItemsSource="{Binding Folders}"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Folders}">
-                    <TreeViewItem Header="{Binding Name}"></TreeViewItem>
-                </HierarchicalDataTemplate>            </TreeView.ItemTemplate> 
+                    <TextBlock Text="{Binding Name}"></TextBlock>
+                </HierarchicalDataTemplate>            
+            </TreeView.ItemTemplate> 
         </TreeView>
 
 

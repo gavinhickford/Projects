@@ -4,16 +4,15 @@
         xmlns:wpfToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
         xmlns:views="clr-namespace:WpfToolkit.Main" x:Class="WpfToolkit.MainWindow"
         xmlns:vm="clr-namespace:WpfToolkit.VM" 
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="450" Width="700">
     <Window.DataContext>
-        <vm:MainVM></vm:MainVM>
+        <Binding Source="{StaticResource Locator}" Path="MainVM"></Binding>
     </Window.DataContext>
     
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="3*"/>
-
         </Grid.ColumnDefinitions>
         <wpfToolkit:Accordion 
 			HorizontalAlignment="Stretch"
@@ -30,7 +29,6 @@
                 <TreeView  
                     VerticalAlignment="Stretch"
                     HorizontalAlignment="Stretch"/>
-
             </wpfToolkit:AccordionItem>
             <wpfToolkit:AccordionItem Header="Library Items">
                 <TreeView VerticalAlignment="Stretch"/>
