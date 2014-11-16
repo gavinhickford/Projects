@@ -28,7 +28,9 @@ namespace WpfToolkit.VM
         {
             //ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
              IFolderService folderService = new FolderService();
-             this.MainVM = new MainVM(folderService);
+             string org = "test";
+
+             this.MainVM = new MainVM(folderService, org);
         }
 
         /// <summary>

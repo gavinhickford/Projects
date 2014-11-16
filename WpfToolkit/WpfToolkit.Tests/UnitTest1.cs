@@ -20,7 +20,7 @@ namespace WpfToolkit.Tests
             };
             var mockService = new Mock<IFolderService>();
             mockService.Setup(f => f.GetFolders()).Returns(expectedFolders);
-            MainVM mainVM= new MainVM(mockService.Object);
+            MainVM mainVM= new MainVM(mockService.Object, "test");
             Assert.AreEqual(mainVM.ChildVM.Folders.Count, expectedFolders.Count);
         }
 
@@ -34,7 +34,7 @@ namespace WpfToolkit.Tests
             };
             var mockService = new Mock<IFolderService>();
             mockService.Setup(f => f.GetFolders()).Returns(expectedFolders);
-            MainVM mainVM = new MainVM(mockService.Object);
+            MainVM mainVM = new MainVM(mockService.Object, "test");
             Assert.AreEqual(mainVM.ChildVM.Folders.Count, 1);
         }
     }

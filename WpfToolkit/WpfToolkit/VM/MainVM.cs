@@ -14,12 +14,14 @@ namespace WpfToolkit.VM
         private FolderTreeVM _childVM;
         private IFolderService _folderService;
 
-        public MainVM(IFolderService folderService)
+        public MainVM(IFolderService folderService, string orgName)
         {
             _folderService = folderService;
             var folders = _folderService.GetFolders();
             ChildVM = new FolderTreeVM();
-            ChildVM.Title = "My org title";
+            ChildVM.Title = orgName;
+            Folder rootFolder = new Folder { Name = orgName, Id = -1 };
+            folders.Add(rootFolder);
             ChildVM.Folders = Resolve(folders);
         }
 
