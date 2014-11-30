@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,7 +13,12 @@ namespace WpfToolkit.VM
     {
         private string _title;
         private ObservableCollection<Folder> _folders;
-   
+
+        public FolderTreeVM()
+        {
+            SelectedFolderChanged = new RelayCommand<Folder>(f => SelectedFolder = f);
+        }
+
         public string Title
         {
             get { return _title; }
@@ -24,5 +30,9 @@ namespace WpfToolkit.VM
             get { return _folders; }
             set { Set(() => Folders, ref _folders, value); }
         }
+
+        public RelayCommand<Folder> SelectedFolderChanged { get; private set; }
+
+        public Folder SelectedFolder { get; private set; }
     }
 }

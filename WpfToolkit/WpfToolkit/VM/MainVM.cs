@@ -23,6 +23,8 @@ namespace WpfToolkit.VM
             Folder rootFolder = new Folder { Name = orgName, Id = -1 };
             folders.Add(rootFolder);
             ChildVM.Folders = Resolve(folders);
+
+            Items = new List<string> { "one", "two" };
         }
 
         public FolderTreeVM ChildVM 
@@ -41,6 +43,13 @@ namespace WpfToolkit.VM
             ObservableCollection<Folder> resolvedFolders = new ObservableCollection<Folder>(folders.Where(item => item.ParentId == -1));
 
             return resolvedFolders;
+        }
+
+        private List<string> _items;
+        public List<string> Items
+        {
+            get { return _items; }
+            set { Set(() => Items, ref _items, value); }
         }
     }
 }

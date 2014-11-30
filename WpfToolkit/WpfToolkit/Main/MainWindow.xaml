@@ -38,5 +38,6 @@
                 <TreeView  VerticalAlignment="Stretch"/>
             </wpfToolkit:AccordionItem>
         </wpfToolkit:Accordion>
+        <ListBox Grid.Column="1" HorizontalAlignment="Left" ItemsSource="{Binding Items}"/>
     </Grid>
 </Window>
