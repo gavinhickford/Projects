@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientDemo.ConsoleApp", "PatientDemo.ConsoleApp\PatientDemo.ConsoleApp.csproj", "{AFB8C7BF-E715-4BAC-BB4B-EBB0C307460D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation", "1. Presentation", "{0B1EB9AA-7F5B-4F76-9356-8460F5C8E2FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain", "2. Domain", "{03D878C4-8C28-4B18-9BAF-86347702B364}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Data", "3. Data", "{399179B6-1438-4A1F-BC8F-300E79BD3861}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientDemo.Domain", "PatientDemo.Domain\PatientDemo.Domain.csproj", "{A98E91AD-F1C2-4C94-AE59-D1762968175F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFB8C7BF-E715-4BAC-BB4B-EBB0C307460D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFB8C7BF-E715-4BAC-BB4B-EBB0C307460D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFB8C7BF-E715-4BAC-BB4B-EBB0C307460D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFB8C7BF-E715-4BAC-BB4B-EBB0C307460D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A98E91AD-F1C2-4C94-AE59-D1762968175F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A98E91AD-F1C2-4C94-AE59-D1762968175F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A98E91AD-F1C2-4C94-AE59-D1762968175F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A98E91AD-F1C2-4C94-AE59-D1762968175F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AFB8C7BF-E715-4BAC-BB4B-EBB0C307460D} = {0B1EB9AA-7F5B-4F76-9356-8460F5C8E2FE}
+		{A98E91AD-F1C2-4C94-AE59-D1762968175F} = {03D878C4-8C28-4B18-9BAF-86347702B364}
+	EndGlobalSection
+EndGlobal
