@@ -11,10 +11,13 @@ namespace PatientDemo.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Patient myPatient = new Patient();
+            var myPatient = new Patient();
             myPatient.Surname = "Smith";
             myPatient.Forename = "John";
-            Console.WriteLine("Name: " + myPatient.Forename + " " + myPatient.Surname);
+	        myPatient.Gender = "Male";
+	        myPatient.Height = 1.75f;
+			myPatient.Weight = 75.00f;
+            Console.WriteLine(myPatient.ToString());
             Console.ReadKey();
         }
     }
