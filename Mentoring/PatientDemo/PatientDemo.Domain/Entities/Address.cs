@@ -13,5 +13,15 @@ namespace PatientDemo.Domain.Entities
         public string PostTown { get; set; }
         public string County { get; set; }
         public string Postcode { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0}, {1}, {2}, {3}, {4}", 
+                AddressLine1, 
+                AddressLine2, 
+                PostTown, 
+                County, 
+                Postcode);
+        }
     }
 }
