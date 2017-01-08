@@ -1,0 +1,16 @@
+﻿@model SIGN.ViewModels.GuidelinesViewModel
+@{
+    ViewBag.Title = "Guidelines";
+}
+
+<h3>Guidelines</h3>
+<ul class="list-group">
+    @foreach (var guideline in Model.Guidelines)
+    {
+        <li class="list-group-item">
+            <a asp-controller="App" asp-action="Guideline" asp-route-id="@guideline.Id" class="btn btn-success">
+                @guideline.Name
+            </a>
+        </li>
+    }
+</ul>
