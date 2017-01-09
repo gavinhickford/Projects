@@ -1,4 +1,5 @@
-﻿using SIGN.Domain.Classes;
+﻿using Microsoft.AspNetCore.Identity;
+using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,14 +12,27 @@ namespace SIGN
     public class SeedData
     {
         private ISIGNRepository _repository;
+        private UserManager<SIGNUser> _userManager;
 
-        public SeedData(ISIGNRepository repository)
+        public SeedData(ISIGNRepository repository, UserManager<SIGNUser> userManager)
         {
             _repository = repository;
+            _userManager = userManager;
         }
 
-        public void EnsureSeedData()
+        public async void EnsureSeedData()
         {
+            if (await _userManager.FindByEmailAsync("gjhickford@sign.com") == null)
+            {
+                var user = new SIGNUser
+                {
+                    UserName = "Gavin Hickford",
+                    Email = "gjhickford@sign.com"
+                };
+
+                await _userManager.CreateAsync(user, "PA$$w0rd01!");
+            }
+
             Guideline guideline110 = new Guideline { Name = "Early management of patients with a head injury", Number = 110, DatePublished = new DateTime(2009, 5, 1) };
             Guideline guideline119 = new Guideline { Name = "Management of patients with stroke: identification and management of dysphagia", Number = 119, DatePublished = new DateTime(2010, 6, 1) };
             Guideline guideline143 = new Guideline { Name = "Diagnosis and management of epilepsy in adults", Number = 143, DatePublished = new DateTime(2015, 5, 1) };
@@ -55,6 +69,7 @@ namespace SIGN
                 _repository.AddGuideline(guideline119);
                 _repository.AddGuideline(guideline143);
                 _repository.AddGuideline(guideline153);
+                await _repository.SaveChangesAsync(); 
             }
         }
     }

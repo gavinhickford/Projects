@@ -1,31 +1,34 @@
 ﻿using SIGN.Domain.Classes;
+using SIGN.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SIGN.ViewModels
 {
-    public class GuidelineViewModel
+    public class GuidelineViewModel : IModificationHistory
     {
-        public GuidelineViewModel(Guideline guideline)
-        {
-            Number = guideline.Number;
-            Name = guideline.Name;
-            DatePublished = guideline.DatePublished;
-            Assessments = guideline.Assessments;
-        }
+        public int Id { get; set; }
 
+        [Required]
         public int Number { get; set; }
 
+        [Required]
+        [StringLength(250, MinimumLength = 10)]
         public string Name { get; set; }
+
+        public string Author { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}",
                ApplyFormatInEditMode = true)]
+        [Required]
         public DateTime DatePublished { get; set; }
+
+        public DateTime DateCreated { get; set; }
+
+        public DateTime DateModified { get; set; }
+
+        public bool IsDirty { get; set; }
 
         public IEnumerable<Assessment> Assessments { get; set; }
     }

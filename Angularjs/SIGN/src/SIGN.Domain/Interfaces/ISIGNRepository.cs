@@ -12,6 +12,14 @@ namespace SIGN.Domain.Interfaces
 
         Guideline GetGuideline(int id);
 
+        Assessment GetAssessment(int id);
+
         void AddGuideline(Guideline guideline);
+
+        Task<bool> SaveChangesAsync();
+
+        int SaveChanges();
+
+        void AddAssessment(int guidelineId, Assessment assessment);
     }
 }

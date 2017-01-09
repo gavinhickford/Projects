@@ -5,10 +5,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Threading;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace SIGN.Data.EFCore
 {
-    public class SIGNContext : DbContext
+    public class SIGNContext : IdentityDbContext<SIGNUser>
     {
         //private IConfigurationRoot _configuration;
 
@@ -33,8 +35,37 @@ namespace SIGN.Data.EFCore
             modelBuilder.Entity<Assessment>().Ignore(g => g.IsDirty);
             base.OnModelCreating(modelBuilder);
         }
-        
+
+        public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            SetModificationHistory();
+            int result = await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+            SetIsDirtyFlag();
+            return result;
+        }
+
         public override int SaveChanges()
+        {
+            SetModificationHistory();
+            int result = base.SaveChanges();
+            SetIsDirtyFlag();
+
+            return result;
+        }
+
+        private void SetIsDirtyFlag()
+        {
+            var savedEntities = this.ChangeTracker.Entries()
+                .Where(e => e.Entity is IModificationHistory)
+                .Select(e => e.Entity as IModificationHistory);
+
+            foreach (var entity in savedEntities)
+            {
+                entity.IsDirty = false;
+            }
+        }
+
+        private void SetModificationHistory()
         {
             var modifiedEntities = this.ChangeTracker.Entries()
                 .Where(e => e.Entity is IModificationHistory && (e.State == EntityState.Added ||
@@ -49,19 +80,6 @@ namespace SIGN.Data.EFCore
                     entity.DateCreated = DateTime.Now;
                 }
             }
-
-            int result = base.SaveChanges();
-            var savedEntities = this.ChangeTracker.Entries()
-                .Where(e => e.Entity is IModificationHistory)
-                .Select(e => e.Entity as IModificationHistory);
-
-            foreach (var entity in savedEntities)
-            {
-                entity.IsDirty = false;
-            }
-
-            return result;
         }
-
     }
 }

@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
 using SIGN.ViewModels;
+using System;
 
 namespace SIGN.Controllers.Web
 {
@@ -10,19 +13,31 @@ namespace SIGN.Controllers.Web
     {
         private IConfigurationRoot _configuration;
         private ISIGNRepository _signRepository;
+        private ILogger<AppController> _logger;
 
         public AppController(
             ISIGNRepository signRepository, 
-            IConfigurationRoot configuration)
+            IConfigurationRoot configuration,
+            ILogger<AppController> logger)
         {
             _signRepository = signRepository;
             _configuration = configuration;
+            _logger = logger;
         }
         public IActionResult Index()
         {
-            return View();
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error getting the home page: {ex.Message}");
+                return Redirect("/error");
+            }
         }
 
+        [Authorize]
         public IActionResult Guidelines()
         {
             GuidelinesViewModel model = new GuidelinesViewModel();
@@ -33,7 +48,14 @@ namespace SIGN.Controllers.Web
         public IActionResult Guideline(int id)
         {
             Guideline guideline = _signRepository.GetGuideline(id);
-            GuidelineViewModel model = new GuidelineViewModel(guideline);
+            GuidelineViewModel model = new GuidelineViewModel
+            {
+                Name = guideline.Name,
+                Assessments = guideline.Assessments,
+                DatePublished = guideline.DatePublished,
+                Number = guideline.Number
+            };
+
             return View(model);
         }
 

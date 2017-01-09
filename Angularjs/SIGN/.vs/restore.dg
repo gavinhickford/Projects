@@ -1,6 +1,12 @@
+#:C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
+#:C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Data.EFCore\SIGN.Data.EFCore.xproj
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Data.EFCore\SIGN.Data.EFCore.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
+#:C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN\SIGN.xproj
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN\SIGN.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Data.EFCore\SIGN.Data.EFCore.xproj
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN\SIGN.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Data.EFCore\SIGN.Data.EFCore.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
 #:C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Tests\SIGN.Tests.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Tests\SIGN.Tests.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN\SIGN.xproj
-C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Tests\SIGN.Tests.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN\SIGN.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Data.EFCore\SIGN.Data.EFCore.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN\SIGN.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Data.EFCore\SIGN.Data.EFCore.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj

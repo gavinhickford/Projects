@@ -11,6 +11,10 @@ using Microsoft.Extensions.Configuration;
 using SIGN.Domain.Interfaces;
 using SIGN.Data.EFCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using AutoMapper;
+using SIGN.ViewModels;
+using SIGN.Domain.Classes;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace SIGN
 {
@@ -40,6 +44,14 @@ namespace SIGN
             services.AddEntityFramework(_configuration["ConnectionStrings:SIGNContextConnectionString"]);
             services.AddScoped<ISIGNRepository, SIGNRepository>();
             services.AddTransient<SeedData>();
+            services.AddLogging();
+            services.AddIdentity<SIGNUser, IdentityRole>(config =>
+            {
+                config.User.RequireUniqueEmail = true;
+                config.Password.RequiredLength = 8;
+                config.Cookies.ApplicationCookie.LoginPath = "/Auth/Login";
+            })
+            .AddEntityFrameworkStores<SIGNContext>();
 
             //if (_environment.IsDevelopment())
             //{
@@ -58,14 +70,20 @@ namespace SIGN
             ILoggerFactory loggerFactory,
             SeedData seed)
         {
-            loggerFactory.AddConsole();
+            SetupMappings();
+
             if (env.IsEnvironment("Development"))
             {
                 app.UseDeveloperExceptionPage();
+                loggerFactory.AddDebug(LogLevel.Information);
+            }
+            else
+            {
+                loggerFactory.AddDebug(LogLevel.Error);
             }
 
             app.UseStaticFiles();
-
+            app.UseIdentity();
             app.UseMvc(config =>
             {
                 config.MapRoute(
@@ -76,6 +94,15 @@ namespace SIGN
             });
 
             seed.EnsureSeedData();
+        }
+
+        private static void SetupMappings()
+        {
+            Mapper.Initialize(config =>
+            {
+                config.CreateMap<GuidelineViewModel, Guideline>().ReverseMap();
+                config.CreateMap<AssessmentViewModel, Assessment>().ReverseMap();
+            });
         }
     }
 }
