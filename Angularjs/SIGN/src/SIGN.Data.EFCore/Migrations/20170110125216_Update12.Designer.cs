@@ -4,13 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using SIGN.Data.EFCore;
+using SIGN.Domain.Classes;
 
 namespace SIGN.Data.EFCore.Migrations
 {
     [DbContext(typeof(SIGNContext))]
-    partial class SIGNContextModelSnapshot : ModelSnapshot
+    [Migration("20170110125216_Update12")]
+    partial class Update12
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.2")

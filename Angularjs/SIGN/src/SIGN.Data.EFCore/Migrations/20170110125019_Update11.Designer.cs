@@ -4,13 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using SIGN.Data.EFCore;
+using SIGN.Domain.Classes;
 
 namespace SIGN.Data.EFCore.Migrations
 {
     [DbContext(typeof(SIGNContext))]
-    partial class SIGNContextModelSnapshot : ModelSnapshot
+    [Migration("20170110125019_Update11")]
+    partial class Update11
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.2")
@@ -156,8 +158,7 @@ namespace SIGN.Data.EFCore.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("ActionId")
-                        .IsRequired();
+                    b.Property<int?>("ActionId");
 
                     b.Property<int>("AssessmentId");
 
@@ -345,8 +346,7 @@ namespace SIGN.Data.EFCore.Migrations
                 {
                     b.HasOne("SIGN.Domain.Classes.StepAction", "Action")
                         .WithMany()
-                        .HasForeignKey("ActionId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ActionId");
 
                     b.HasOne("SIGN.Domain.Classes.Assessment", "Assessment")
                         .WithMany()

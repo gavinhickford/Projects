@@ -27,6 +27,15 @@ input[type=text], input[type=password], textarea {
     bottom: 0;
     width: 100%;
 }*/
+.question {
+    background-color:#666;
+    color: #FFF;
+}
+
+.recommendation {
+    background-color:#FFF;
+    color: #666;
+}
 
 .headshot {
     max-width: 50px;

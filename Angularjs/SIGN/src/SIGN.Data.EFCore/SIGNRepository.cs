@@ -58,6 +58,12 @@ namespace SIGN.Data.EFCore
             return _context.Guidelines.ToList();
         }
 
+        public IEnumerable<Guideline> GetGuidelinesByAuthor(string AuthorName)
+        {
+            return _context.Guidelines
+                .Where(g => g.Author == AuthorName)
+                .ToList();
+        }
         public async Task<bool> SaveChangesAsync()
         {
             return (await _context.SaveChangesAsync()) > 0;
@@ -66,6 +72,43 @@ namespace SIGN.Data.EFCore
         public int SaveChanges()
         {
             return _context.SaveChanges();
+        }
+
+        public Step GetStep(int id)
+        {
+            return _context.Steps.FirstOrDefault(s => s.Id == id);
+        }
+
+        public StepAction GetAction(int stepId, bool choice)
+        {
+            var decisions = _context.Decisions
+                .Include(d => d.Step)
+                .Include(d => d.Action)
+                .Include(d => d.Action.NextStep);
+
+            Decision decision = decisions.FirstOrDefault(d => d.Step.Id == stepId && d.Condition == choice);
+
+            if (decision != null)
+            {
+                return decision.Action;
+            }
+
+            return null;
+        }
+
+        public void AddStep(Step step)
+        {
+            _context.Add(step);
+        }
+
+        public void AddDecision(Decision decision)
+        {
+            _context.Add(decision);
+        }
+
+        public void AddStepAction(StepAction stepAction)
+        {
+            _context.Add(stepAction);
         }
     }
 }

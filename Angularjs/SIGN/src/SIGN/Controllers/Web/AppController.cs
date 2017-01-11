@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -6,6 +7,7 @@ using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
 using SIGN.ViewModels;
 using System;
+using System.Linq;
 
 namespace SIGN.Controllers.Web
 {
@@ -45,47 +47,65 @@ namespace SIGN.Controllers.Web
             return View(model);
         }
 
+        [Authorize]
+        public IActionResult MyGuidelines()
+        {
+            GuidelinesViewModel model = new GuidelinesViewModel();
+            model.Guidelines = _signRepository.GetGuidelinesByAuthor(User.Identity.Name);
+            return View(model);
+        }
+
         public IActionResult Guideline(int id)
         {
             Guideline guideline = _signRepository.GetGuideline(id);
-            GuidelineViewModel model = new GuidelineViewModel
+            GuidelineViewModel model = Mapper.Map<GuidelineViewModel>(guideline);
+
+            return View(model);
+        }
+
+        public IActionResult Assessment(int id)
+        {
+            Assessment assessment = _signRepository.GetAssessment(id);
+            AssessmentViewModel model = Mapper.Map<AssessmentViewModel>(assessment);
+
+            return View(model);
+        }
+
+        public IActionResult Step(int id)
+        {
+            Step step = _signRepository.GetStep(id);
+            StepViewModel model = Mapper.Map<StepViewModel>(step);
+
+            int? yesStepId = GetNextStepId(step.Id, true);
+            int? noStepId = GetNextStepId(step.Id, false);
+
+            if (yesStepId.HasValue)
             {
-                Name = guideline.Name,
-                Assessments = guideline.Assessments,
-                DatePublished = guideline.DatePublished,
-                Number = guideline.Number
+                model.YesStepId = yesStepId.Value;
+            };
+
+            if (noStepId.HasValue)
+            {
+                model.NoStepId = noStepId.Value;
             };
 
             return View(model);
         }
 
-        public IActionResult Contact()
+        private int? GetNextStepId(int stepId, bool condition)
         {
-            return View();
-        }
+            StepAction action = _signRepository.GetAction(stepId, condition);
 
-        [HttpPost]
-        public IActionResult Contact(ContactViewModel model)
-        {
-            //if (model.Email.Contains("aol.com"))
-            //{
-            //    ModelState.AddModelError("", "We don't support AOL Addresses");
-            //}
-
-            //if (ModelState.IsValid)
-            //{
-            //    _mailService.SendMail(
-            //        to: _configuration["MailSettings:ToAddress"],
-            //        from: model.Email,
-            //        subject: "From" + model.Name,
-            //        body: model.Message);
-
-            //    ModelState.Clear();
-
-            //    ViewBag.UserMessage = "Message Sent";
-            //}
-
-            return View();
+            if (action != null)
+            {
+                Step step = action.NextStep;
+                if (step != null)
+                {
+                    return step.Id;
+                }
+            }
+            
+            return null;
         }
 
         public IActionResult About()

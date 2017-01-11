@@ -4,13 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using SIGN.Data.EFCore;
+using SIGN.Domain.Classes;
 
 namespace SIGN.Data.EFCore.Migrations
 {
     [DbContext(typeof(SIGNContext))]
-    partial class SIGNContextModelSnapshot : ModelSnapshot
+    [Migration("20170109132055_Update9")]
+    partial class Update9
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.2")
@@ -134,8 +136,6 @@ namespace SIGN.Data.EFCore.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<int>("FirstStepId");
-
                     b.Property<int>("GuidelineId");
 
                     b.Property<string>("Name");
@@ -143,8 +143,6 @@ namespace SIGN.Data.EFCore.Migrations
                     b.Property<int>("Type");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("FirstStepId");
 
                     b.HasIndex("GuidelineId");
 
@@ -156,8 +154,7 @@ namespace SIGN.Data.EFCore.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("ActionId")
-                        .IsRequired();
+                    b.Property<int>("ActionId");
 
                     b.Property<int>("AssessmentId");
 
@@ -258,15 +255,21 @@ namespace SIGN.Data.EFCore.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("AssessmentId");
+
                     b.Property<DateTime>("DateCreated");
 
                     b.Property<DateTime>("DateModified");
+
+                    b.Property<bool>("IsStartStep");
 
                     b.Property<string>("Text");
 
                     b.Property<int>("Type");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AssessmentId");
 
                     b.ToTable("Steps");
                 });
@@ -282,7 +285,7 @@ namespace SIGN.Data.EFCore.Migrations
 
                     b.Property<bool>("IsDirty");
 
-                    b.Property<int?>("NextStepId");
+                    b.Property<int>("NextStepId");
 
                     b.HasKey("Id");
 
@@ -330,11 +333,6 @@ namespace SIGN.Data.EFCore.Migrations
 
             modelBuilder.Entity("SIGN.Domain.Classes.Assessment", b =>
                 {
-                    b.HasOne("SIGN.Domain.Classes.Step", "FirstStep")
-                        .WithMany()
-                        .HasForeignKey("FirstStepId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("SIGN.Domain.Classes.Guideline", "Guideline")
                         .WithMany("Assessments")
                         .HasForeignKey("GuidelineId")
@@ -349,7 +347,7 @@ namespace SIGN.Data.EFCore.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SIGN.Domain.Classes.Assessment", "Assessment")
-                        .WithMany()
+                        .WithMany("Decisions")
                         .HasForeignKey("AssessmentId")
                         .OnDelete(DeleteBehavior.Cascade);
 
@@ -358,11 +356,19 @@ namespace SIGN.Data.EFCore.Migrations
                         .HasForeignKey("StepId");
                 });
 
+            modelBuilder.Entity("SIGN.Domain.Classes.Step", b =>
+                {
+                    b.HasOne("SIGN.Domain.Classes.Assessment")
+                        .WithMany("Steps")
+                        .HasForeignKey("AssessmentId");
+                });
+
             modelBuilder.Entity("SIGN.Domain.Classes.StepAction", b =>
                 {
                     b.HasOne("SIGN.Domain.Classes.Step", "NextStep")
                         .WithMany()
-                        .HasForeignKey("NextStepId");
+                        .HasForeignKey("NextStepId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }

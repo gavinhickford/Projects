@@ -21,6 +21,9 @@ namespace SIGN.Data.EFCore
 
         public DbSet<Guideline> Guidelines { get; set; }
         public DbSet<Assessment> Assessments { get; set; }
+        public DbSet<Step> Steps { get; set; }
+        public DbSet<StepAction> StepActions { get; set; }
+        public DbSet<Decision> Decisions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -33,6 +36,18 @@ namespace SIGN.Data.EFCore
         {
             modelBuilder.Entity<Guideline>().Ignore(g => g.IsDirty);
             modelBuilder.Entity<Assessment>().Ignore(g => g.IsDirty);
+            modelBuilder.Entity<Step>().Ignore(g => g.IsDirty);
+
+            //modelBuilder.Entity<Step>()
+            //    .HasOne(s => s.StepIdIfFalse)
+            //    .WithOne(s => s.)
+
+
+            //modelBuilder.Entity<Step>()
+            //    .HasOne(s => s.StepIdIfTrue)
+            //    .WithOne(s => s.StepIfTrue)
+            //    .HasForeignKey<Step>(s => s.Id);
+
             base.OnModelCreating(modelBuilder);
         }
 

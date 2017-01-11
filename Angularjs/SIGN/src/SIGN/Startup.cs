@@ -15,6 +15,7 @@ using AutoMapper;
 using SIGN.ViewModels;
 using SIGN.Domain.Classes;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SIGN
 {
@@ -37,7 +38,14 @@ namespace SIGN
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc(config =>
+            {
+                if (_environment.IsProduction())
+                {
+                    config.Filters.Add(new RequireHttpsAttribute());
+                }
+            });
+
             services.AddSingleton(_configuration);
             //services.AddDbContext<SIGNContext>();
             //services.AddEntityFramework(_configuration.GetConnectionString("DefaultConnection"));
@@ -64,9 +72,9 @@ namespace SIGN
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(
-            IApplicationBuilder app, 
-            IHostingEnvironment env, 
+        public async void Configure(
+            IApplicationBuilder app,
+            IHostingEnvironment env,
             ILoggerFactory loggerFactory,
             SeedData seed)
         {
@@ -93,7 +101,7 @@ namespace SIGN
                 );
             });
 
-            seed.EnsureSeedData();
+            await seed.EnsureSeedData();
         }
 
         private static void SetupMappings()
@@ -102,6 +110,7 @@ namespace SIGN
             {
                 config.CreateMap<GuidelineViewModel, Guideline>().ReverseMap();
                 config.CreateMap<AssessmentViewModel, Assessment>().ReverseMap();
+                config.CreateMap<StepViewModel, Step>().ReverseMap();
             });
         }
     }

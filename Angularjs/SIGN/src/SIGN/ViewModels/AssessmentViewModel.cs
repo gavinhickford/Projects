@@ -20,6 +20,8 @@ namespace SIGN.ViewModels
 
         public string Description { get; set; }
 
+        public int FirstStepId { get; set; }
+
         public DateTime DateCreated { get; set; }
 
         public DateTime DateModified { get; set; }

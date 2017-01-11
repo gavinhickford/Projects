@@ -1,10 +1,19 @@
-﻿@{ 
+﻿@{
     ViewBag.Title = "Home Page";
 }
 <div class="row">
     <div class="col-md-12">
         <h3>SIGN Guidelines</h3>
         <p>Welcome text</p>
-        <a app-controller="App" asp-action="Guidelines" class="btn btn-lg success">Go to Guidelines</a>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <a app-controller="App" asp-action="Guidelines" class="btn btn-lg btn-success">Go to all Guidelines</a>
+                </div>
+                <div class="form-group">
+                    <a app-controller="App" asp-action="MyGuidelines" class="btn btn-lg btn-success">Go to my Guidelines</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

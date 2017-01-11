@@ -14,12 +14,19 @@ namespace SIGN.Domain.Interfaces
 
         Assessment GetAssessment(int id);
 
-        void AddGuideline(Guideline guideline);
+        Step GetStep(int id);
 
+        void AddGuideline(Guideline guideline);
+        void AddAssessment(int guidelineId, Assessment assessment);
+        void AddStep(Step step);
+        void AddDecision(Decision decision);
+        void AddStepAction(StepAction stepAction);
         Task<bool> SaveChangesAsync();
 
         int SaveChanges();
 
-        void AddAssessment(int guidelineId, Assessment assessment);
+
+        IEnumerable<Guideline> GetGuidelinesByAuthor(string AuthorName);
+        StepAction GetAction(int stepId, bool choice);
     }
 }
