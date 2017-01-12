@@ -1,0 +1,24 @@
+﻿<div class="col-md-10 col-md-offset-1">
+    <h3>Guidelines</h3>
+    <div class="text-danger" ng-show="viewModel.errorMessage">{{ viewModel.errorMessage }}</div>
+    <wait-cursor display-when="viewModel.processing"></wait-cursor>
+    <table class="table table-responsive table-striped">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Date Published</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tr ng-repeat="guideline in viewModel.guidelines">
+            <td>{{guideline.number}}</td>
+            <td>{{guideline.name}}</td>
+            <td>{{guideline.datePublished | date: 'dd-MM-yyyy'}}</td>
+            <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+        </tr>
+    </table>
+    <a href="#/add" class="btn btn-sm btn-primary">Add New Guideline</a>
+</div>

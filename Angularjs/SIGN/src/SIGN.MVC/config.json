@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "SIGNContextConnectionString": "Server=.\\SQLEXPRESS; Database=SIGNGuidelines; Trusted_Connection=true; MultipleActiveResultSets=true;"
+  }
+}

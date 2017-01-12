@@ -1,0 +1,23 @@
+﻿@model SIGN.Angular.ViewModels.StepViewModel
+@{
+    ViewBag.Title = "Steps";
+}
+
+<div class="row">
+    <div class="col-md-10">
+        <div class="form-group form">
+            <textarea rows="3" asp-for="Text" class="@(Model.Type == SIGN.Domain.Classes.StepType.Question ? "form-control question" : "form-control recommendation")" readonly></textarea>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <form>
+            <div class="form-group">
+                @if (Model.Type == SIGN.Domain.Classes.StepType.Question)
+                {
+                    <a app-controller="App" asp-action="Step" asp-route-id="@Model.YesStepId" class="btn btn-success">Yes</a>
+                    <a app-controller="App" asp-action="Step" asp-route-id="@Model.NoStepId" class="btn btn-warning">No</a>
+                }
+            </div>
+        </form>
+    </div>
+</div>

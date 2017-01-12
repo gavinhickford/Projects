@@ -1,0 +1,28 @@
+﻿@model SIGN.Angular.ViewModels.AssessmentViewModel
+@{
+    ViewBag.Title = "Assessment Details";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Assessment details</h3>
+        <form>
+            <div class="form-group">
+                <label asp-for="Name">Name</label>
+                <input asp-for="Name" class="form-control" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="Type">Type</label>
+                <input asp-for="Type" class="form-control" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Description</label>
+                @*<input asp-for="Description" class="form-control" readonly />*@
+                <textarea rows="4" asp-for="Description" class="form-control" readonly></textarea>
+            </div>
+            <div class="form-group">
+                <a app-controller="App" asp-action="Step" asp-route-id="@Model.FirstStepId" class="btn btn-success">Run Assessment</a>
+            </div>
+        </form>
+    </div>
+</div>
