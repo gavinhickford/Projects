@@ -15,7 +15,8 @@
     "SIGN.Data.EFCore": "1.0.0-*",
     "SIGN.Domain": "1.0.0-*",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
-    "AutoMapper": "5.2.0"
+    "AutoMapper": "5.2.0",
+    "SIGN.Services": "1.0.0-*"
   },
 
   "tools": {

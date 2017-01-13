@@ -11,6 +11,7 @@ using SIGN.Angular.ViewModels;
 using SIGN.Data.EFCore;
 using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
+using SIGN.Services;
 
 namespace SIGN.Angular
 {
@@ -42,10 +43,9 @@ namespace SIGN.Angular
             });
 
             services.AddSingleton(_configuration);
-            //services.AddDbContext<SIGNContext>();
-            //services.AddEntityFramework(_configuration.GetConnectionString("DefaultConnection"));
             services.AddEntityFramework(_configuration["ConnectionStrings:SIGNContextConnectionString"]);
             services.AddScoped<ISIGNRepository, SIGNRepository>();
+            services.AddScoped<ISIGNService, SIGNService>();
             services.AddTransient<SeedData>();
             services.AddLogging();
             services.AddIdentity<SIGNUser, IdentityRole>(config =>
@@ -55,15 +55,6 @@ namespace SIGN.Angular
                 config.Cookies.ApplicationCookie.LoginPath = "/Auth/Login";
             })
             .AddEntityFrameworkStores<SIGNContext>();
-
-            //if (_environment.IsDevelopment())
-            //{
-
-            //}
-            //else
-            //{
-            //    services.AddScoped<ISIGNRepository, SIGNRepository>();
-            //}
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

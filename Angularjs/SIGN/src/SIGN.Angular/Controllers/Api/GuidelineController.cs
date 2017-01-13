@@ -6,8 +6,6 @@ using SIGN.Domain.Interfaces;
 using SIGN.Angular.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SIGN.Angular.Controllers.Api
@@ -16,12 +14,15 @@ namespace SIGN.Angular.Controllers.Api
     {
         private ILogger<GuidelineController> _logger;
         private ISIGNRepository _repository;
+        private ISIGNService _signService; 
 
         public GuidelineController(
             ISIGNRepository repository,
+            ISIGNService signService,
             ILogger<GuidelineController> logger)
         {
             _repository = repository;
+            _signService = signService;
             _logger = logger;
         }
 
@@ -30,7 +31,7 @@ namespace SIGN.Angular.Controllers.Api
         {
             try
             {
-                IEnumerable<Guideline> guidelines = _repository.GetGuidelines();
+                IEnumerable<Guideline> guidelines = _signService.GetGuidelines();
                 return Ok(Mapper.Map<IEnumerable<GuidelineViewModel>>(guidelines));
             }
             catch (Exception ex)
@@ -45,7 +46,7 @@ namespace SIGN.Angular.Controllers.Api
         {
             try
             {
-                Guideline guideline = _repository.GetGuideline(id);
+                Guideline guideline = _signService.GetGuideline(id);
                 return Ok(Mapper.Map<GuidelineViewModel>(guideline));
             }
             catch (Exception ex)

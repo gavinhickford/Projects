@@ -3,11 +3,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using SIGN.Angular.ViewModels;
 using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
-using SIGN.Angular.ViewModels;
 using System;
-using System.Linq;
 
 namespace SIGN.Angular.Controllers.Web
 {
@@ -15,14 +14,17 @@ namespace SIGN.Angular.Controllers.Web
     {
         private IConfigurationRoot _configuration;
         private ISIGNRepository _signRepository;
+        private ISIGNService _signService;
         private ILogger<AppController> _logger;
 
         public AppController(
             ISIGNRepository signRepository, 
+            ISIGNService signService,
             IConfigurationRoot configuration,
             ILogger<AppController> logger)
         {
             _signRepository = signRepository;
+            _signService = signService;
             _configuration = configuration;
             _logger = logger;
         }
@@ -51,13 +53,13 @@ namespace SIGN.Angular.Controllers.Web
         public IActionResult MyGuidelines()
         {
             GuidelinesViewModel model = new GuidelinesViewModel();
-            model.Guidelines = _signRepository.GetGuidelinesByAuthor(User.Identity.Name);
+            model.Guidelines = _signService.GetMyGuidelines(User.Identity.Name);
             return View(model);
         }
 
         public IActionResult Guideline(int id)
         {
-            Guideline guideline = _signRepository.GetGuideline(id);
+            Guideline guideline = _signService.GetGuideline(id);
             GuidelineViewModel model = Mapper.Map<GuidelineViewModel>(guideline);
 
             return View(model);

@@ -1,14 +1,13 @@
 ﻿using SIGN.Domain.Classes;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SIGN.Domain.Interfaces
 {
-    public interface IGuidelineService
+    public interface ISIGNService
     {
         IEnumerable<Guideline> GetGuidelines();
+
+        IEnumerable<Guideline> GetMyGuidelines(string username);
 
         Guideline GetGuideline(int id);
     }

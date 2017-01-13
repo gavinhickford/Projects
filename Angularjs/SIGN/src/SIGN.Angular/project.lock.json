@@ -4142,6 +4142,20 @@
         "runtime": {
           "netstandard1.6/SIGN.Domain.dll": {}
         }
+      },
+      "SIGN.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "SIGN.Domain": "1.0.0"
+        },
+        "compile": {
+          "netstandard1.6/SIGN.Services.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/SIGN.Services.dll": {}
+        }
       }
     }
   },
@@ -10549,6 +10563,11 @@
       "type": "project",
       "path": "../SIGN.Domain/project.json",
       "msbuildProject": "../SIGN.Domain/SIGN.Domain.xproj"
+    },
+    "SIGN.Services/1.0.0": {
+      "type": "project",
+      "path": "../SIGN.Services/project.json",
+      "msbuildProject": "../SIGN.Services/SIGN.Services.xproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -10569,7 +10588,8 @@
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.0.0",
       "Microsoft.NETCore.App >= 1.0.1",
       "SIGN.Data.EFCore >= 1.0.0-*",
-      "SIGN.Domain >= 1.0.0-*"
+      "SIGN.Domain >= 1.0.0-*",
+      "SIGN.Services >= 1.0.0-*"
     ],
     ".NETCoreApp,Version=v1.0": []
   },
