@@ -3,19 +3,18 @@
     "use strict";
 
     angular.module("app-guidelines", ["controls", "ngRoute"])
-    .config(function ($routeProvider) {
-        $routeProvider.when("/", {
-            controller: "guidelinesController",
-            controllerAs: "viewModel",
-            templateUrl: "/views/guidelinesView.html"
-        });
-
-        $routeProvider.when("/add", {
-            controller: "addGuidelineController",
-            controllerAs: "viewModel",
-            templateUrl: "/views/addGuidelineView.html"
-        });
-
-        $routeProvider.otherwise({ redirectTo: "/" });
+        .config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    controller: "guidelinesController",
+                    controllerAs: "vm",
+                    templateUrl: "/views/guidelinesView.html"
+                })
+                .when("/add", {
+                    controller: "addGuidelineController",
+                    //controllerAs: "viewModel",
+                    templateUrl: "/views/addGuidelineView.html"
+                })
+                .otherwise({ redirectTo: "/" });
     });
 })();

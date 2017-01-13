@@ -1,4 +1,5 @@
 ﻿using SIGN.Domain.Classes;
+using SIGN.Domain.Enums;
 using SIGN.Domain.Interfaces;
 using System;
 using System.Collections.Generic;

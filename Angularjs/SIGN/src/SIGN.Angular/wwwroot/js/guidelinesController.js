@@ -5,44 +5,41 @@
         .controller("guidelinesController", guidelinesController);
 
     function guidelinesController($http) {
-        var viewModel = this;
+        var vm = this;
 
-        viewModel.guidelines = [];
-        viewModel.newGuideline = {};
-        viewModel.errorMessage = "";
-        viewModel.processing = true;
-        viewModel.addGuideline = function () {
-            viewModel.processing = true;
-            viewModel.errorMessage = "";
-            $http.post("/api/guidelines", viewModel.newGuideline)
+        vm.guidelines = [];
+        vm.newGuideline = {};
+        vm.errorMessage = "";
+        vm.processing = true;
+        vm.addGuideline = function () {
+            vm.processing = true;
+            vm.errorMessage = "";
+            $http.post("/api/guidelines", vm.newGuideline)
             .then(function (response) {
                 // successfully added
-                viewModel.guidelines.push(response.data);
-                viewModel.newGuideline = {};
+                vm.guidelines.push(response.data);
+                vm.newGuideline = {};
             },
             function () {
                 // failed
-                viewModel.errorMessage = "Failed to save the guideline";
+                vm.errorMessage = "Failed to save the guideline";
             })
             .finally(function() {
-                viewModel.processing = false;
+                vm.processing = false;
             });
         };
 
         $http.get("/api/guidelines")
             .then(function (response) {
                 // successful retrieval
-                angular.copy(response.data, viewModel.guidelines);
+                angular.copy(response.data, vm.guidelines);
             },
             function (error) {
                 // failed retrieval
-                viewModel.errorMessage = "Failed to load guidelines: " + error.status + " " + error.statusText;
+                vm.errorMessage = "Failed to load guidelines: " + error.status + " " + error.statusText;
             })
         .finally(function () {
-            viewModel.processing = false;
+            vm.processing = false;
         });
-
-
-    };
-
+    }
 })();

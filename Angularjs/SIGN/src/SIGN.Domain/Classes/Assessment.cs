@@ -1,7 +1,6 @@
-﻿using SIGN.Domain.Interfaces;
+﻿using SIGN.Domain.Enums;
+using SIGN.Domain.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace SIGN.Domain.Classes
 {
@@ -15,9 +14,6 @@ namespace SIGN.Domain.Classes
         public int GuidelineId { get; set; }
         public Step FirstStep { get; set; }
         public int FirstStepId { get; set; }
-        //public Collection<Step> Steps { get; set; }
-        //public Collection<Decision> Decisions { get; set; }
-
         public DateTime DateModified { get; set; }
         public DateTime DateCreated { get; set; }
         public bool IsDirty { get; set; }

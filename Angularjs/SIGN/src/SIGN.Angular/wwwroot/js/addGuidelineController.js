@@ -7,6 +7,6 @@
 
     function addGuidelineController()
     {
-        alert("here");
-    };
+
+    }
 })();

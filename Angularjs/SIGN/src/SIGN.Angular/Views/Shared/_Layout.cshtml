@@ -17,17 +17,17 @@
             <span id="username">@User.Identity.Name</span>
         }
         <ul class="nav navbar">
-            <li class="active"><a asp-controller="App" asp-action="Index">Home</a></li>
-            <li><a asp-controller="App" asp-action="Guidelines">All Guidelines</a></li>
-            <li><a asp-controller="App" asp-action="MyGuidelines">My Guidelines</a></li>
-            <li><a asp-controller="App" asp-action="About">About</a></li>
+            <li class="active"><a asp-controller="App" asp-action="Index"><i class="fa fa-home"></i> Home</a></li>
+            <li><a asp-controller="App" asp-action="Guidelines"><i class="fa fa-file-o"></i> All Guidelines</a></li>
+            <li><a asp-controller="App" asp-action="MyGuidelines"><i class="fa fa-file-picture-o"></i> My Guidelines</a></li>
+            <li><a asp-controller="App" asp-action="About"><i class="fa fa-question-circle-o"></i> About</a></li>
             @if (User.Identity.IsAuthenticated)
             {
-                <li><a asp-controller="Auth" asp-action="Logout">Logout</a></li>
+                <li><a asp-controller="Auth" asp-action="Logout"><i class="fa fa-sign-out"></i> Logout</a></li>
             }
             else
             {
-                <li><a asp-controller="Auth" asp-action="Login">Login</a></li>
+                <li><a asp-controller="Auth" asp-action="Login"><i class="fa fa-sign-in"></i> Login</a></li>
             };
         </ul>
     </div>
@@ -47,7 +47,7 @@
                     {
                         <li>
                             <a asp-controller="Auth" asp-action="Logout" class="btn btn-primary">
-                                <i class="fa fa-laptop "></i>Logout
+                                <i class="fa fa-sign-out"></i> Logout
                             </a>
                         </li>
                     }
@@ -55,7 +55,7 @@
                     {
                         <li>
                             <a asp-controller="Auth" asp-action="Login" class="btn btn-primary">
-                                <i class="fa fa-laptop "></i>Login
+                                <i class="fa fa-sign-in "></i>Login
                             </a>
                         </li>
                     };

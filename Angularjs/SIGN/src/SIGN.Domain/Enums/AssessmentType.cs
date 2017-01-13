@@ -1,4 +1,4 @@
-﻿namespace SIGN.Domain.Classes
+﻿namespace SIGN.Domain.Enums
 {
     public enum AssessmentType
     {

@@ -1,8 +1,6 @@
-﻿using SIGN.Domain.Interfaces;
+﻿using SIGN.Domain.Enums;
+using SIGN.Domain.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SIGN.Domain.Classes
 {
