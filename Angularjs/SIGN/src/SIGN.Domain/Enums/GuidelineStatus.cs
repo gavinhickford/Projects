@@ -2,6 +2,7 @@
 {
     public enum GuidelineStatus
     {
+        None = 0,
         CurrentLessThanThreeYears = 1,
         CurrentThreeToSevenYears = 2,
         GreaterThanSevenYears = 3,

@@ -2,7 +2,8 @@
 {
     public enum AssessmentType
     {
-        Telephone =1,
+        None = 0,
+        Telephone = 1,
         Consultation = 2
     }
 }

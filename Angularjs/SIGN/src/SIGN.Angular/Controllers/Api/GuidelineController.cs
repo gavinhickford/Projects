@@ -13,15 +13,15 @@ namespace SIGN.Angular.Controllers.Api
     public class GuidelineController : Controller
     {
         private ILogger<GuidelineController> _logger;
-        private ISIGNRepository _repository;
+        //private ISIGNRepository _repository;
         private ISIGNService _signService; 
 
         public GuidelineController(
-            ISIGNRepository repository,
+            //ISIGNRepository repository,
             ISIGNService signService,
             ILogger<GuidelineController> logger)
         {
-            _repository = repository;
+            //_repository = repository;
             _signService = signService;
             _logger = logger;
         }
@@ -62,9 +62,9 @@ namespace SIGN.Angular.Controllers.Api
             if (ModelState.IsValid)
             {
                 Guideline newGuideline = Mapper.Map<Guideline>(guideline);
-                _repository.AddGuideline(newGuideline);
+                //_repository.AddGuideline(newGuideline);
         
-                if (await _repository.SaveChangesAsync())
+                if (await _signService.AddGuideline(newGuideline))
                 {
                     return Created($"api/guidelines/{guideline.Name}", Mapper.Map<GuidelineViewModel>(newGuideline));
                 }

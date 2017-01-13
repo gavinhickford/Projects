@@ -12,7 +12,7 @@
                 })
                 .when("/add", {
                     controller: "addGuidelineController",
-                    //controllerAs: "viewModel",
+                    controllerAs: "vm",
                     templateUrl: "/views/addGuidelineView.html"
                 })
                 .otherwise({ redirectTo: "/" });

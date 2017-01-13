@@ -27,6 +27,11 @@ input[type=text], input[type=password], textarea {
     bottom: 0;
     width: 100%;
 }*/
+
+.form-label {
+    text-align:left;
+}
+
 .question {
     background-color:#666;
     color: #FFF;

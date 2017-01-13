@@ -1,5 +1,6 @@
 ﻿using SIGN.Domain.Classes;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SIGN.Domain.Interfaces
 {
@@ -10,5 +11,7 @@ namespace SIGN.Domain.Interfaces
         IEnumerable<Guideline> GetMyGuidelines(string username);
 
         Guideline GetGuideline(int id);
+
+        Task<bool> AddGuideline(Guideline guideline);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SIGN.Services
 {
@@ -26,6 +27,12 @@ namespace SIGN.Services
         public IEnumerable<Guideline> GetMyGuidelines(string authorName)
         {
             return _repository.GetGuidelinesByAuthor(authorName);
+        }
+
+        public async Task<bool> AddGuideline(Guideline guideline)
+        {
+            _repository.AddGuideline(guideline);
+            return await _repository.SaveChangesAsync();
         }
     }
 }
