@@ -5,28 +5,32 @@
     angular.module("app-guidelines")
         .controller("addGuidelineController", addGuidelineController);
 
-    function addGuidelineController($http)
+    function addGuidelineController(guidelineService)
     {
         var vm = this;
+
+        var onSuccess = function (response) {
+            vm.newGuideline = {};
+            window.location.href = '/app/guidelines';
+        }
+
+        var onError = function (reason) {
+            vm.errorMessage = "Failed to save the guideline";
+        };
+
+        var onComplete = function () {
+            vm.processing = false;
+        };
+
         vm.newGuideline = {};
         vm.errorMessage = "";
         vm.processing = false;
         vm.addGuideline = function () {
             vm.processing = true;
             vm.errorMessage = "";
-            $http.post("/api/guidelines", vm.newGuideline)
-            .then(function (response) {
-                // successfully added
-                vm.newGuideline = {};
-                window.location.href = '/app/guidelines';
-            },
-            function () {
-                // failed
-                vm.errorMessage = "Failed to save the guideline";
-            })
-            .finally(function () {
-                vm.processing = false;
-            });
+            guidelineService.addGuideline(vm.newGuideline)
+                .then(onSuccess, onError)
+                .finally(onComplete);
         };
     }
 })();
