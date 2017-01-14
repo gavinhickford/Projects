@@ -16,18 +16,7 @@ namespace SIGN.Angular.Tests
             var testGuidelines = new List<Guideline>();
             for (int i = 1; i < numberOfGuidelines + 1; i++)
             {
-                testGuidelines.Add(
-                    new Guideline
-                    {
-                        Id = i,
-                        Name = $"TestGuideline{i}",
-                        Number = 100,
-                        Author = "TestUser",
-                        DateCreated = new DateTime(2010, 1, 1),
-                        DateModified = new DateTime(2010, 1, 1),
-                        DatePublished = new DateTime(2005, 1, 1),
-                        Status = GuidelineStatus.GreaterThanSevenYears
-                    });
+                testGuidelines.Add(CreateTestGuideline(i));
             }
 
             return testGuidelines;
@@ -44,6 +33,36 @@ namespace SIGN.Angular.Tests
         {
             List<Guideline> expectedGuidelines = CreateTestGuidelines(numberOfGuidelines: 1);
             return new MockSignService(expectedGuidelines, returnsException);
+        }
+
+        internal static GuidelineViewModel CreateTestGuidelineViewModel(int id)
+        {
+           return new GuidelineViewModel
+            {
+                Id = id,
+                Name = $"TestGuideline{id}",
+                Number = 110,
+                Status = GuidelineStatus.CurrentLessThanThreeYears,
+                Author = "TestUser",
+                DateCreated = new DateTime(2004, 1, 1),
+                DateModified = new DateTime(2004, 1, 1),
+                DatePublished = new DateTime(2004, 1, 1),
+            };
+        }
+
+        internal static Guideline CreateTestGuideline(int id)
+        {
+            return new Guideline
+            {
+                Id = id,
+                Name = $"TestGuideline{id}",
+                Number = 100,
+                Author = "TestUser",
+                DateCreated = new DateTime(2010, 1, 1),
+                DateModified = new DateTime(2010, 1, 1),
+                DatePublished = new DateTime(2005, 1, 1),
+                Status = GuidelineStatus.GreaterThanSevenYears
+            };
         }
 
         public static void InitialiseMappings()

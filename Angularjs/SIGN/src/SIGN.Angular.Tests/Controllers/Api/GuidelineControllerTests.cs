@@ -81,19 +81,8 @@ namespace SIGN.Angular.Tests.Controllers.Api
         {
             TestHelper.InitialiseMappings();
             ISIGNService mockSIGNService =
-                TestHelper.CreateMockSignService(
-                    numberOfGuidelines: 1,
-                    returnsException: true);
-            GuidelineViewModel guideline = new GuidelineViewModel
-            {
-                Name = "TestName",
-                Number = 110,
-                Status = GuidelineStatus.CurrentLessThanThreeYears,
-                Author = "TestUser",
-                DateCreated = new System.DateTime(2004, 1, 1),
-                DateModified = new System.DateTime(2004, 1, 1),
-                DatePublished = new System.DateTime(2004, 1, 1),
-            };
+                TestHelper.CreateMockSignService(numberOfGuidelines: 1);
+            GuidelineViewModel guideline = TestHelper.CreateTestGuidelineViewModel(id: 1);
 
             var controller = new GuidelineController(mockSIGNService, _mockLogger);
 
