@@ -10,13 +10,21 @@
         };
 
         var addGuideline = function (guideline) {
-            return $http.post("/api/guidelines", guideline)
+            return $http.post("/api/guidelines", guideline);
+        };
+
+        var getGuideline = function (id) {
+            return $http.get("/api/guidelines/" + id)
+            .then(function (response) {
+                return response.data;
+            });
         };
 
         // Revealing module pattern
         return {
             getGuidelines: getGuidelines,
-            addGuideline: addGuideline
+            addGuideline: addGuideline,
+            getGuideline: getGuideline
         };
     };
 
