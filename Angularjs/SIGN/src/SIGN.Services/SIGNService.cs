@@ -34,5 +34,16 @@ namespace SIGN.Services
             _repository.AddGuideline(guideline);
             return await _repository.SaveChangesAsync();
         }
+
+        public Assessment GetAssessment(int id)
+        {
+            return _repository.GetAssessment(id);
+        }
+
+        public async Task<bool> AddAssessment(int guidelineId, Assessment assessment)
+        {
+            _repository.AddAssessment(guidelineId, assessment);
+            return await _repository.SaveChangesAsync();
+        }
     }
 }

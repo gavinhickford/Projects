@@ -13,15 +13,12 @@ namespace SIGN.Angular.Controllers.Api
     public class GuidelineController : Controller
     {
         private ILogger<GuidelineController> _logger;
-        //private ISIGNRepository _repository;
         private ISIGNService _signService; 
 
         public GuidelineController(
-            //ISIGNRepository repository,
             ISIGNService signService,
             ILogger<GuidelineController> logger)
         {
-            //_repository = repository;
             _signService = signService;
             _logger = logger;
         }
@@ -53,13 +50,14 @@ namespace SIGN.Angular.Controllers.Api
                 }
                 else
                 {
+                    _logger.LogError($"Failed to retrieve guideline {id}");
                     return NotFound();
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Failed to retrieve guideline: {ex}");
-                return BadRequest("Error in retrieving guideline");
+                _logger.LogError($"Failed to retrieve guideline {id} : {ex}");
+                return BadRequest($"Error in retrieving guideline {id}");
             }
         }
 
@@ -69,7 +67,6 @@ namespace SIGN.Angular.Controllers.Api
             if (ModelState.IsValid)
             {
                 Guideline newGuideline = Mapper.Map<Guideline>(guideline);
-                //_repository.AddGuideline(newGuideline);
         
                 if (await _signService.AddGuideline(newGuideline))
                 {

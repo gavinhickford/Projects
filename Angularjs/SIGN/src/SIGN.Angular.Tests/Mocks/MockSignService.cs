@@ -23,9 +23,19 @@ namespace SIGN.Angular.Tests.Mocks
             _returnsException = returnsException;
         }
 
+        public Task<bool> AddAssessment(int guidelineId, Assessment assessment)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<bool> AddGuideline(Guideline guideline)
         {
-            return new Task<bool>(() => true);
+            return Task.FromResult<bool>(true);
+        }
+
+        public Assessment GetAssessment(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public Guideline GetGuideline(int id)

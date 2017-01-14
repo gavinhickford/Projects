@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SIGN.Angular.ViewModels;
 using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
-using SIGN.Angular.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SIGN.Angular.Controllers.Api
@@ -16,11 +13,11 @@ namespace SIGN.Angular.Controllers.Api
     public class AssessmentController : Controller
     {
         private ILogger<AssessmentController> _logger;
-        private ISIGNRepository _repository;
+        private ISIGNService _signService;
 
-        public AssessmentController(ISIGNRepository repository, ILogger<AssessmentController> logger)
+        public AssessmentController(ISIGNRepository repository, ISIGNService signService, ILogger<AssessmentController> logger)
         {
-            _repository = repository;
+            _signService = signService;
             _logger = logger;
         }
 
@@ -29,15 +26,22 @@ namespace SIGN.Angular.Controllers.Api
         {
             try
             {
-                Assessment assessment = _repository.GetAssessment(id);
-                return Ok(Mapper.Map<AssessmentViewModel>(assessment));
+                Assessment assessment = _signService.GetAssessment(id);
+                if (assessment != null)
+                {
+                    return Ok(Mapper.Map<AssessmentViewModel>(assessment));
+                }
+                else
+                {
+                    _logger.LogError($"Assessment {id} not found");
+                    return NotFound();
+                }
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Failed to get Assessment: {ex}");
+                _logger.LogError($"Failed to retrieve Assessment {id}: {ex}");
+                return BadRequest($"Error in retrieving Assessment {id}.");
             }
-
-            return BadRequest("Failed to retrieve assessment.");
         }
 
         [HttpPost("")]
@@ -46,9 +50,8 @@ namespace SIGN.Angular.Controllers.Api
             if (ModelState.IsValid)
             {
                 Assessment newAssessment = Mapper.Map<Assessment>(assessment);
-                _repository.AddAssessment(id, newAssessment);
-
-                if (await _repository.SaveChangesAsync())
+                
+                if (await _signService.AddAssessment(id, newAssessment))
                 {
                     return Created($"api/assessments/{id}/{assessment.Name}", Mapper.Map<AssessmentViewModel>(newAssessment));
                 }

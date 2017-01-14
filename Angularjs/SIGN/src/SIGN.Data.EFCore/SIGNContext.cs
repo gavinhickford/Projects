@@ -11,11 +11,8 @@ namespace SIGN.Data.EFCore
 {
     public class SIGNContext : IdentityDbContext<SIGNUser>, ISIGNContext
     {
-        //private IConfigurationRoot _configuration;
-
         public SIGNContext(DbContextOptions options) : base(options)
         {
-            //    _configuration = configuration;
         }
 
         public DbSet<Guideline> Guidelines { get; set; }
@@ -27,8 +24,6 @@ namespace SIGN.Data.EFCore
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            //    string connectionString = _configuration["ConnectionStrings:SIGNContextConnectionString"];
-            //    optionsBuilder.UseSqlServer(connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -11,8 +11,8 @@
         vm.processing = true;
         vm.errorMessage = "";
 
-        var onSuccess = function (response) {
-            vm.guideline = response.data;
+        var onSuccess = function (data) {
+            vm.guideline = data;
         };
 
         var onError = function (reason) {

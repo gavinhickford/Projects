@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using SIGN.Domain.Classes;
 using SIGN.Angular.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using SIGN.Domain.Classes;
 using System.Threading.Tasks;
 
 namespace SIGN.Angular.Controllers
@@ -54,8 +51,6 @@ namespace SIGN.Angular.Controllers
                 {
                     ModelState.AddModelError("", "Username or Password is incorrect");
                 }
-
-
             }
 
             return View();

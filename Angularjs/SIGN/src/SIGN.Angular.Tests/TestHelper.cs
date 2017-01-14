@@ -4,6 +4,8 @@ using SIGN.Domain.Classes;
 using SIGN.Domain.Enums;
 using System;
 using System.Collections.Generic;
+using SIGN.Domain.Interfaces;
+using SIGN.Angular.Tests.Mocks;
 
 namespace SIGN.Angular.Tests
 {
@@ -29,6 +31,19 @@ namespace SIGN.Angular.Tests
             }
 
             return testGuidelines;
+        }
+
+        internal static ISIGNService CreateMockSignService(int numberOfGuidelines)
+        {
+            return CreateMockSignService(
+                numberOfGuidelines: numberOfGuidelines, 
+                returnsException: false);
+        }
+
+        internal static ISIGNService CreateMockSignService(int numberOfGuidelines, bool returnsException)
+        {
+            List<Guideline> expectedGuidelines = CreateTestGuidelines(numberOfGuidelines: 1);
+            return new MockSignService(expectedGuidelines, returnsException);
         }
 
         public static void InitialiseMappings()
