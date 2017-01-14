@@ -1,14 +1,11 @@
 ﻿using SIGN.Domain.Classes;
-using SIGN.Domain.Enums;
 using SIGN.Domain.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
 namespace SIGN.Services.Tests
 {
-    
     public class SIGNServiceTest
     {
         [Fact]

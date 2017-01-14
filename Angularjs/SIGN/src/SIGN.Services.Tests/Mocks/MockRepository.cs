@@ -131,7 +131,7 @@ namespace SIGN.Services.Tests.Mocks
 
         public Task<bool> SaveChangesAsync()
         {
-            return new Task<bool>(() => false);
+            return new Task<bool>(() => true);
         }
     }
 }

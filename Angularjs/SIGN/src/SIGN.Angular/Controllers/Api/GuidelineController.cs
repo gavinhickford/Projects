@@ -47,7 +47,14 @@ namespace SIGN.Angular.Controllers.Api
             try
             {
                 Guideline guideline = _signService.GetGuideline(id);
-                return Ok(Mapper.Map<GuidelineViewModel>(guideline));
+                if (guideline != null)
+                {
+                    return Ok(Mapper.Map<GuidelineViewModel>(guideline));
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
             catch (Exception ex)
             {

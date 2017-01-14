@@ -2,7 +2,6 @@
 using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
@@ -10,7 +9,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace SIGN.Data.EFCore
 {
-    public class SIGNContext : IdentityDbContext<SIGNUser>
+    public class SIGNContext : IdentityDbContext<SIGNUser>, ISIGNContext
     {
         //private IConfigurationRoot _configuration;
 
@@ -38,16 +37,6 @@ namespace SIGN.Data.EFCore
             modelBuilder.Entity<Assessment>().Ignore(g => g.IsDirty);
             modelBuilder.Entity<Step>().Ignore(g => g.IsDirty);
 
-            //modelBuilder.Entity<Step>()
-            //    .HasOne(s => s.StepIdIfFalse)
-            //    .WithOne(s => s.)
-
-
-            //modelBuilder.Entity<Step>()
-            //    .HasOne(s => s.StepIdIfTrue)
-            //    .WithOne(s => s.StepIfTrue)
-            //    .HasForeignKey<Step>(s => s.Id);
-
             base.OnModelCreating(modelBuilder);
         }
 
@@ -56,6 +45,7 @@ namespace SIGN.Data.EFCore
             SetModificationHistory();
             int result = await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
             SetIsDirtyFlag();
+
             return result;
         }
 

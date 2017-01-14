@@ -4,10 +4,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SIGN.Domain.Classes
 {
-    public class Decision : IModificationHistory
+    public class Decision : BaseEntity
     {
-        public int Id { get; set; }
-
         public Step Step { get; set; }
 
         public bool Condition { get; set; }
@@ -19,11 +17,5 @@ namespace SIGN.Domain.Classes
         public Assessment Assessment { get; set; }
 
         public int AssessmentId { get; set; }
-
-        public DateTime DateCreated { get; set; }
-
-        public DateTime DateModified { get; set; }
-
-        public bool IsDirty { get; set; }
     }
 }

@@ -17,8 +17,8 @@
             $http.post("/api/guidelines", vm.newGuideline)
             .then(function (response) {
                 // successfully added
-                //vm.guidelines.push(response.data);
                 vm.newGuideline = {};
+                window.location.href = '/app/guidelines';
             },
             function () {
                 // failed

@@ -11,10 +11,10 @@ namespace SIGN.Data.EFCore
 {
     public class SIGNRepository : ISIGNRepository
     {
-        private SIGNContext _context;
+        private ISIGNContext _context;
         private ILogger<SIGNRepository> _logger;
 
-        public SIGNRepository(SIGNContext context, ILogger<SIGNRepository> logger)
+        public SIGNRepository(ISIGNContext context, ILogger<SIGNRepository> logger)
         {
             _context = context;
             _logger = logger;
@@ -66,7 +66,7 @@ namespace SIGN.Data.EFCore
         }
         public async Task<bool> SaveChangesAsync()
         {
-            return (await _context.SaveChangesAsync()) > 0;
+            return (await _context.SaveChangesAsync(true)) > 0;
         }
 
         public int SaveChanges()

@@ -4,13 +4,9 @@ using System;
 
 namespace SIGN.Domain.Classes
 {
-    public class Step : IModificationHistory
+    public class Step : BaseEntity
     {
-        public int Id { get; set; }
         public string Text { get; set; }
         public StepType Type { get; set; }
-        public DateTime DateModified { get; set; }
-        public DateTime DateCreated { get; set; }
-        public bool IsDirty { get; set; }
     }
 }

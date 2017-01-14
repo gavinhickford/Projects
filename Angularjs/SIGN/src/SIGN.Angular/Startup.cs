@@ -46,6 +46,7 @@ namespace SIGN.Angular
             services.AddEntityFramework(_configuration["ConnectionStrings:SIGNContextConnectionString"]);
             services.AddScoped<ISIGNRepository, SIGNRepository>();
             services.AddScoped<ISIGNService, SIGNService>();
+            services.AddScoped<ISIGNContext, SIGNContext>();
             services.AddTransient<SeedData>();
             services.AddLogging();
             services.AddIdentity<SIGNUser, IdentityRole>(config =>
