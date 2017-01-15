@@ -12,14 +12,14 @@
             scope: {
                 displayWhen: "=displayWhen"
             },
-            templateUrl: "/views/waitCursor.html"
+            templateUrl: "/app/controls/waitCursor.html"
         };
     };
 
     function guidelineStatus() {
         return {
             restrict: "E",
-            templateUrl: "/views/guidelineStatus.html"
+            templateUrl: "/app/controls/guidelineStatus.html"
         };
     };
 })();
