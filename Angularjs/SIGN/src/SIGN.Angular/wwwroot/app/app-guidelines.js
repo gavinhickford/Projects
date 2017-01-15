@@ -8,22 +8,22 @@
                 .when("/", {
                     controller: "guidelinesController",
                     controllerAs: "vm",
-                    templateUrl: "/views/guidelinesView.html"
+                    templateUrl: "/app/guidelines/guidelinesView.html"
                 })
                 .when("/add", {
                     controller: "addGuidelineController",
                     controllerAs: "vm",
-                    templateUrl: "/views/addGuidelineView.html"
+                    templateUrl: "/app/guidelines/addGuidelineView.html"
                 })
                 .when("/view/:id", {
                     controller: "viewGuidelineController",
                     controllerAs: "vm",
-                    templateUrl: "/views/viewGuidelineView.html"
+                    templateUrl: "/app/guidelines/viewGuidelineView.html"
                 })
                 .when("/edit/:id", {
                     controller: "editGuidelineController",
                     controllerAs: "vm",
-                    templateUrl: "/views/editGuidelineView.html"
+                    templateUrl: "/app/guidelines/editGuidelineView.html"
                 })
                 .otherwise({ redirectTo: "/" });
     });
