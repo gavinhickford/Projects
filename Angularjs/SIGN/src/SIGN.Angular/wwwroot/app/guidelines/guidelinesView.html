@@ -18,7 +18,7 @@
             <td>{{guideline.number}}</td>
             <td>{{guideline.name}}</td>
             <td>{{guideline.datePublished | date: 'dd-MM-yyyy'}}</td>
-            <td><guideline-status></guideline-status></td>
+            <td><guideline-status status-id="guideline.status"></guideline-status></td>
             <td><a href="#!/edit/{{guideline.id}}" class="btn btn-sm btn-primary">Edit</a></td>
             <td><a href="#!/view/{{guideline.id}}" class="btn btn-sm btn-primary">View</a></td>
         </tr>

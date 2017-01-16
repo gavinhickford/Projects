@@ -1,10 +1,9 @@
-﻿<div>
+﻿
     <p>
         <i ng-class="{
-           'fa fa-check fa-2x text-success': {{guideline.status}} == 1, 
-           'fa fa-question-circle-o fa-2x text-warning': {{guideline.status}} == 2,
-           'fa fa-exclamation-circle fa-2x text-error': {{guideline.status}} == 3,
-           'fa fa-close fa-2x text-error': {{guideline.status}} == 4,
-           'fa fa-edit fa-2x text-warning': {{guideline.status}} == 5}"></i>
+           'fa fa-check fa-2x text-success': statusId == 1, 
+           'fa fa-question-circle-o fa-2x text-warning': statusId == 2,
+           'fa fa-exclamation-circle fa-2x text-error': statusId == 3,
+           'fa fa-close fa-2x text-error': statusId == 4,
+           'fa fa-edit fa-2x text-warning': statusId == 5}"></i>
     </p>
-</div>

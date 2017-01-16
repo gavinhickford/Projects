@@ -19,6 +19,9 @@
     function guidelineStatus() {
         return {
             restrict: "E",
+            scope: {
+                statusId: "=statusId"
+            },
             templateUrl: "/app/controls/guidelineStatus.html"
         };
     };

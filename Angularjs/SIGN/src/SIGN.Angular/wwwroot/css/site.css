@@ -27,6 +27,28 @@ input[type=text], input[type=password], textarea {
     bottom: 0;
     width: 100%;
 }*/
+.page-header{
+  text-align: center;    
+}
+
+.sign-number {
+  text-align: center;
+  font-size:48px;
+}
+
+.sign-heading {
+  margin-top:15px;
+}
+
+sign-label {
+  font-size: large;
+  font-weight: 600;
+}
+
+sign-text {
+  font-size: large
+}
+
 .main-content {
     padding-bottom: 28px;
 }
