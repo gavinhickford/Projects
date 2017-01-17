@@ -1,9 +1,7 @@
 ﻿<div class="col-md-10 col-md-offset-1">
     <div class="text-danger" ng-show="vm.errorMessage">{{ vm.errorMessage }}</div>
     <wait-cursor display-when="vm.processing"></wait-cursor>
-    <header class="page-header">
-        <h1 class="page-title">{{ vm.guideline.name }}</h1>
-    </header>
+    <h3>{{ vm.guideline.name }}</h3>
 
     <div class="row">
         <div class="col-md-12">
@@ -17,14 +15,16 @@
                             <div class="col-xs-12 col-sm-5">
                                 <ul class="list-group">
                                     <li class="list-group-item">
-                                        <p>Published: {{ vm.guideline.datePublished  | date: 'dd-MM-yyyy'}}</p>
+                                        <div class="col-md-3"><p>Published</p></div>
+                                        <div class="col-md-9"><p>{{ vm.guideline.datePublished  | date: 'dd-MM-yyyy'}}</p></div>
                                     </li>
                                     <li class="list-group-item">
-                                        <p>Author: {{ vm.guideline.author }}</p>
+                                        <div class="col-md-3"><p>Author</p></div>
+                                        <div class="col-md-9"><p>{{ vm.guideline.author }}</p></div>
                                     </li>
                                     <li class="list-group-item">
-                                        <div class="col-md-2"><p>Status</p></div>
-                                        <div class="col-md-10"><guideline-status status-id="vm.guideline.status"></guideline-status></div>
+                                        <div class="col-md-3"><p>Status</p></div>
+                                        <div class="col-md-9"><guideline-status status-id="vm.guideline.status"></guideline-status></div>
                                     </li>
                                 </ul>
                             </div><div class="col-xs-12 col-sm-5">
