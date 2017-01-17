@@ -9,7 +9,7 @@
     {
         var vm = this;
 
-        var onSuccess = function (response) {
+        var onSuccess = function (data) {
             vm.newGuideline = {};
             window.location.href = '/app/guidelines';
         }

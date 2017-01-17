@@ -49,23 +49,7 @@
 
         $httpBackend.flush();
 
-        expect(response.data).toEqual(expectedUrl);
-    });
-
-    it('should add a new guideline and return status 201 (Created)', function () {
-        var response;
-        var expectedUrl = '/api/guidelines/' + guideline1Name;
-        $httpBackend.when('POST', '/api/guidelines')
-            .respond(201, expectedUrl, newGuideline);
-
-        guidelineService.addGuideline()
-            .then(function (data) {
-                response = data;
-            });
-
-        $httpBackend.flush();
-
-        expect(response.status).toEqual(201);
+        expect(response).toEqual(expectedUrl);
     });
 
     it('should get a guideline by id', function () {

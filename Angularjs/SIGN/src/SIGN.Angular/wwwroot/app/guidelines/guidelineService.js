@@ -10,7 +10,10 @@
         };
 
         var addGuideline = function (guideline) {
-            return $http.post("/api/guidelines", guideline);
+            return $http.post("/api/guidelines", guideline)
+            .then(function (response) {
+                return response.data;
+            });
         };
 
         var getGuideline = function (id) {
