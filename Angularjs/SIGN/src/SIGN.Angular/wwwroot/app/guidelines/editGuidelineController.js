@@ -11,12 +11,21 @@
         vm.processing = true;
         vm.errorMessage = "";
 
-        var onSuccess = function (data) {
+        var onRetrievalSuccess = function (data) {
             vm.guideline = data;
+            vm.guideline.datePublished = new Date(data.datePublished);
         };
 
-        var onError = function (reason) {
+        var onRetrievalError = function (reason) {
             vm.errorMessage = "Failed to retrieve the guideline";
+        };
+
+        var onSaveSuccess = function (data) {
+            //vm.guideline = data;
+        };
+
+        var onSaveError = function (reason) {
+            vm.errorMessage = "Failed to save the guideline";
         };
 
         var onComplete = function () {
@@ -24,7 +33,15 @@
         };
 
         guidelineService.getGuideline($routeParams.id)
-           .then(onSuccess, onError)
+           .then(onRetrievalSuccess, onRetrievalError)
            .finally(onComplete);
+
+        vm.editGuideline = function(){
+            vm.processing = true;
+            vm.errorMessage = "";
+            guidelineService.addGuideline(vm.guideline)
+                .then(onSaveSuccess, onSaveError)
+                .finally(onComplete);
+        };
     }
 })();

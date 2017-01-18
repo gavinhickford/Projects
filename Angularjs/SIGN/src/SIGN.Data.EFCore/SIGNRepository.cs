@@ -33,7 +33,19 @@ namespace SIGN.Data.EFCore
 
         public void AddGuideline(Guideline guideline)
         {
-            _context.Add(guideline);
+            Guideline existingGuideline = GetGuideline(guideline.Id);
+            if (existingGuideline != null)
+            {
+                existingGuideline.Name = guideline.Name;
+                existingGuideline.Number = guideline.Number;
+                existingGuideline.Author = guideline.Author;
+                existingGuideline.DatePublished = guideline.DatePublished;
+                existingGuideline.Status = guideline.Status;
+            }
+            else
+            {
+                _context.Add(guideline);
+            }
         }
 
         public Assessment GetAssessment(int id)
