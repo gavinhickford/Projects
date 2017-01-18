@@ -2,6 +2,7 @@
 using SIGN.Domain.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System;
 
 namespace SIGN.Services
 {
@@ -44,6 +45,16 @@ namespace SIGN.Services
         {
             _repository.AddAssessment(guidelineId, assessment);
             return await _repository.SaveChangesAsync();
+        }
+
+        public StepAction GetAction(int stepId, bool condition)
+        {
+            return _repository.GetAction(stepId, condition);
+        }
+
+        public Step GetStep(int id)
+        {
+            return _repository.GetStep(id);
         }
     }
 }

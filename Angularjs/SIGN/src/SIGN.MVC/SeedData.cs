@@ -3,7 +3,6 @@ using SIGN.Domain.Classes;
 using SIGN.Domain.Enums;
 using SIGN.Domain.Interfaces;
 using System;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -69,7 +68,7 @@ namespace SIGN.MVC
                 var result = await _userManager.CreateAsync(user, "Pa$$word1");
             }
 
-         
+
             if (!_repository.GetGuidelines().Any())
             {
                 SetUpGuidelines();
@@ -98,7 +97,7 @@ namespace SIGN.MVC
                 _repository.SaveGuideline(_guideline119);
                 _repository.SaveGuideline(_guideline143);
                 _repository.SaveGuideline(_guideline153);
-                await _repository.SaveChangesAsync(); 
+                await _repository.SaveChangesAsync();
             }
         }
 
@@ -350,25 +349,32 @@ namespace SIGN.MVC
                 Name = "Early management of patients with a head injury",
                 Number = 110,
                 DatePublished = new DateTime(2009, 5, 1),
-                Author = "GavinHickford"
+                Author = "GavinHickford",
+                Status = GuidelineStatus.GreaterThanSevenYears
             };
-            _guideline119 = new Guideline {
+            _guideline119 = new Guideline
+            {
                 Name = "Management of patients with stroke: identification and management of dysphagia",
                 Number = 119,
                 DatePublished = new DateTime(2010, 6, 1),
-                Author = "GavinHickford"
+                Author = "GavinHickford",
+                Status = GuidelineStatus.CurrentThreeToSevenYears
             };
-            _guideline143 = new Guideline {
+            _guideline143 = new Guideline
+            {
                 Name = "Diagnosis and management of epilepsy in adults",
                 Number = 143,
                 DatePublished = new DateTime(2015, 5, 1),
-                Author = "JohnSmith"
+                Author = "JohnSmith",
+                Status = GuidelineStatus.CurrentThreeToSevenYears
             };
-            _guideline153 = new Guideline {
+            _guideline153 = new Guideline
+            {
                 Name = "British guideline on the management of asthma",
                 Number = 153,
                 DatePublished = new DateTime(2016, 9, 1),
-                Author = "JohnSmith"
+                Author = "JohnSmith",
+                Status = GuidelineStatus.CurrentLessThanThreeYears
             };
         }
     }

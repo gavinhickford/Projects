@@ -11,7 +11,9 @@ namespace SIGN.Domain.Interfaces
         Guideline GetGuideline(int id);
         Task<bool> SaveGuideline(Guideline guideline);
         Assessment GetAssessment(int id);
+        Step GetStep(int id);
         Task<bool> AddAssessment(int guidelineId, Assessment assessment);
+        StepAction GetAction(int stepId, bool condition);
 
     }
 }

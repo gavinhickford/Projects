@@ -14,15 +14,15 @@ namespace SIGN.MVC.Controllers.Web
     public class AppController : Controller
     {
         private IConfigurationRoot _configuration;
-        private ISIGNRepository _signRepository;
+        private ISIGNService _signService;
         private ILogger<AppController> _logger;
 
         public AppController(
-            ISIGNRepository signRepository, 
+            ISIGNService signService, 
             IConfigurationRoot configuration,
             ILogger<AppController> logger)
         {
-            _signRepository = signRepository;
+            _signService = signService;
             _configuration = configuration;
             _logger = logger;
         }
@@ -43,7 +43,7 @@ namespace SIGN.MVC.Controllers.Web
         public IActionResult Guidelines()
         {
             GuidelinesViewModel model = new GuidelinesViewModel();
-            model.Guidelines = _signRepository.GetGuidelines();
+            model.Guidelines = _signService.GetGuidelines();
             return View(model);
         }
 
@@ -51,13 +51,13 @@ namespace SIGN.MVC.Controllers.Web
         public IActionResult MyGuidelines()
         {
             GuidelinesViewModel model = new GuidelinesViewModel();
-            model.Guidelines = _signRepository.GetGuidelinesByAuthor(User.Identity.Name);
+            model.Guidelines = _signService.GetMyGuidelines(User.Identity.Name);
             return View(model);
         }
 
         public IActionResult Guideline(int id)
         {
-            Guideline guideline = _signRepository.GetGuideline(id);
+            Guideline guideline = _signService.GetGuideline(id);
             GuidelineViewModel model = Mapper.Map<GuidelineViewModel>(guideline);
 
             return View(model);
@@ -65,7 +65,7 @@ namespace SIGN.MVC.Controllers.Web
 
         public IActionResult Assessment(int id)
         {
-            Assessment assessment = _signRepository.GetAssessment(id);
+            Assessment assessment = _signService.GetAssessment(id);
             AssessmentViewModel model = Mapper.Map<AssessmentViewModel>(assessment);
 
             return View(model);
@@ -73,7 +73,7 @@ namespace SIGN.MVC.Controllers.Web
 
         public IActionResult Step(int id)
         {
-            Step step = _signRepository.GetStep(id);
+            Step step = _signService.GetStep(id);
             StepViewModel model = Mapper.Map<StepViewModel>(step);
 
             int? yesStepId = GetNextStepId(step.Id, true);
@@ -94,7 +94,7 @@ namespace SIGN.MVC.Controllers.Web
 
         private int? GetNextStepId(int stepId, bool condition)
         {
-            StepAction action = _signRepository.GetAction(stepId, condition);
+            StepAction action = _signService.GetAction(stepId, condition);
 
             if (action != null)
             {
@@ -104,7 +104,7 @@ namespace SIGN.MVC.Controllers.Web
                     return step.Id;
                 }
             }
-            
+
             return null;
         }
 
