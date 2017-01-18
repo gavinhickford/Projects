@@ -1,32 +1,33 @@
-﻿/*body {
-    font-family: sans-serif;
-    font-size: 14px;
-    margin: 0;
+﻿.page-header{
+  text-align: center;    
 }
 
-label {
-    font-weight: bold;
-    display: block;
+.sign-number {
+  text-align: center;
+  font-size:48px;
 }
 
-input[type=text], input[type=password], textarea {
-    width: 150px;
-}*/
-
-/*#main {
-    background-color: #eee;
-    padding: 4px;
-    margin: 0;
+.sign-heading {
+  margin-top:15px;
 }
 
-#footer {
-    background-color: #222;
-    color: #eee;
-    padding: 8px 5px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}*/
+sign-label {
+  font-size: large;
+  font-weight: 600;
+}
+
+sign-text {
+  font-size: large
+}
+
+.main-content {
+    padding-bottom: 28px;
+}
+
+.form-label {
+    text-align:left;
+}
+
 .question {
     background-color:#666;
     color: #FFF;

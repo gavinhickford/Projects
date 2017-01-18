@@ -7,7 +7,6 @@ using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
 using SIGN.MVC.ViewModels;
 using System;
-using System.Linq;
 
 namespace SIGN.MVC.Controllers.Web
 {
@@ -55,6 +54,7 @@ namespace SIGN.MVC.Controllers.Web
             return View(model);
         }
 
+        [Authorize]
         public IActionResult Guideline(int id)
         {
             Guideline guideline = _signService.GetGuideline(id);
@@ -63,6 +63,7 @@ namespace SIGN.MVC.Controllers.Web
             return View(model);
         }
 
+        [Authorize]
         public IActionResult Assessment(int id)
         {
             Assessment assessment = _signService.GetAssessment(id);
@@ -71,6 +72,7 @@ namespace SIGN.MVC.Controllers.Web
             return View(model);
         }
 
+        [Authorize]
         public IActionResult Step(int id)
         {
             Step step = _signService.GetStep(id);
