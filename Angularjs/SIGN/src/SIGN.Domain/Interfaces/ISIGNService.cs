@@ -9,7 +9,7 @@ namespace SIGN.Domain.Interfaces
         IEnumerable<Guideline> GetGuidelines();
         IEnumerable<Guideline> GetMyGuidelines(string username);
         Guideline GetGuideline(int id);
-        Task<bool> AddGuideline(Guideline guideline);
+        Task<bool> SaveGuideline(Guideline guideline);
         Assessment GetAssessment(int id);
         Task<bool> AddAssessment(int guidelineId, Assessment assessment);
 

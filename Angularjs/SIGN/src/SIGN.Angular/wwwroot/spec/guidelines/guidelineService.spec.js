@@ -42,7 +42,7 @@
         $httpBackend.when('POST', '/api/guidelines')
             .respond(201, expectedUrl, newGuideline);
 
-        guidelineService.addGuideline()
+        guidelineService.saveGuideline()
             .then(function (data) {
                 response = data;
             });

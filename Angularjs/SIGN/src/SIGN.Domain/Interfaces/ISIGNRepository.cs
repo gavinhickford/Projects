@@ -16,7 +16,7 @@ namespace SIGN.Domain.Interfaces
 
         Step GetStep(int id);
 
-        void AddGuideline(Guideline guideline);
+        void SaveGuideline(Guideline guideline);
         void AddAssessment(int guidelineId, Assessment assessment);
         void AddStep(Step step);
         void AddDecision(Decision decision);

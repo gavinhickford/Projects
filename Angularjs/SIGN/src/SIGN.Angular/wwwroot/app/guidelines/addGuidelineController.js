@@ -28,7 +28,7 @@
         vm.addGuideline = function () {
             vm.processing = true;
             vm.errorMessage = "";
-            guidelineService.addGuideline(vm.newGuideline)
+            guidelineService.saveGuideline(vm.newGuideline)
                 .then(onSuccess, onError)
                 .finally(onComplete);
         };

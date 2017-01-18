@@ -29,9 +29,9 @@ namespace SIGN.Services
             return _repository.GetGuidelinesByAuthor(authorName);
         }
 
-        public async Task<bool> AddGuideline(Guideline guideline)
+        public async Task<bool> SaveGuideline(Guideline guideline)
         {
-            _repository.AddGuideline(guideline);
+            _repository.SaveGuideline(guideline);
             return await _repository.SaveChangesAsync();
         }
 

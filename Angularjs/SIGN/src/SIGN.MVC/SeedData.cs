@@ -94,10 +94,10 @@ namespace SIGN.MVC
                 _repository.AddDecision(_decision13);
                 _repository.AddDecision(_decision14);
 
-                _repository.AddGuideline(_guideline110);
-                _repository.AddGuideline(_guideline119);
-                _repository.AddGuideline(_guideline143);
-                _repository.AddGuideline(_guideline153);
+                _repository.SaveGuideline(_guideline110);
+                _repository.SaveGuideline(_guideline119);
+                _repository.SaveGuideline(_guideline143);
+                _repository.SaveGuideline(_guideline153);
                 await _repository.SaveChangesAsync(); 
             }
         }

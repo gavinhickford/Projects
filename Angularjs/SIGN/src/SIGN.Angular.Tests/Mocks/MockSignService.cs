@@ -28,7 +28,7 @@ namespace SIGN.Angular.Tests.Mocks
             throw new NotImplementedException();
         }
 
-        public Task<bool> AddGuideline(Guideline guideline)
+        public Task<bool> SaveGuideline(Guideline guideline)
         {
             return Task.FromResult<bool>(true);
         }

@@ -68,7 +68,7 @@ namespace SIGN.Angular.Controllers.Api
             {
                 Guideline newGuideline = Mapper.Map<Guideline>(guideline);
         
-                if (await _signService.AddGuideline(newGuideline))
+                if (await _signService.SaveGuideline(newGuideline))
                 {
                     return Created($"api/guidelines/{guideline.Name}", Mapper.Map<GuidelineViewModel>(newGuideline));
                 }

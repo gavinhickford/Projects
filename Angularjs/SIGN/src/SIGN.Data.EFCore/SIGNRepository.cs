@@ -31,7 +31,7 @@ namespace SIGN.Data.EFCore
             }
         }
 
-        public void AddGuideline(Guideline guideline)
+        public void SaveGuideline(Guideline guideline)
         {
             Guideline existingGuideline = GetGuideline(guideline.Id);
             if (existingGuideline != null)

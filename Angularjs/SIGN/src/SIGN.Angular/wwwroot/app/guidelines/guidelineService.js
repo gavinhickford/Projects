@@ -9,7 +9,7 @@
             });
         };
 
-        var addGuideline = function (guideline) {
+        var saveGuideline = function (guideline) {
             return $http.post("/api/guidelines", guideline)
             .then(function (response) {
                 return response.data;
@@ -26,7 +26,7 @@
         // Revealing module pattern
         return {
             getGuidelines: getGuidelines,
-            addGuideline: addGuideline,
+            saveGuideline: saveGuideline,
             getGuideline: getGuideline
         };
     };

@@ -39,7 +39,7 @@
         vm.editGuideline = function(){
             vm.processing = true;
             vm.errorMessage = "";
-            guidelineService.addGuideline(vm.guideline)
+            guidelineService.saveGuideline(vm.guideline)
                 .then(onSaveSuccess, onSaveError)
                 .finally(onComplete);
         };

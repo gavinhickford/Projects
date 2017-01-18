@@ -49,7 +49,7 @@ namespace SIGN.Services.Tests.Mocks
             return;
         }
 
-        public void AddGuideline(Guideline guideline)
+        public void SaveGuideline(Guideline guideline)
         {
             return;
         }
