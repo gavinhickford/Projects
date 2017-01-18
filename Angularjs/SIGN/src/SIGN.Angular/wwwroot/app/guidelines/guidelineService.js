@@ -32,5 +32,5 @@
     };
 
     var module = angular.module("app-guidelines")
-        .factory("guidelineService", guidelineService)
+        .factory("guidelineService", guidelineService);
 })();

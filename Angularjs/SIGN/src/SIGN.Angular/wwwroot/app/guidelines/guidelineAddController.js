@@ -12,7 +12,7 @@
         var onSuccess = function (data) {
             vm.newGuideline = {};
             window.location.href = '/app/guidelines';
-        }
+        };
 
         var onError = function (reason) {
             vm.errorMessage = "Failed to save the guideline";

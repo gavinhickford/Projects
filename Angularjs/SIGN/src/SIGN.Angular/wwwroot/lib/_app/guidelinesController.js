@@ -1,0 +1,1 @@
+!function(){"use strict";function e(e){var n=this,i=function(e){angular.copy(e,n.guidelines)},r=function(e){n.errorMessage="Failed to load guidelines: "+error.status+" "+error.statusText},s=function(){n.processing=!1};n.guidelines=[],n.errorMessage="",n.processing=!0,e.getGuidelines().then(i,r).finally(s)}angular.module("app-guidelines").controller("guidelinesController",e)}();

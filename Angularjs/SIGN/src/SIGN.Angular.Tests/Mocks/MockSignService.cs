@@ -59,5 +59,15 @@ namespace SIGN.Angular.Tests.Mocks
             return _expectedGuidelines
                 .Where(g => g.Author == username);
         }
+
+        public Step GetStep(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public StepAction GetAction(int stepId, bool condition)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
