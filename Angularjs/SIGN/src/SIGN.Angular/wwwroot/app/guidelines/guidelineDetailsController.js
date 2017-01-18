@@ -1,11 +1,11 @@
-﻿//viewGuidelineController.js
+﻿//guidelineDetailsController.js
 (function () {
     "use strict";
 
     angular.module("app-guidelines")
-        .controller("viewGuidelineController", viewGuidelineController);
+        .controller("guidelineDetailsController", guidelineDetailsController);
 
-    function viewGuidelineController(guidelineService, $routeParams) {
+    function guidelineDetailsController(guidelineService, $routeParams) {
         var vm = this;
         vm.guideline = {};
         vm.processing = true;

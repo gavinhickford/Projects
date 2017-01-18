@@ -11,19 +11,19 @@
                     templateUrl: "/app/guidelines/guidelinesView.html"
                 })
                 .when("/add", {
-                    controller: "addGuidelineController",
+                    controller: "guidelineAddController",
                     controllerAs: "vm",
-                    templateUrl: "/app/guidelines/addGuidelineView.html"
+                    templateUrl: "/app/guidelines/guidelineAddView.html"
                 })
                 .when("/view/:id", {
-                    controller: "viewGuidelineController",
+                    controller: "guidelineDetailsController",
                     controllerAs: "vm",
-                    templateUrl: "/app/guidelines/viewGuidelineView.html"
+                    templateUrl: "/app/guidelines/guidelineDetailsView.html"
                 })
                 .when("/edit/:id", {
-                    controller: "editGuidelineController",
+                    controller: "guidelineEditController",
                     controllerAs: "vm",
-                    templateUrl: "/app/guidelines/editGuidelineView.html"
+                    templateUrl: "/app/guidelines/guidelineEditView.html"
                 })
                 .otherwise({ redirectTo: "/" });
     });

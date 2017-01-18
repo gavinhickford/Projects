@@ -1,11 +1,11 @@
-﻿// editGuidelineController.js
+﻿// guidelineEditController.js
 (function () {
     "use strict";
 
     angular.module("app-guidelines")
-    .controller("editGuidelineController", editGuidelineController);
+    .controller("guidelineEditController", guidelineEditController);
 
-    function editGuidelineController(guidelineService, $routeParams) {
+    function guidelineEditController(guidelineService, $routeParams) {
         var vm = this;
         vm.guideline = {};
         vm.processing = true;
