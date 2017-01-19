@@ -12,7 +12,6 @@ namespace SIGN.MVC.ViewModels
         public int Id { get; set; }
         public string Text { get; set; }
         public StepType Type { get; set; }
-
         public int YesStepId { get; set; }
         public int NoStepId { get; set; }
     }

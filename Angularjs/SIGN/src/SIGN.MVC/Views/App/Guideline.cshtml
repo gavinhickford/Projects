@@ -2,6 +2,9 @@
 @{
     ViewBag.Title = "Guideline Details";
 }
+@section scripts {
+    <script src="~/js/accordion.js"></script>
+}
 <div class="col-md-10 col-md-offset-1">
     <h3>@Model.Name</h3>
 
@@ -52,16 +55,6 @@
                                         </div>
                                     </li>
                                 </ul>
-                            </div><div class="col-xs-12 col-sm-5">
-                                Assessments
-                               @foreach (var assessment in Model.Assessments)
-                               {
-                                <div class="form-group">
-                                    <a asp-controller="App" asp-action="Assessment" asp-route-id="@assessment.Id" class="btn btn-block btn-info">
-                                        @assessment.Name
-                                    </a>
-                                </div>
-                               }
                             </div>
                         </div>
                     </div>
@@ -69,4 +62,25 @@
             </div>
         </div>
     </div>
+
+    <button class="accordion">Assessments</button>
+    <div class="accordion-panel">
+        @foreach (var assessment in Model.Assessments)
+        {
+            <div>
+                <a asp-controller="App" asp-action="Assessment" asp-route-id="@assessment.Id" class="btn btn-block btn-success">
+                    @assessment.Name
+                </a>
+            </div>
+        }
+    </div>
+
+    <button class="accordion">Recommendations</button>
+    <div class="accordion-panel">
+        <div>
+            <a href="#" class="btn btn-block btn-warning">
+                Recommendation 1
+            </a>
+        </div>
+</div>
 </div>
