@@ -28,14 +28,8 @@ sign-text {
     text-align:left;
 }
 
-.question {
-    background-color:#666;
-    color: #FFF;
-}
-
-.recommendation {
-    background-color:#FFF;
-    color: #666;
+#steps .panel {
+    border-radius: 4px;
 }
 
 .headshot {
