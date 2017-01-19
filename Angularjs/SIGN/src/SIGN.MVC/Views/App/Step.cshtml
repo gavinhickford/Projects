@@ -3,21 +3,23 @@
     ViewBag.Title = "Steps";
 }
 
-<div class="row">
-    <div class="col-md-10">
-        <div class="form-group form">
-            <textarea rows="3" asp-for="Text" class="@(Model.Type == SIGN.Domain.Enums.StepType.Question ? "form-control question" : "form-control recommendation")" readonly></textarea>
+<div class="container col-md-10 col-md-offset-1">
+    <div id="steps" class="panel-group">
+        <div class="@(Model.Type == SIGN.Domain.Enums.StepType.Question ? "panel panel-success" : "panel panel-danger")">
+            <div class="panel-heading">@Model.Type</div>
+            <div class="panel-body">
+                <div class="col-md-10">
+                    @Model.Text
+                </div>
+                <div class="col-md-2">
+                    @if (Model.Type == SIGN.Domain.Enums.StepType.Question)
+                    {
+                        <a app-controller="App" asp-action="Step" asp-route-id="@Model.YesStepId" class="btn btn-success">Yes</a>
+                        <a app-controller="App" asp-action="Step" asp-route-id="@Model.NoStepId" class="btn btn-warning">No</a>
+                    }
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-md-2">
-        <form>
-            <div class="form-group">
-                @if (Model.Type == SIGN.Domain.Enums.StepType.Question)
-                {
-                    <a app-controller="App" asp-action="Step" asp-route-id="@Model.YesStepId" class="btn btn-success">Yes</a>
-                    <a app-controller="App" asp-action="Step" asp-route-id="@Model.NoStepId" class="btn btn-warning">No</a>
-                }
-            </div>
-        </form>
-    </div>
 </div>
+

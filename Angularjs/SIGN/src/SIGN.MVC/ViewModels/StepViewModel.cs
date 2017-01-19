@@ -15,6 +15,5 @@ namespace SIGN.MVC.ViewModels
 
         public int YesStepId { get; set; }
         public int NoStepId { get; set; }
-        //public bool IsStartStep { get; set; }
     }
 }
