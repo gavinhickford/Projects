@@ -10861,23 +10861,23 @@
     },
     "SIGN.Angular/1.0.0": {
       "type": "project",
-      "path": "../SIGN.Angular/project.json",
-      "msbuildProject": "../SIGN.Angular/SIGN.Angular.xproj"
+      "path": "../../src/SIGN.Angular/project.json",
+      "msbuildProject": "../../src/SIGN.Angular/SIGN.Angular.xproj"
     },
     "SIGN.Data.EFCore/1.0.0": {
       "type": "project",
-      "path": "../SIGN.Data.EFCore/project.json",
-      "msbuildProject": "../SIGN.Data.EFCore/SIGN.Data.EFCore.xproj"
+      "path": "../../src/SIGN.Data.EFCore/project.json",
+      "msbuildProject": "../../src/SIGN.Data.EFCore/SIGN.Data.EFCore.xproj"
     },
     "SIGN.Domain/1.0.0": {
       "type": "project",
-      "path": "../SIGN.Domain/project.json",
-      "msbuildProject": "../SIGN.Domain/SIGN.Domain.xproj"
+      "path": "../../src/SIGN.Domain/project.json",
+      "msbuildProject": "../../src/SIGN.Domain/SIGN.Domain.xproj"
     },
     "SIGN.Services/1.0.0": {
       "type": "project",
-      "path": "../SIGN.Services/project.json",
-      "msbuildProject": "../SIGN.Services/SIGN.Services.xproj"
+      "path": "../../src/SIGN.Services/project.json",
+      "msbuildProject": "../../src/SIGN.Services/SIGN.Services.xproj"
     }
   },
   "projectFileDependencyGroups": {
