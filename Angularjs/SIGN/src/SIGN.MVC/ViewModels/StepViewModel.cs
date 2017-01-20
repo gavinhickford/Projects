@@ -1,9 +1,4 @@
-﻿using SIGN.Domain.Classes;
-using SIGN.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using SIGN.Domain.Enums;
 
 namespace SIGN.MVC.ViewModels
 {
