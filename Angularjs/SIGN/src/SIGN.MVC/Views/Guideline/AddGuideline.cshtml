@@ -1,0 +1,81 @@
+﻿@using SIGN.Domain.Enums
+@using SIGN.MVC.ViewModels
+@model GuidelineViewModel
+@{
+    ViewBag.Title = "Add Guideline";
+}
+
+<div class="col-md-10 col-md-offset-1">
+    <h3>Add new guideline</h3>
+    <form action="/guideline/addGuideline" method="post" class="form-horizontal" >
+        <div class="form-group">
+            <label for="number" class="col-md-1 form-label">Number</label>
+            <div class="col-md-11">
+                <input class="form-control"
+                        type="number"
+                        id="number"
+                        name="number"
+                        asp-for="Number"
+                        required />
+                @*<span ng-show="addGuidelineForm.number.$error.required"
+                        class="text-warning">
+                    The Number is required.
+                </span>*@
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name" class="col-md-1 form-label">Name</label>
+            <div class="col-md-11">
+                <input class="form-control"
+                        type="text"
+                        id="name"
+                        name="name"
+                        asp-for="Name"
+                        required ng-minlength="10" />
+                @*<span ng-show="addGuidelineForm.name.$error.required"
+                        class="text-warning">
+                    The Name is required.
+                </span>*@
+                @*<span ng-show="addGuidelineForm.name.$error.minlength"
+                        class="text-warning">
+                    The Name must be at least 10 characters.
+                </span>*@
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="datePublished" class="col-md-1 form-label">Published</label>
+            <div class="col-md-11">
+                <input class="form-control"
+                        type="date"
+                        id="datePublished"
+                        name="datePublished"
+                        asp-for="DatePublished"
+                        required />
+                @*<span ng-show="addGuidelineForm.datePublished.$error.required"
+                        class="text-warning">
+                    The Date published is required.
+                </span>*@
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="status" class="col-md-1 form-label">Status</label>
+            <div class="col-md-11">
+                <select class="selectpicker" id="status" name="status" asp-for="Status" required>
+                    <option value="1">Current < 3 years</option>
+                    <option value="2">Current 3 - 7 years</option>
+                    <option value="3">> 7 years</option>
+                    <option value="4">Withdrawn</option>
+                    <option value="5">Recommendations being updated</option>
+                </select>
+                @*<span ng-show="addGuidelineForm.status.$error.required"
+                        class="text-warning">
+                    The Status is required.
+                </span>*@
+            </div>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-success btn-sm" value="Save" />
+            <a asp-controller="App" asp-action="Guidelines" class="btn btn-sm btn-default"><i class="fa fa-angle-left"></i> Back to Guidelines</a>
+        </div>
+    </form>
+</div>

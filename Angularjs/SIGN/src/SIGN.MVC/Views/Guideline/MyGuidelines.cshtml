@@ -3,8 +3,8 @@
     ViewBag.Title = "My Guidelines";
 }
 <div class="col-md-10 col-md-offset-1">
-    <h3>My Guidelines</h3>
-    <p>Guidelines Authored by @User.Identity.Name</p>
+    <h3>Guidelines created by @User.Identity.Name</h3>
+    <a asp-controller="Guideline" asp-action="AddGuideline" class="btn btn-sm btn-primary">Add New Guideline</a>
     <table class="table table-responsive table-striped">
         <thead>
             <tr>

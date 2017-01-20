@@ -37,32 +37,7 @@ namespace SIGN.MVC.Controllers.Web
                 return Redirect("/error");
             }
         }
-
-        [Authorize]
-        public IActionResult Guidelines()
-        {
-            GuidelinesViewModel model = new GuidelinesViewModel();
-            model.Guidelines = _signService.GetGuidelines();
-            return View(model);
-        }
-
-        [Authorize]
-        public IActionResult MyGuidelines()
-        {
-            GuidelinesViewModel model = new GuidelinesViewModel();
-            model.Guidelines = _signService.GetMyGuidelines(User.Identity.Name);
-            return View(model);
-        }
-
-        //[Authorize]
-        //public IActionResult Guideline(int id)
-        //{
-        //    Guideline guideline = _signService.GetGuideline(id);
-        //    GuidelineViewModel model = Mapper.Map<GuidelineViewModel>(guideline);
-
-        //    return View(model);
-        //}
-
+        
         [Authorize]
         public IActionResult Assessment(int id)
         {
