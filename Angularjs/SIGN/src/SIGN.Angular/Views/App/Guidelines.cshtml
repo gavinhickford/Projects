@@ -5,13 +5,24 @@
 @section Scripts{
     <script src="~/lib/angular/angular.min.js"></script>
     <script src="~/lib/angular-route/angular-route.min.js"></script>
-    <script src="~/app/controls/controls.js"></script>
-    <script src="~/app/app-guidelines.js"></script>
-    <script src="~/app/guidelines/guidelinesController.js"></script>
-    <script src="~/app/guidelines/guidelineService.js"></script>
-    <script src="~/app/guidelines/guidelineEditController.js"></script>
-    <script src="~/app/guidelines/guidelineDetailsController.js"></script>
-    <script src="~/app/guidelines/guidelineAddController.js"></script>
+    <environment names="Development">
+        <script src="~/app/controls/controls.js"></script>
+        <script src="~/app/app-guidelines.js"></script>
+        <script src="~/app/guidelines/guidelinesController.js"></script>
+        <script src="~/app/guidelines/guidelineService.js"></script>
+        <script src="~/app/guidelines/guidelineEditController.js"></script>
+        <script src="~/app/guidelines/guidelineDetailsController.js"></script>
+        <script src="~/app/guidelines/guidelineAddController.js"></script>
+    </environment>
+    <environment names="Production,Staging">
+        <script src="~/lib/_app/controls.js"></script>
+        <script src="~/lib/_app/app-guidelines.js"></script>
+        <script src="~/lib/_app/guidelines/guidelinesController.js"></script>
+        <script src="~/lib/_app/guidelines/guidelineService.js"></script>
+        <script src="~/lib/_app/guidelines/guidelineEditController.js"></script>
+        <script src="~/lib/_app/guidelines/guidelineDetailsController.js"></script>
+        <script src="~/lib/_app/guidelines/guidelineAddController.js"></script>
+    </environment>
 }
 <div ng-app="app-guidelines">
     <div ng-view></div>

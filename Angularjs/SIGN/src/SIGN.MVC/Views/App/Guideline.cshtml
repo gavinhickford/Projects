@@ -3,7 +3,12 @@
     ViewBag.Title = "Guideline Details";
 }
 @section scripts {
+<environment names="Development">
     <script src="~/js/accordion.js"></script>
+</environment>
+<environment names="Staging,Production">
+    <script src="~/lib/_app/accordion.js"></script>
+</environment>
 }
 <div class="col-md-10 col-md-offset-1">
     <h3>@Model.Name</h3>
@@ -82,5 +87,5 @@
                 Recommendation 1
             </a>
         </div>
-</div>
+    </div>
 </div>
