@@ -54,14 +54,14 @@ namespace SIGN.MVC.Controllers.Web
             return View(model);
         }
 
-        [Authorize]
-        public IActionResult Guideline(int id)
-        {
-            Guideline guideline = _signService.GetGuideline(id);
-            GuidelineViewModel model = Mapper.Map<GuidelineViewModel>(guideline);
+        //[Authorize]
+        //public IActionResult Guideline(int id)
+        //{
+        //    Guideline guideline = _signService.GetGuideline(id);
+        //    GuidelineViewModel model = Mapper.Map<GuidelineViewModel>(guideline);
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
 
         [Authorize]
         public IActionResult Assessment(int id)
