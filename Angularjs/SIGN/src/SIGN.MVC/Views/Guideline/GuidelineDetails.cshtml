@@ -73,7 +73,7 @@
         @foreach (var assessment in Model.Assessments)
         {
             <div>
-                <a asp-controller="App" asp-action="Assessment" asp-route-id="@assessment.Id" class="btn btn-block btn-success">
+                <a asp-controller="Assessment" asp-action="AssessmentDetails" asp-route-id="@assessment.Id" class="btn btn-block btn-success">
                     @assessment.Name
                 </a>
             </div>

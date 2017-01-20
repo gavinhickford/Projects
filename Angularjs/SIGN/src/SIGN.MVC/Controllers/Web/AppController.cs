@@ -38,53 +38,6 @@ namespace SIGN.MVC.Controllers.Web
             }
         }
         
-        [Authorize]
-        public IActionResult Assessment(int id)
-        {
-            Assessment assessment = _signService.GetAssessment(id);
-            AssessmentViewModel model = Mapper.Map<AssessmentViewModel>(assessment);
-
-            return View(model);
-        }
-
-        [Authorize]
-        public IActionResult Step(int id)
-        {
-            Step step = _signService.GetStep(id);
-            StepViewModel model = Mapper.Map<StepViewModel>(step);
-
-            int? yesStepId = GetNextStepId(step.Id, true);
-            int? noStepId = GetNextStepId(step.Id, false);
-
-            if (yesStepId.HasValue)
-            {
-                model.YesStepId = yesStepId.Value;
-            };
-
-            if (noStepId.HasValue)
-            {
-                model.NoStepId = noStepId.Value;
-            };
-
-            return View(model);
-        }
-
-        private int? GetNextStepId(int stepId, bool condition)
-        {
-            StepAction action = _signService.GetAction(stepId, condition);
-
-            if (action != null)
-            {
-                Step step = action.NextStep;
-                if (step != null)
-                {
-                    return step.Id;
-                }
-            }
-
-            return null;
-        }
-
         public IActionResult About()
         {
             return View();
