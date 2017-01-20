@@ -1,11 +1,11 @@
-﻿using SIGN.Domain.Interfaces;
+﻿using SIGN.Domain.Classes;
+using SIGN.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SIGN.Domain.Classes;
 
-namespace SIGN.Angular.Tests.Mocks
+namespace SIGN.Mocks.Services
 {
     public class MockSignService : ISIGNService
     {
@@ -71,3 +71,4 @@ namespace SIGN.Angular.Tests.Mocks
         }
     }
 }
+

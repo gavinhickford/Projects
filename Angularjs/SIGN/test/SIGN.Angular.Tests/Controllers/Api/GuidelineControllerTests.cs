@@ -1,11 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SIGN.Angular.Controllers.Api;
-using SIGN.Angular.Tests.Mocks;
 using SIGN.Angular.ViewModels;
-using SIGN.Domain.Enums;
 using SIGN.Domain.Interfaces;
-using System.Threading.Tasks;
+using SIGN.Mocks.Angular;
 using Xunit;
 
 namespace SIGN.Angular.Tests.Controllers.Api

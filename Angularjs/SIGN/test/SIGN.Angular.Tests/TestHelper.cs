@@ -2,10 +2,10 @@
 using SIGN.Angular.ViewModels;
 using SIGN.Domain.Classes;
 using SIGN.Domain.Enums;
+using SIGN.Domain.Interfaces;
+using SIGN.Mocks.Services;
 using System;
 using System.Collections.Generic;
-using SIGN.Domain.Interfaces;
-using SIGN.Angular.Tests.Mocks;
 
 namespace SIGN.Angular.Tests
 {

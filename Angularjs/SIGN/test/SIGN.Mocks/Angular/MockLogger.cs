@@ -1,12 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using SIGN.Angular.Controllers.Api;
-using SIGN.Domain.Classes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace SIGN.Angular.Tests.Mocks
+namespace SIGN.Mocks.Angular
 {
     public class MockLogger : ILogger<GuidelineController>
     {
