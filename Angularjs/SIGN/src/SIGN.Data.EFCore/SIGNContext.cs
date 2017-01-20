@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
 using System;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Threading;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace SIGN.Data.EFCore
 {
@@ -20,6 +20,8 @@ namespace SIGN.Data.EFCore
         public DbSet<Step> Steps { get; set; }
         public DbSet<StepAction> StepActions { get; set; }
         public DbSet<Decision> Decisions { get; set; }
+        public DbSet<Recommendation> Recommendations { get; set; }
+        public DbSet<RecommendationGrade> RecommendationGrades { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -31,6 +33,10 @@ namespace SIGN.Data.EFCore
             modelBuilder.Entity<Guideline>().Ignore(g => g.IsDirty);
             modelBuilder.Entity<Assessment>().Ignore(g => g.IsDirty);
             modelBuilder.Entity<Step>().Ignore(g => g.IsDirty);
+            modelBuilder.Entity<Decision>().Ignore(g => g.IsDirty);
+            modelBuilder.Entity<StepAction>().Ignore(g => g.IsDirty);
+            modelBuilder.Entity<Recommendation>().Ignore(g => g.IsDirty);
+            modelBuilder.Entity<RecommendationGrade>().Ignore(g => g.IsDirty);
 
             base.OnModelCreating(modelBuilder);
         }

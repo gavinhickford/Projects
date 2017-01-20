@@ -9,9 +9,10 @@ using SIGN.Domain.Enums;
 namespace SIGN.Data.EFCore.Migrations
 {
     [DbContext(typeof(SIGNContext))]
-    partial class SIGNContextModelSnapshot : ModelSnapshot
+    [Migration("20170120225641_Update15")]
+    partial class Update15
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.2")
