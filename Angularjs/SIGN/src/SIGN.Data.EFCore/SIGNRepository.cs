@@ -122,5 +122,10 @@ namespace SIGN.Data.EFCore
         {
             _context.Add(stepAction);
         }
+
+        public void AddRecommendationGrade(RecommendationGrade grade)
+        {
+            _context.Add(grade);
+        }
     }
 }

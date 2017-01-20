@@ -48,6 +48,10 @@ namespace SIGN.MVC
         private Decision _decision14;
         private Decision _decision10;
         private Decision _decision9;
+        private RecommendationGrade _gradeA;
+        private RecommendationGrade _gradeB;
+        private RecommendationGrade _gradeC;
+        private RecommendationGrade _gradeD;
 
         public SeedData(ISIGNRepository repository, UserManager<SIGNUser> userManager)
         {
@@ -76,29 +80,77 @@ namespace SIGN.MVC
                 SetUpSteps();
                 SetUpActions();
                 SetUpDecisions();
+                SetupRecommendationGrades();
                 LinkData();
 
-                _repository.AddDecision(_decision1);
-                _repository.AddDecision(_decision2);
-                _repository.AddDecision(_decision3);
-                _repository.AddDecision(_decision4);
-                _repository.AddDecision(_decision5);
-                _repository.AddDecision(_decision6);
-                _repository.AddDecision(_decision7);
-                _repository.AddDecision(_decision8);
-                _repository.AddDecision(_decision9);
-                _repository.AddDecision(_decision10);
-                _repository.AddDecision(_decision11);
-                _repository.AddDecision(_decision12);
-                _repository.AddDecision(_decision13);
-                _repository.AddDecision(_decision14);
+                AddDecisions();
 
-                _repository.SaveGuideline(_guideline110);
-                _repository.SaveGuideline(_guideline119);
-                _repository.SaveGuideline(_guideline143);
-                _repository.SaveGuideline(_guideline153);
-                await _repository.SaveChangesAsync();
+                AddRecommendationGrades();
+
+                await SaveData();
             }
+        }
+
+        private async Task SaveData()
+        {
+            _repository.SaveGuideline(_guideline110);
+            _repository.SaveGuideline(_guideline119);
+            _repository.SaveGuideline(_guideline143);
+            _repository.SaveGuideline(_guideline153);
+            await _repository.SaveChangesAsync();
+        }
+
+        private void AddRecommendationGrades()
+        {
+            _repository.AddRecommendationGrade(_gradeA);
+            _repository.AddRecommendationGrade(_gradeB);
+            _repository.AddRecommendationGrade(_gradeC);
+            _repository.AddRecommendationGrade(_gradeD);
+        }
+
+        private void AddDecisions()
+        {
+            _repository.AddDecision(_decision1);
+            _repository.AddDecision(_decision2);
+            _repository.AddDecision(_decision3);
+            _repository.AddDecision(_decision4);
+            _repository.AddDecision(_decision5);
+            _repository.AddDecision(_decision6);
+            _repository.AddDecision(_decision7);
+            _repository.AddDecision(_decision8);
+            _repository.AddDecision(_decision9);
+            _repository.AddDecision(_decision10);
+            _repository.AddDecision(_decision11);
+            _repository.AddDecision(_decision12);
+            _repository.AddDecision(_decision13);
+            _repository.AddDecision(_decision14);
+        }
+
+        private void SetupRecommendationGrades()
+        {
+            _gradeA = new RecommendationGrade
+            {
+                Grade = "A",
+                Text = "At least one meta-analysis, systematic review, or RCT rated as 1++, and directly applicable to the target population; or A body of evidence consisting principally of studies rated as 1 +, directly applicable to the target population, and demonstrating overall consistency of results"
+            };
+
+            _gradeB = new RecommendationGrade
+            {
+                Grade = "B",
+                Text = "A body of evidence including studies rated as 2++, directly applicable to the target population, and demonstrating overall consistency of results; or Extrapolated evidence from studies rated as 1++ or 1 + "
+            };
+
+            _gradeC = new RecommendationGrade
+            {
+                Grade = "C",
+                Text = "A body of evidence including studies rated as 2+, directly applicable to the target population and demonstrating overall consistency of results; or Extrapolated evidence from studies rated as 2++"
+            };
+
+            _gradeD = new RecommendationGrade
+            {
+                Grade = "D",
+                Text = "Evidence level 3 or 4; or Extrapolated evidence from studies rated as 2 + "
+            };
         }
 
         private void SetUpDecisions()
