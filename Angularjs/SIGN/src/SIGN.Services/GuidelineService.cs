@@ -6,11 +6,11 @@ using System;
 
 namespace SIGN.Services
 {
-    public class SIGNService : ISIGNService
+    public class GuidelineService : IGuidelineService
     {
         private ISIGNRepository _repository;
 
-        public SIGNService(ISIGNRepository repository)
+        public GuidelineService(ISIGNRepository repository)
         {
             _repository = repository;
         }

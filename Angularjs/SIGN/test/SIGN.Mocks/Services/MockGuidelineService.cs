@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace SIGN.Mocks.Services
 {
-    public class MockSignService : ISIGNService
+    public class MockGuidelineService : IGuidelineService
     {
         private List<Guideline> _expectedGuidelines;
         private bool _returnsException;
 
-        public MockSignService(List<Guideline> expectedGuidelines)
+        public MockGuidelineService(List<Guideline> expectedGuidelines)
             : this(expectedGuidelines, false)
         {
         }
 
-        public MockSignService(List<Guideline> expectedGuidelines, bool returnsException)
+        public MockGuidelineService(List<Guideline> expectedGuidelines, bool returnsException)
         {
             _expectedGuidelines = expectedGuidelines;
             _returnsException = returnsException;

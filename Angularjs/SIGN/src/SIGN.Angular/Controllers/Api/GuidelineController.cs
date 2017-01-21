@@ -13,13 +13,13 @@ namespace SIGN.Angular.Controllers.Api
     public class GuidelineController : Controller
     {
         private ILogger<GuidelineController> _logger;
-        private ISIGNService _signService; 
+        private IGuidelineService _guidelineService; 
 
         public GuidelineController(
-            ISIGNService signService,
+            IGuidelineService guidelineService,
             ILogger<GuidelineController> logger)
         {
-            _signService = signService;
+            _guidelineService = guidelineService;
             _logger = logger;
         }
 
@@ -28,7 +28,7 @@ namespace SIGN.Angular.Controllers.Api
         {
             try
             {
-                IEnumerable<Guideline> guidelines = _signService.GetGuidelines();
+                IEnumerable<Guideline> guidelines = _guidelineService.GetGuidelines();
                 return Ok(Mapper.Map<IEnumerable<GuidelineViewModel>>(guidelines));
             }
             catch (Exception ex)
@@ -43,7 +43,7 @@ namespace SIGN.Angular.Controllers.Api
         {
             try
             {
-                Guideline guideline = _signService.GetGuideline(id);
+                Guideline guideline = _guidelineService.GetGuideline(id);
                 if (guideline != null)
                 {
                     return Ok(Mapper.Map<GuidelineViewModel>(guideline));
@@ -68,7 +68,7 @@ namespace SIGN.Angular.Controllers.Api
             {
                 Guideline newGuideline = Mapper.Map<Guideline>(guideline);
         
-                if (await _signService.SaveGuideline(newGuideline))
+                if (await _guidelineService.SaveGuideline(newGuideline))
                 {
                     return Created($"api/guidelines/{guideline.Name}", Mapper.Map<GuidelineViewModel>(newGuideline));
                 }

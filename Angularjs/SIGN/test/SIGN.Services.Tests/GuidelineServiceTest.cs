@@ -6,7 +6,7 @@ using Xunit;
 
 namespace SIGN.Services.Tests
 {
-    public class SIGNServiceTest
+    public class GuidelineServiceTest
     {
         [Fact]
         public void GetGuidlines_WhenRepositoryHasSingleGuideline_ReturnsSingleGuideline()
@@ -16,10 +16,10 @@ namespace SIGN.Services.Tests
 
             ISIGNRepository mockSignRepository = new Mocks.MockRepository(
                 numberOfExpectedGuidelines: numberOfExpectedGuidelines);
-            ISIGNService signService = new SIGNService(mockSignRepository);
+            IGuidelineService guidelineService = new GuidelineService(mockSignRepository);
 
             // Act
-            IEnumerable<Guideline> actual = signService.GetGuidelines();
+            IEnumerable<Guideline> actual = guidelineService.GetGuidelines();
 
             // Assert
             Assert.Equal(numberOfExpectedGuidelines, actual.Count()); 
@@ -33,7 +33,7 @@ namespace SIGN.Services.Tests
 
             ISIGNRepository mockSignRepository = new Mocks.MockRepository(
                 numberOfExpectedGuidelines: numberOfExpectedGuidelines);
-            ISIGNService signService = new SIGNService(mockSignRepository);
+            IGuidelineService signService = new GuidelineService(mockSignRepository);
 
             // Act
             IEnumerable<Guideline> actual = signService.GetGuidelines();
@@ -50,10 +50,10 @@ namespace SIGN.Services.Tests
 
             ISIGNRepository mockSignRepository = new Mocks.MockRepository(
                 numberOfExpectedGuidelines: numberOfExpectedGuidelines);
-            ISIGNService signService = new SIGNService(mockSignRepository);
+            IGuidelineService guidelineService = new GuidelineService(mockSignRepository);
 
             // Act
-            IEnumerable<Guideline> actual = signService.GetGuidelines();
+            IEnumerable<Guideline> actual = guidelineService.GetGuidelines();
 
             // Assert
             Assert.Equal(numberOfExpectedGuidelines, actual.Count());
@@ -68,7 +68,7 @@ namespace SIGN.Services.Tests
 
             ISIGNRepository mockSignRepository = new Mocks.MockRepository(
                 numberOfExpectedGuidelines: numberOfExpectedGuidelines);
-            ISIGNService signService = new SIGNService(mockSignRepository);
+            IGuidelineService signService = new GuidelineService(mockSignRepository);
 
             // Act
             Guideline actual = signService.GetGuideline(expectedIdentifier);
@@ -86,7 +86,7 @@ namespace SIGN.Services.Tests
 
             ISIGNRepository mockSignRepository = new Mocks.MockRepository(
                 numberOfExpectedGuidelines: numberOfExpectedGuidelines);
-            ISIGNService signService = new SIGNService(mockSignRepository);
+            IGuidelineService signService = new GuidelineService(mockSignRepository);
 
             // Act
             Guideline actual = signService.GetGuideline(expectedIdentifier);

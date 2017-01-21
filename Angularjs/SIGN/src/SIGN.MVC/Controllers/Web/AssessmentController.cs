@@ -9,17 +9,17 @@ namespace SIGN.MVC.Controllers.Web
 {
     public class AssessmentController : Controller
     {
-        private ISIGNService _signService;
+        private IGuidelineService _guidelineService;
 
-        public AssessmentController(ISIGNService signService)
+        public AssessmentController(IGuidelineService guidelineService)
         {
-            _signService = signService;
+            _guidelineService = guidelineService;
         }
 
         [Authorize]
         public IActionResult AssessmentDetails(int id)
         {
-            Assessment assessment = _signService.GetAssessment(id);
+            Assessment assessment = _guidelineService.GetAssessment(id);
             AssessmentViewModel model = Mapper.Map<AssessmentViewModel>(assessment);
 
             return View(model);
@@ -28,7 +28,7 @@ namespace SIGN.MVC.Controllers.Web
         [Authorize]
         public IActionResult Step(int id)
         {
-            Step step = _signService.GetStep(id);
+            Step step = _guidelineService.GetStep(id);
             StepViewModel model = Mapper.Map<StepViewModel>(step);
 
             int? yesStepId = GetNextStepId(step.Id, true);
@@ -49,7 +49,7 @@ namespace SIGN.MVC.Controllers.Web
 
         private int? GetNextStepId(int stepId, bool condition)
         {
-            StepAction action = _signService.GetAction(stepId, condition);
+            StepAction action = _guidelineService.GetAction(stepId, condition);
 
             if (action != null)
             {

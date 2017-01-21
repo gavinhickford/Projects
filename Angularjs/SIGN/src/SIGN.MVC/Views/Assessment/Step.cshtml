@@ -7,7 +7,7 @@
 </div>
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
-        <div id="steps" class="panel-group">
+        <div id="step" class="panel-group">
             <div class="@(Model.Type == SIGN.Domain.Enums.StepType.Question ? "panel panel-success" : "panel panel-danger")">
                 <div class="panel-heading">@Model.Type</div>
                 <div class="panel-body">
@@ -24,6 +24,21 @@
                 </div>
             </div>
         </div>
+        @if (Model.Detail != null)
+        {
+            <div id="stepDetail" class="panel-group">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <p><i class="fa fa-info"></i> Further Information - @Model.Detail.Title</p>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            - @Html.Raw(Model.Detail.Text.Replace(Environment.NewLine, "<br /> - "))
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+
     </div>
 </div>
-

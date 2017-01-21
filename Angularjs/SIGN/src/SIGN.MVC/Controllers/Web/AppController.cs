@@ -13,15 +13,15 @@ namespace SIGN.MVC.Controllers.Web
     public class AppController : Controller
     {
         private IConfigurationRoot _configuration;
-        private ISIGNService _signService;
+        private IGuidelineService _guidelineService;
         private ILogger<AppController> _logger;
 
         public AppController(
-            ISIGNService signService, 
+            IGuidelineService guidelineService, 
             IConfigurationRoot configuration,
             ILogger<AppController> logger)
         {
-            _signService = signService;
+            _guidelineService = guidelineService;
             _configuration = configuration;
             _logger = logger;
         }

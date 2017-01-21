@@ -14,17 +14,17 @@ namespace SIGN.Angular.Controllers.Web
     {
         private IConfigurationRoot _configuration;
         private ISIGNRepository _signRepository;
-        private ISIGNService _signService;
+        private IGuidelineService _guidelineService;
         private ILogger<AppController> _logger;
 
         public AppController(
             ISIGNRepository signRepository, 
-            ISIGNService signService,
+            IGuidelineService guidelineService,
             IConfigurationRoot configuration,
             ILogger<AppController> logger)
         {
             _signRepository = signRepository;
-            _signService = signService;
+            _guidelineService = guidelineService;
             _configuration = configuration;
             _logger = logger;
         }
@@ -53,13 +53,13 @@ namespace SIGN.Angular.Controllers.Web
         public IActionResult MyGuidelines()
         {
             GuidelinesViewModel model = new GuidelinesViewModel();
-            model.Guidelines = _signService.GetMyGuidelines(User.Identity.Name);
+            model.Guidelines = _guidelineService.GetMyGuidelines(User.Identity.Name);
             return View(model);
         }
 
         public IActionResult Guideline(int id)
         {
-            Guideline guideline = _signService.GetGuideline(id);
+            Guideline guideline = _guidelineService.GetGuideline(id);
             GuidelineViewModel model = Mapper.Map<GuidelineViewModel>(guideline);
 
             return View(model);

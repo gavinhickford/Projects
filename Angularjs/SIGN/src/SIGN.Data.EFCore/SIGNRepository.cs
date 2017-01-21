@@ -78,7 +78,15 @@ namespace SIGN.Data.EFCore
         }
         public async Task<bool> SaveChangesAsync()
         {
-            return (await _context.SaveChangesAsync(true)) > 0;
+            try
+            {
+                return (await _context.SaveChangesAsync(true)) > 0;
+            }
+            catch (System.Data.SqlClient.SqlException se)
+            {
+                _logger.LogError(se.Message);
+                return false;
+            }
         }
 
         public int SaveChanges()
@@ -88,7 +96,9 @@ namespace SIGN.Data.EFCore
 
         public Step GetStep(int id)
         {
-            return _context.Steps.FirstOrDefault(s => s.Id == id);
+            return _context.Steps
+                .Include(s => s.Detail)
+                .FirstOrDefault(s => s.Id == id);
         }
 
         public StepAction GetAction(int stepId, bool choice)

@@ -9,18 +9,18 @@ namespace SIGN.MVC.Controllers.Web
 {
     public class GuidelineController : Controller
     {
-        private ISIGNService _signService;
+        private IGuidelineService _guidelineService;
 
-        public GuidelineController(ISIGNService signService)
+        public GuidelineController(IGuidelineService guidelineService)
         {
-            _signService = signService;
+            _guidelineService = guidelineService;
         }
 
         [HttpGet, Authorize]
         public IActionResult AllGuidelines()
         {
             GuidelinesViewModel model = new GuidelinesViewModel();
-            model.Guidelines = _signService.GetGuidelines();
+            model.Guidelines = _guidelineService.GetGuidelines();
             return View(model);
         }
 
@@ -28,16 +28,15 @@ namespace SIGN.MVC.Controllers.Web
         public IActionResult MyGuidelines()
         {
             GuidelinesViewModel model = new GuidelinesViewModel();
-            model.Guidelines = _signService.GetMyGuidelines(User.Identity.Name);
+            model.Guidelines = _guidelineService.GetMyGuidelines(User.Identity.Name);
             return View(model);
         }
 
         [HttpGet, Authorize]
         public IActionResult GuidelineDetails(int id)
         {
-            Guideline guideline = _signService.GetGuideline(id);
+            Guideline guideline = _guidelineService.GetGuideline(id);
             GuidelineViewModel model = Mapper.Map<GuidelineViewModel>(guideline);
-
             return View(model);
         }
 
@@ -47,31 +46,40 @@ namespace SIGN.MVC.Controllers.Web
             return View();
         }
 
-        [HttpPost, Authorize]
+        [HttpPost, Authorize, ValidateAntiForgeryToken]
         public IActionResult AddGuideline(GuidelineViewModel newGuideline)
         {
-            newGuideline.Author = User.Identity.Name;
-            _signService.SaveGuideline(Mapper.Map<Guideline>(newGuideline));
-            return View("AllGuidelines");
+            if (ModelState.IsValid)
+            {
+                newGuideline.Author = User.Identity.Name;
+                _guidelineService.SaveGuideline(Mapper.Map<Guideline>(newGuideline));
+                //RedirectToAction("GuidelineDetails", new { id = newGuideline.Id });
+                RedirectToAction("AllGuidelines");
+            }
+
+            return View(newGuideline);
         }
 
         [HttpGet, Authorize]
         public IActionResult EditGuideline(int id)
         {
-            Guideline guideline = _signService.GetGuideline(id);
+            Guideline guideline = _guidelineService.GetGuideline(id);
+            if (guideline == null)
+            {
+                return RedirectToAction("AllGuidelines");
+            }
+
             GuidelineViewModel model = Mapper.Map<GuidelineViewModel>(guideline);
             return View(model);
         }
 
-        [HttpPost, Authorize]
+        [HttpPost, Authorize, ValidateAntiForgeryToken]
         public IActionResult EditGuideline(GuidelineViewModel guideline)
         {
             if (ModelState.IsValid)
             {
-                guideline.Author = User.Identity.Name;
-                _signService.SaveGuideline(Mapper.Map<Guideline>(guideline));
-
-                //return View("AllGuidelines");
+                _guidelineService.SaveGuideline(Mapper.Map<Guideline>(guideline));
+                return RedirectToAction("GuidelineDetails", new { id = guideline.Id });
             }
 
             return View(guideline);

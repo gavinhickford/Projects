@@ -9,35 +9,29 @@
     <div class="page-header">
         <h3>Add new guideline</h3>
     </div>
-    <form action="/guideline/addGuideline" method="post" class="form-horizontal">
+    <form asp-action="AddGuideline" method="post" class="form-horizontal">
         <div class="form-group">
             <label for="number" class="col-md-1 form-label">Number</label>
             <div class="col-md-11">
                 <input class="form-control"
-                        type="number"
-                        id="number"
-                        name="number"
-                        asp-for="Number"
-                        required />
-                @*<span ng-show="addGuidelineForm.number.$error.required"
-                            class="text-warning">
-                        The Number is required.
-                    </span>*@
+                       type="number"
+                       id="number"
+                       name="number"
+                       asp-for="Number"
+                       required />
+                <span asp-validation-for="Number" class="text-warning">The Number is required.</span>
             </div>
         </div>
         <div class="form-group">
             <label for="name" class="col-md-1 form-label">Name</label>
             <div class="col-md-11">
-                <input class="form-control"
-                        type="text"
-                        id="name"
-                        name="name"
-                        asp-for="Name"
-                        required ng-minlength="10" />
-                @*<span ng-show="addGuidelineForm.name.$error.required"
-                            class="text-warning">
-                        The Name is required.
-                    </span>*@
+                <input class="form-control" 
+                       type="text" 
+                       id="name" 
+                       name="name" 
+                       asp-for="Name" 
+                       required/>
+                <span asp-validation-for="Name" class="text-warning">The Name is required.</span>
                 @*<span ng-show="addGuidelineForm.name.$error.minlength"
                             class="text-warning">
                         The Name must be at least 10 characters.
@@ -47,16 +41,13 @@
         <div class="form-group">
             <label for="datePublished" class="col-md-1 form-label">Published</label>
             <div class="col-md-11">
-                <input class="form-control"
-                        type="date"
-                        id="datePublished"
-                        name="datePublished"
-                        asp-for="DatePublished"
-                        required />
-                @*<span ng-show="addGuidelineForm.datePublished.$error.required"
-                            class="text-warning">
-                        The Date published is required.
-                    </span>*@
+                <input class="form-control" 
+                       type="date" 
+                       id="datePublished" 
+                       name="datePublished" 
+                       asp-for="DatePublished" 
+                       required />
+                <span asp-validation-for="DatePublished" class="text-warning">The Date published is required.</span>
             </div>
         </div>
         <div class="form-group">
@@ -69,10 +60,7 @@
                     <option value="4">Withdrawn</option>
                     <option value="5">Recommendations being updated</option>
                 </select>
-                @*<span ng-show="addGuidelineForm.status.$error.required"
-                            class="text-warning">
-                        The Status is required.
-                    </span>*@
+                <span asp-validation-for="Status" class="text-warning">The Status is required.</span>
             </div>
         </div>
         <div>

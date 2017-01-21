@@ -21,12 +21,12 @@ namespace SIGN.MVC.Tests
                  new Claim(ClaimTypes.Name, currentUser)
             }));
 
-            ISIGNService mockSignService = MockProvider.CreateMockSignService(
+            IGuidelineService mockGuidelineService = MockProvider.CreateMockGuidelineService(
                 numberOfGuidelines: numberOfGuidelines,
                 author: currentUser,
                 returnsException: false);
 
-            GuidelineController controller = new GuidelineController(mockSignService);
+            GuidelineController controller = new GuidelineController(mockGuidelineService);
             controller.ControllerContext = new ControllerContext()
             {
                 HttpContext = new DefaultHttpContext() { User = user }

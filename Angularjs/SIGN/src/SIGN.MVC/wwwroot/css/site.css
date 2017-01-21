@@ -1,6 +1,7 @@
 ﻿.page-header{
   text-align: center;
-  border-bottom: none;    
+  border-bottom: none; 
+  margin-top: 12px;   
 }
 
 .sign-number {
@@ -29,7 +30,11 @@ sign-text {
     text-align:left;
 }
 
-#steps .panel {
+#step .panel {
+    border-radius: 4px;
+}
+
+#stepDetail .panel {
     border-radius: 4px;
 }
 

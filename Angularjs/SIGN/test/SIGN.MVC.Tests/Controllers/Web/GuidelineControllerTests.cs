@@ -19,8 +19,8 @@ namespace SIGN.MVC.Tests.Controllers.Web
         {
             // Arrange
             const int expectedNumberOfGuidelines = 10;
-            ISIGNService mockSignService = MockProvider.CreateMockSignService(expectedNumberOfGuidelines);
-            GuidelineController controller = new GuidelineController(mockSignService);
+            IGuidelineService mockGuidelineService = MockProvider.CreateMockGuidelineService(expectedNumberOfGuidelines);
+            GuidelineController controller = new GuidelineController(mockGuidelineService);
 
             // Act
             var result = controller.AllGuidelines() as ViewResult;

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace SIGN.Domain.Interfaces
 {
-    public interface ISIGNService
+    public interface IGuidelineService
     {
         IEnumerable<Guideline> GetGuidelines();
         IEnumerable<Guideline> GetMyGuidelines(string username);

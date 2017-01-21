@@ -18,8 +18,8 @@ namespace SIGN.Angular.Tests.Controllers.Api
         {
             // Arrange
             TestMappings.Initialise();
-            ISIGNService mockSIGNService = MockProvider.CreateMockSignService(numberOfGuidelines: 1);
-            var controller = new GuidelineController(mockSIGNService, _mockLogger);
+            IGuidelineService mockGuidelineService = MockProvider.CreateMockGuidelineService(numberOfGuidelines: 1);
+            var controller = new GuidelineController(mockGuidelineService, _mockLogger);
 
             // Act
             IActionResult response = controller.Get();
@@ -33,8 +33,8 @@ namespace SIGN.Angular.Tests.Controllers.Api
         {
             // Arrange
             TestMappings.Initialise();
-            ISIGNService mockSIGNService = MockProvider.CreateMockSignService(numberOfGuidelines: 1);
-            var controller = new GuidelineController(mockSIGNService, _mockLogger);
+            IGuidelineService mockGuidelineService = MockProvider.CreateMockGuidelineService(numberOfGuidelines: 1);
+            var controller = new GuidelineController(mockGuidelineService, _mockLogger);
 
             // Act
             IActionResult response = controller.Get(1);
@@ -48,8 +48,8 @@ namespace SIGN.Angular.Tests.Controllers.Api
         {
             // Arrange
             TestMappings.Initialise();
-            ISIGNService mockSIGNService = MockProvider.CreateMockSignService(numberOfGuidelines: 1);
-            var controller = new GuidelineController(mockSIGNService, _mockLogger);
+            IGuidelineService mockGuidelineService = MockProvider.CreateMockGuidelineService(numberOfGuidelines: 1);
+            var controller = new GuidelineController(mockGuidelineService, _mockLogger);
 
             // Act
             IActionResult response = controller.Get(2);
@@ -63,12 +63,12 @@ namespace SIGN.Angular.Tests.Controllers.Api
         {
             // Arrange
             TestMappings.Initialise();
-            ISIGNService mockSIGNService =
-                MockProvider.CreateMockSignService(
+            IGuidelineService mockGuidelineService =
+                MockProvider.CreateMockGuidelineService(
                     numberOfGuidelines: 1,
                     returnsException: true);
 
-            var controller = new GuidelineController(mockSIGNService, _mockLogger);
+            var controller = new GuidelineController(mockGuidelineService, _mockLogger);
 
             // Act
             IActionResult response = controller.Get();
@@ -82,11 +82,11 @@ namespace SIGN.Angular.Tests.Controllers.Api
         {
             // Arrange
             TestMappings.Initialise();
-            ISIGNService mockSIGNService =
-                MockProvider.CreateMockSignService(numberOfGuidelines: 1);
+            IGuidelineService mockGuidelineService =
+                MockProvider.CreateMockGuidelineService(numberOfGuidelines: 1);
             GuidelineViewModel guideline = TestDataProvider.CreateTestGuidelineViewModel(id: 1);
 
-            var controller = new GuidelineController(mockSIGNService, _mockLogger);
+            var controller = new GuidelineController(mockGuidelineService, _mockLogger);
 
             // Act
             IActionResult response = await controller.Post(guideline);

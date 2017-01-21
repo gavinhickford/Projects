@@ -52,6 +52,7 @@ namespace SIGN.MVC
         private RecommendationGrade _gradeB;
         private RecommendationGrade _gradeC;
         private RecommendationGrade _gradeD;
+        private StepDetail _stepDetail1;
 
         public SeedData(ISIGNRepository repository, UserManager<SIGNUser> userManager)
         {
@@ -77,10 +78,12 @@ namespace SIGN.MVC
             {
                 SetUpGuidelines();
                 SetUpAssessments();
+                SetupStepDetails();
                 SetUpSteps();
                 SetUpActions();
                 SetUpDecisions();
                 SetupRecommendationGrades();
+   
                 LinkData();
 
                 AddDecisions();
@@ -89,6 +92,19 @@ namespace SIGN.MVC
 
                 await SaveData();
             }
+        }
+
+        private void SetupStepDetails()
+        {
+            _stepDetail1 = new StepDetail
+            {
+                Title = "Focal neurological deficit",
+                Text = "problems understanding, speaking, reading or writing" + Environment.NewLine +
+                    "loss of feeling in part of the bodyproblems balancing" + Environment.NewLine +
+                    "unilateral weakness" + Environment.NewLine +
+                    "any changes in eyesight" + Environment.NewLine +
+                    "problems walking."
+            };
         }
 
         private async Task SaveData()
@@ -330,7 +346,8 @@ namespace SIGN.MVC
             _step2 = new Step
             {
                 Text = "Does the patient show any focal (i.e. restricted to a particular part of the body or a particular activity) neurological deficit since the injury",
-                Type = StepType.Question
+                Type = StepType.Question,
+                Detail = _stepDetail1
             };
 
             _step3 = new Step

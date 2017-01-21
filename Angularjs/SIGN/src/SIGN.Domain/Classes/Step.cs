@@ -8,5 +8,6 @@ namespace SIGN.Domain.Classes
     {
         public string Text { get; set; }
         public StepType Type { get; set; }
+        public StepDetail Detail { get; set; }
     }
 }

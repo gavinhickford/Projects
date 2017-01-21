@@ -22,6 +22,7 @@ namespace SIGN.Data.EFCore
         public DbSet<Decision> Decisions { get; set; }
         public DbSet<Recommendation> Recommendations { get; set; }
         public DbSet<RecommendationGrade> RecommendationGrades { get; set; }
+        public DbSet<StepDetail> StepDetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -37,6 +38,7 @@ namespace SIGN.Data.EFCore
             modelBuilder.Entity<StepAction>().Ignore(g => g.IsDirty);
             modelBuilder.Entity<Recommendation>().Ignore(g => g.IsDirty);
             modelBuilder.Entity<RecommendationGrade>().Ignore(g => g.IsDirty);
+            modelBuilder.Entity<StepDetail>().Ignore(g => g.IsDirty);
 
             base.OnModelCreating(modelBuilder);
         }

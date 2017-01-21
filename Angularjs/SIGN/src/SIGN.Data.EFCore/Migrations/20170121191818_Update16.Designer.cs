@@ -9,9 +9,10 @@ using SIGN.Domain.Enums;
 namespace SIGN.Data.EFCore.Migrations
 {
     [DbContext(typeof(SIGNContext))]
-    partial class SIGNContextModelSnapshot : ModelSnapshot
+    [Migration("20170121191818_Update16")]
+    partial class Update16
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.2")
@@ -307,7 +308,7 @@ namespace SIGN.Data.EFCore.Migrations
 
                     b.Property<DateTime>("DateModified");
 
-                    b.Property<int?>("DetailId");
+                    b.Property<int?>("DetailsId");
 
                     b.Property<string>("Text");
 
@@ -315,7 +316,7 @@ namespace SIGN.Data.EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DetailId");
+                    b.HasIndex("DetailsId");
 
                     b.ToTable("Steps");
                 });
@@ -436,9 +437,9 @@ namespace SIGN.Data.EFCore.Migrations
 
             modelBuilder.Entity("SIGN.Domain.Classes.Step", b =>
                 {
-                    b.HasOne("SIGN.Domain.Classes.StepDetail", "Detail")
+                    b.HasOne("SIGN.Domain.Classes.StepDetail", "Details")
                         .WithMany()
-                        .HasForeignKey("DetailId");
+                        .HasForeignKey("DetailsId");
                 });
 
             modelBuilder.Entity("SIGN.Domain.Classes.StepAction", b =>

@@ -11,14 +11,16 @@
     </environment>
 }
 <div class="col-md-10 col-md-offset-1">
-    <div class="page-header">
-        <h3>Guideline Details</h3>
-    </div>
+    @*<div class="page-header">
+            <h3>Guideline Details</h3>
+        </div>*@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading"><h4>@Model.Name</h4></div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>@Model.Name</h4>
+                </div>
                 <div class="panel-body">
                     <div class="col-md-3">
                         <p class="sign-number">@Model.Number</p>
@@ -39,19 +41,19 @@
                                     switch (Model.Status)
                                     {
                                         case SIGN.Domain.Enums.GuidelineStatus.CurrentLessThanThreeYears:
-                                            <i class="fa fa-check fa-2x text-success"></i>
+                                <i class="fa fa-check fa-2x text-success"></i>
                                             break;
                                         case SIGN.Domain.Enums.GuidelineStatus.CurrentThreeToSevenYears:
-                                            <i class="fa fa-question-circle-o fa-2x text-warning"></i>
+                                <i class="fa fa-question-circle-o fa-2x text-warning"></i>
                                             break;
                                         case SIGN.Domain.Enums.GuidelineStatus.GreaterThanSevenYears:
-                                            <i class="fa fa-exclamation-circle fa-2x text-error"></i>
+                                <i class="fa fa-exclamation-circle fa-2x text-error"></i>
                                             break;
                                         case SIGN.Domain.Enums.GuidelineStatus.Withdrawn:
-                                            <i class="fa fa-close fa-2x text-error"></i>
+                                <i class="fa fa-close fa-2x text-error"></i>
                                             break;
                                         case SIGN.Domain.Enums.GuidelineStatus.BeingUpdated:
-                                            <i class="fa fa-edit fa-2x text-warning"></i>
+                                <i class="fa fa-edit fa-2x text-warning"></i>
                                             break;
                                         default:
                                             break;
