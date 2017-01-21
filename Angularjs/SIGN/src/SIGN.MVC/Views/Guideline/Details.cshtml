@@ -38,19 +38,34 @@
                                     switch (Model.Status)
                                     {
                                         case SIGN.Domain.Enums.GuidelineStatus.CurrentLessThanThreeYears:
-                                <i class="fa fa-check fa-2x text-success"></i>
+                                            <div>
+                                                <i class="fa fa-check text-success"></i>
+                                                Current < 3 years
+                                            </div>
                                             break;
                                         case SIGN.Domain.Enums.GuidelineStatus.CurrentThreeToSevenYears:
-                                <i class="fa fa-question-circle-o fa-2x text-warning"></i>
+                                            <div>
+                                                <i class="fa fa-question-circle-o text-warning"></i>
+                                                Current 3 - 7 years
+                                            </div>
                                             break;
                                         case SIGN.Domain.Enums.GuidelineStatus.GreaterThanSevenYears:
-                                <i class="fa fa-exclamation-circle fa-2x text-error"></i>
+                                            <div>
+                                                <i class="fa fa-exclamation-circle text-error"></i>
+                                                Greater than 7 yrs
+                                            </div>
                                             break;
                                         case SIGN.Domain.Enums.GuidelineStatus.Withdrawn:
-                                <i class="fa fa-close fa-2x text-error"></i>
+                                            <div>
+                                                <i class="fa fa-close text-error"></i>
+                                                Withdrawn
+                                            </div>
                                             break;
                                         case SIGN.Domain.Enums.GuidelineStatus.BeingUpdated:
-                                <i class="fa fa-edit fa-2x text-warning"></i>
+                                            <div>
+                                                <i class="fa fa-edit text-warning"></i>
+                                                Recommendations being updated
+                                            </div>
                                             break;
                                         default:
                                             break;

@@ -27,26 +27,39 @@
                         switch (guideline.Status)
                         {
                             case SIGN.Domain.Enums.GuidelineStatus.CurrentLessThanThreeYears:
-                                <i class="fa fa-check fa-2x text-success"></i>
+                                <div title="Current < 3 yrs">
+                                    <i class="fa fa-check fa-2x text-success"></i>
+                                </div>
                                 break;
                             case SIGN.Domain.Enums.GuidelineStatus.CurrentThreeToSevenYears:
-                                <i class="fa fa-question-circle-o fa-2x text-warning"></i>
+                                <div title="Current 3 -7yrs. Some recommendations may be out of date Declaration of interests governance may not be in line with current policy">
+                                    <i class="fa fa-question-circle-o fa-2x text-warning"></i>
+                                </div>
                                 break;
                             case SIGN.Domain.Enums.GuidelineStatus.GreaterThanSevenYears:
-                                <i class="fa fa-exclamation-circle fa-2x text-error"></i>
+                                <div title=">7 yrs. Use with caution Declaration of interests governance may not be in line with current policy">
+                                    <i class="fa fa-exclamation-circle fa-2x text-error"></i>
+                                </div>
                                 break;
                             case SIGN.Domain.Enums.GuidelineStatus.Withdrawn:
-                                <i class="fa fa-close fa-2x text-error"></i>
+                                <div title="Withdrawn">
+                                    <i class="fa fa-close fa-2x text-error"></i>
+                                </div>
                                 break;
                             case SIGN.Domain.Enums.GuidelineStatus.BeingUpdated:
-                                <i class="fa fa-edit fa-2x text-warning"></i>
+                                <div title="Recommendations being updated">
+                                    <i class="fa fa-edit fa-2x text-warning"></i>
+                                </div>
                                 break;
                             default:
                                 break;
                         }
                     }
 
-                </td>
+</td>
+
+
+
                 <td><a asp-controller="Guideline" asp-action="Edit" asp-route-id="@guideline.Id" class="btn btn-block btn-sm btn-success">Edit</a></td>
                 <td><a asp-controller="Guideline" asp-action="Details" asp-route-id="@guideline.Id" class="btn btn-block btn-sm btn-success">View</a></td>
             </tr>
