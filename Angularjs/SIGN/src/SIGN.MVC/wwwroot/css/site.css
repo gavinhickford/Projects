@@ -1,5 +1,6 @@
 ﻿.page-header{
-  text-align: center;    
+  text-align: center;
+  border-bottom: none;    
 }
 
 .sign-number {
@@ -82,10 +83,13 @@ button.accordion {
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 18px;
+    padding: 4px;
+    margin: 4px 0px 0px;
     width: 100%;
     text-align: left;
-    border: none;
+    border: solid;
+    border-width: thin;
+    border-color:darkgray ;
     outline: none;
     transition: 0.4s;
 }

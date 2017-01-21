@@ -43,7 +43,7 @@ namespace SIGN.MVC.Controllers
                 {
                     if (string.IsNullOrWhiteSpace(returnUrl))
                     {
-                        return RedirectToAction("Guidelines", "App");
+                        return RedirectToAction("AllGuidelines", "Guideline");
                     }
                     else
                     {

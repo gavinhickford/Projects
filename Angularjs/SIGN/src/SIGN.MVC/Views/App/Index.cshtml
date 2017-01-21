@@ -3,17 +3,19 @@
 }
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
-        <h3>SIGN Guidelines</h3>
+        <div class="page-header">
+            <h3>SIGN Guidelines</h3>
+        </div>
         <p>The Scottish Intercollegiate Guidelines Network (SIGN) develops evidence based clinical practice guidelines for the National Health Service (NHS) in Scotland. SIGN guidelines are derived from a systematic review of the scientific literature and are designed as a vehicle for accelerating the translation of new knowledge into action to meet the aim of reducing variations in practice, and improving patient-important outcomes.</p>
         <p>This application was designed to allow the storage of the guidelines using a data model stored in SQL Server database, and accessed via the entity framework core.</p>
         <p>The user interface has been developed using AngularJS and a web api developed using .NET Core and ASP.NET core.</p>
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <a asp-controller="Guideline" asp-action="AllGuidelines" class="btn btn-lg btn-success">Go to all Guidelines</a>
+                    <a asp-controller="Guideline" asp-action="AllGuidelines" class="btn btn-lg btn-success btn-block">Go to all Guidelines</a>
                 </div>
                 <div class="form-group">
-                    <a asp-controller="Guideline" asp-action="MyGuidelines" class="btn btn-lg btn-success">Go to my Guidelines</a>
+                    <a asp-controller="Guideline" asp-action="MyGuidelines" class="btn btn-lg btn-success btn-block">Go to my Guidelines</a>
                 </div>
             </div>
         </div>
