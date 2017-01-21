@@ -53,6 +53,8 @@ namespace SIGN.MVC
         private RecommendationGrade _gradeC;
         private RecommendationGrade _gradeD;
         private StepDetail _stepDetail1;
+        private StepDetail _stepDetail2;
+        private StepDetail _stepDetail3;
 
         public SeedData(ISIGNRepository repository, UserManager<SIGNUser> userManager)
         {
@@ -99,11 +101,39 @@ namespace SIGN.MVC
             _stepDetail1 = new StepDetail
             {
                 Title = "Focal neurological deficit",
-                Text = "problems understanding, speaking, reading or writing" + Environment.NewLine +
-                    "loss of feeling in part of the bodyproblems balancing" + Environment.NewLine +
-                    "unilateral weakness" + Environment.NewLine +
-                    "any changes in eyesight" + Environment.NewLine +
-                    "problems walking."
+                Text = "Problems understanding, speaking, reading or writing" + Environment.NewLine +
+                    "Loss of feeling in part of the body" + Environment.NewLine +
+                    "Problems balancing" + Environment.NewLine +
+                    "Unilateral weakness" + Environment.NewLine +
+                    "Any changes in eyesight" + Environment.NewLine +
+                    "Problems walking."
+            };
+
+            _stepDetail2 = new StepDetail
+            {
+                Title = "Skull fracture or penetrating head injury",
+                Text = "Fluid running from the ears or nose" + Environment.NewLine +
+                    "Black eye with no direct orbital trauma" + Environment.NewLine +
+                    "Bleeding from one or both ears" + Environment.NewLine +
+                    "New deafness in one or both ears" + Environment.NewLine +
+                    "Bruising behind one or both ears" + Environment.NewLine +
+                    "Penetrating injury" + Environment.NewLine +
+                    "Major scalp wound or skull trauma."
+            };
+
+            _stepDetail3 = new StepDetail
+            {
+                Title = "High energy head injury",
+                Text = "Pedestrian struck by motor vehicle" + Environment.NewLine +
+                    "Occupant ejected from motor vehicle" + Environment.NewLine +
+                    "A fall from a height of greater than one metre or more than five stairs" + Environment.NewLine +
+                    "Diving accident" + Environment.NewLine +
+                    "High speed motor vehicle collision" + Environment.NewLine +
+                    "Rollover motor accident" + Environment.NewLine +
+                    "Accident involving motorised recreational vehicles" + Environment.NewLine +
+                    "Bicycle collision" + Environment.NewLine +
+                    "Impact from golf club, cricket or baseball bat" + Environment.NewLine +
+                    "Any other potentially high energy mechanism."
             };
         }
 
@@ -365,7 +395,8 @@ namespace SIGN.MVC
             _step5 = new Step
             {
                 Text = "Is there any suspicion of a skull fracture or penetrating head injury?",
-                Type = StepType.Question
+                Type = StepType.Question,
+                Detail = _stepDetail2
             };
 
             _step6 = new Step
@@ -377,7 +408,8 @@ namespace SIGN.MVC
             _step7 = new Step
             {
                 Text = "Was this a high energy head injury?",
-                Type = StepType.Question
+                Type = StepType.Question,
+                Detail = _stepDetail3
             };
 
             _step8 = new Step

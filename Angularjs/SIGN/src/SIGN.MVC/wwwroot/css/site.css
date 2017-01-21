@@ -89,7 +89,7 @@ button.accordion {
     color: #444;
     cursor: pointer;
     padding: 4px;
-    margin: 4px 0px 0px;
+    margin: 4px 0 0;
     width: 100%;
     text-align: left;
     border: solid;
@@ -100,11 +100,11 @@ button.accordion {
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-button.accordion.active, button.accordion:hover {
+.accordion.active, .accordion:hover {
     background-color: #ddd;
 }
 
-div.accordion-panel {
+.accordion-panel {
     /*padding: 0 18px;*/
     background-color: white;
     max-height: 0;
