@@ -17,7 +17,7 @@ namespace SIGN.MVC.Controllers.Web
         }
 
         [Authorize]
-        public IActionResult AssessmentDetails(int id)
+        public IActionResult Details(int id)
         {
             Assessment assessment = _guidelineService.GetAssessment(id);
             AssessmentViewModel model = Mapper.Map<AssessmentViewModel>(assessment);

@@ -33,7 +33,7 @@ namespace SIGN.MVC.Controllers.Web
         }
 
         [HttpGet, Authorize]
-        public IActionResult GuidelineDetails(int id)
+        public IActionResult Details(int id)
         {
             Guideline guideline = _guidelineService.GetGuideline(id);
             GuidelineViewModel model = Mapper.Map<GuidelineViewModel>(guideline);
@@ -41,13 +41,13 @@ namespace SIGN.MVC.Controllers.Web
         }
 
         [HttpGet, Authorize]
-        public IActionResult AddGuideline()
+        public IActionResult Add()
         {
             return View();
         }
 
         [HttpPost, Authorize, ValidateAntiForgeryToken]
-        public IActionResult AddGuideline(GuidelineViewModel newGuideline)
+        public IActionResult Add(GuidelineViewModel newGuideline)
         {
             if (ModelState.IsValid)
             {
@@ -61,7 +61,7 @@ namespace SIGN.MVC.Controllers.Web
         }
 
         [HttpGet, Authorize]
-        public IActionResult EditGuideline(int id)
+        public IActionResult Edit(int id)
         {
             Guideline guideline = _guidelineService.GetGuideline(id);
             if (guideline == null)
@@ -74,12 +74,12 @@ namespace SIGN.MVC.Controllers.Web
         }
 
         [HttpPost, Authorize, ValidateAntiForgeryToken]
-        public IActionResult EditGuideline(GuidelineViewModel guideline)
+        public IActionResult Edit(GuidelineViewModel guideline)
         {
             if (ModelState.IsValid)
             {
                 _guidelineService.SaveGuideline(Mapper.Map<Guideline>(guideline));
-                return RedirectToAction("GuidelineDetails", new { id = guideline.Id });
+                return RedirectToAction("Details", new { id = guideline.Id });
             }
 
             return View(guideline);

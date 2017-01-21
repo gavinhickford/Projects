@@ -95,7 +95,7 @@ namespace SIGN.MVC.Tests.Controllers.Web
                 Number = 112,
                 Status = Domain.Enums.GuidelineStatus.CurrentThreeToSevenYears
             };
-            var result = controller.AddGuideline(model);
+            var result = controller.Add(model);
 
             Assert.Equal("AllGuidelines", (result as ViewResult).ViewName);
         }
