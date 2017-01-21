@@ -17,7 +17,7 @@ namespace SIGN.Angular.Tests.Controllers.Api
         public void Get_Guidelines_ReturnsOKResponse()
         {
             // Arrange
-            TestHelper.InitialiseMappings();
+            TestMappings.Initialise();
             ISIGNService mockSIGNService = MockProvider.CreateMockSignService(numberOfGuidelines: 1);
             var controller = new GuidelineController(mockSIGNService, _mockLogger);
 
@@ -32,7 +32,7 @@ namespace SIGN.Angular.Tests.Controllers.Api
         public void Get_GuidelineById_ReturnsOKResponse()
         {
             // Arrange
-            TestHelper.InitialiseMappings();
+            TestMappings.Initialise();
             ISIGNService mockSIGNService = MockProvider.CreateMockSignService(numberOfGuidelines: 1);
             var controller = new GuidelineController(mockSIGNService, _mockLogger);
 
@@ -47,7 +47,7 @@ namespace SIGN.Angular.Tests.Controllers.Api
         public void Get_GuidelineById_NotFound_Returns404()
         {
             // Arrange
-            TestHelper.InitialiseMappings();
+            TestMappings.Initialise();
             ISIGNService mockSIGNService = MockProvider.CreateMockSignService(numberOfGuidelines: 1);
             var controller = new GuidelineController(mockSIGNService, _mockLogger);
 
@@ -61,7 +61,8 @@ namespace SIGN.Angular.Tests.Controllers.Api
         [Fact]
         public void Get_Guidelines_ExceptionThrown_Returns400()
         {
-            TestHelper.InitialiseMappings();
+            // Arrange
+            TestMappings.Initialise();
             ISIGNService mockSIGNService =
                 MockProvider.CreateMockSignService(
                     numberOfGuidelines: 1,
@@ -72,20 +73,25 @@ namespace SIGN.Angular.Tests.Controllers.Api
             // Act
             IActionResult response = controller.Get();
 
+            // Assert
             Assert.True(response is BadRequestObjectResult);
         }
 
         [Fact]
         public async void Post_Guideline_ReturnsCreatedResult201()
         {
-            TestHelper.InitialiseMappings();
+            // Arrange
+            TestMappings.Initialise();
             ISIGNService mockSIGNService =
                 MockProvider.CreateMockSignService(numberOfGuidelines: 1);
             GuidelineViewModel guideline = TestDataProvider.CreateTestGuidelineViewModel(id: 1);
 
             var controller = new GuidelineController(mockSIGNService, _mockLogger);
 
+            // Act
             IActionResult response = await controller.Post(guideline);
+
+            // Assert
             Assert.True(response is CreatedResult);
         }
     }

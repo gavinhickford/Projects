@@ -133,5 +133,10 @@ namespace SIGN.Services.Tests.Mocks
         {
             return new Task<bool>(() => true);
         }
+
+        public void AddRecommendationGrade(RecommendationGrade grade)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

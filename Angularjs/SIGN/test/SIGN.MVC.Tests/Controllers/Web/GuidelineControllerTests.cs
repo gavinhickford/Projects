@@ -35,8 +35,7 @@ namespace SIGN.MVC.Tests.Controllers.Web
         {
             // Arrange
             const int expectedNumberOfGuidelines = 0;
-            ISIGNService mockSignService = MockProvider.CreateMockSignService(expectedNumberOfGuidelines);
-            GuidelineController controller = new GuidelineController(mockSignService);
+            GuidelineController controller = TestHelper.CreateController(expectedNumberOfGuidelines);
 
             // Act
             var result = controller.AllGuidelines() as ViewResult;
@@ -52,11 +51,7 @@ namespace SIGN.MVC.Tests.Controllers.Web
             // Arrange
             const string userName = "TestAuthor";
             const int expectedNumberOfGuidelines = 10;
-            ISIGNService mockSignService = MockProvider.CreateMockSignService(
-                numberOfGuidelines: expectedNumberOfGuidelines,
-                author: userName,
-                returnsException: false);
-            GuidelineController controller = CreateController(mockSignService, userName);
+            GuidelineController controller = TestHelper.CreateController(userName, expectedNumberOfGuidelines);
 
             // Act
             var result = controller.MyGuidelines() as ViewResult;
@@ -72,11 +67,7 @@ namespace SIGN.MVC.Tests.Controllers.Web
             // Arrange
             const string userName = "TestAuthor";
             const int expectedNumberOfGuidelines = 0;
-            ISIGNService mockSignService = MockProvider.CreateMockSignService(
-                numberOfGuidelines: expectedNumberOfGuidelines,
-                author: userName,
-                returnsException: false);
-            GuidelineController controller = CreateController(mockSignService, userName);
+            GuidelineController controller = TestHelper.CreateController(userName, expectedNumberOfGuidelines);
 
             // Act
             var result = controller.MyGuidelines() as ViewResult;
@@ -86,20 +77,27 @@ namespace SIGN.MVC.Tests.Controllers.Web
             Assert.Empty(actualGuidelines);
         }
 
-        private static GuidelineController CreateController(ISIGNService service, string currentUser)
+        [Fact]
+        public void AddGuideline_RedirectsToGuidelinesPage()
         {
-            var user = new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
-            {
-                new Claim(ClaimTypes.Name, currentUser)
-            }));
+            // Arrange
+            TestMappings.Initialise();
+            const string userName = "TestAuthor";
+            const int expectedNumberOfGuidelines = 10;
+            GuidelineController controller = TestHelper.CreateController(userName, expectedNumberOfGuidelines);
 
-            GuidelineController controller = new GuidelineController(service);
-            controller.ControllerContext = new ControllerContext()
+            GuidelineViewModel model = new GuidelineViewModel
             {
-                HttpContext = new DefaultHttpContext() { User = user }
+                Author ="Test",
+                DatePublished = new System.DateTime(2010, 1, 1),
+                Id = 0,
+                Name = "Test Name",
+                Number = 112,
+                Status = Domain.Enums.GuidelineStatus.CurrentThreeToSevenYears
             };
+            var result = controller.AddGuideline(model);
 
-            return controller;
+            Assert.Equal("AllGuidelines", (result as ViewResult).ViewName);
         }
     }
 }

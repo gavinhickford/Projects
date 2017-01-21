@@ -16,7 +16,7 @@ namespace SIGN.MVC.Controllers.Web
             _signService = signService;
         }
 
-        [Authorize]
+        [HttpGet, Authorize]
         public IActionResult AllGuidelines()
         {
             GuidelinesViewModel model = new GuidelinesViewModel();
@@ -24,7 +24,7 @@ namespace SIGN.MVC.Controllers.Web
             return View(model);
         }
 
-        [Authorize]
+        [HttpGet, Authorize]
         public IActionResult MyGuidelines()
         {
             GuidelinesViewModel model = new GuidelinesViewModel();
@@ -32,7 +32,7 @@ namespace SIGN.MVC.Controllers.Web
             return View(model);
         }
 
-        [Authorize]
+        [HttpGet, Authorize]
         public IActionResult GuidelineDetails(int id)
         {
             Guideline guideline = _signService.GetGuideline(id);
@@ -41,19 +41,40 @@ namespace SIGN.MVC.Controllers.Web
             return View(model);
         }
 
-        [Authorize]
+        [HttpGet, Authorize]
         public IActionResult AddGuideline()
         {
             return View();
         }
 
-        [HttpPost]
-        [Authorize]
+        [HttpPost, Authorize]
         public IActionResult AddGuideline(GuidelineViewModel newGuideline)
         {
             newGuideline.Author = User.Identity.Name;
             _signService.SaveGuideline(Mapper.Map<Guideline>(newGuideline));
-            return View("Guidelines");
+            return View("AllGuidelines");
+        }
+
+        [HttpGet, Authorize]
+        public IActionResult EditGuideline(int id)
+        {
+            Guideline guideline = _signService.GetGuideline(id);
+            GuidelineViewModel model = Mapper.Map<GuidelineViewModel>(guideline);
+            return View(model);
+        }
+
+        [HttpPost, Authorize]
+        public IActionResult EditGuideline(GuidelineViewModel guideline)
+        {
+            if (ModelState.IsValid)
+            {
+                guideline.Author = User.Identity.Name;
+                _signService.SaveGuideline(Mapper.Map<Guideline>(guideline));
+
+                //return View("AllGuidelines");
+            }
+
+            return View(guideline);
         }
     }
 }

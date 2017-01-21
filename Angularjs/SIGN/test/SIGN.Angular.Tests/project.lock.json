@@ -4288,6 +4288,7 @@
           "Microsoft.NETCore.App": "1.0.1",
           "SIGN.Angular": "1.0.0",
           "SIGN.Domain": "1.0.0",
+          "SIGN.MVC": "1.0.0",
           "dotnet-test-xunit": "2.2.0-preview2-build1029"
         },
         "compile": {
@@ -4295,6 +4296,32 @@
         },
         "runtime": {
           "netcoreapp1.0/SIGN.Mocks.dll": {}
+        }
+      },
+      "SIGN.MVC/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "AutoMapper": "5.2.0",
+          "Microsoft.AspNetCore.Diagnostics": "1.0.0",
+          "Microsoft.AspNetCore.Mvc": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.TagHelpers": "1.0.0",
+          "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
+          "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
+          "Microsoft.AspNetCore.StaticFiles": "1.0.0",
+          "Microsoft.Extensions.Configuration.Json": "1.0.0",
+          "Microsoft.Extensions.Logging.Console": "1.0.0",
+          "Microsoft.Extensions.Logging.Debug": "1.0.0",
+          "Microsoft.NETCore.App": "1.0.1",
+          "SIGN.Data.EFCore": "1.0.0",
+          "SIGN.Domain": "1.0.0",
+          "SIGN.Services": "1.0.0"
+        },
+        "compile": {
+          "netcoreapp1.0/SIGN.MVC.dll": {}
+        },
+        "runtime": {
+          "netcoreapp1.0/SIGN.MVC.dll": {}
         }
       },
       "SIGN.Services/1.0.0": {
@@ -10894,6 +10921,11 @@
       "type": "project",
       "path": "../SIGN.Mocks/project.json",
       "msbuildProject": "../SIGN.Mocks/SIGN.Mocks.xproj"
+    },
+    "SIGN.MVC/1.0.0": {
+      "type": "project",
+      "path": "../../src/SIGN.MVC/project.json",
+      "msbuildProject": "../../src/SIGN.MVC/SIGN.MVC.xproj"
     },
     "SIGN.Services/1.0.0": {
       "type": "project",
