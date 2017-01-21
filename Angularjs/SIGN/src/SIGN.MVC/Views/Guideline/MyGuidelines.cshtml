@@ -47,8 +47,8 @@
                     }
 
                 </td>
-                <td><a asp-controller="App" asp-action="Guideline" asp-route-id="@guideline.Id" class="btn btn-block btn-sm btn-success">Edit</a></td>
-                <td><a asp-controller="App" asp-action="Guideline" asp-route-id="@guideline.Id" class="btn btn-block btn-sm btn-success">View</a></td>
+                <td><a asp-controller="Guideline" asp-action="EditGuideline" asp-route-id="@guideline.Id" class="btn btn-block btn-sm btn-success">Edit</a></td>
+                <td><a asp-controller="Guideline" asp-action="GuidelineDetails" asp-route-id="@guideline.Id" class="btn btn-block btn-sm btn-success">View</a></td>
             </tr>
                         }
     </table>
