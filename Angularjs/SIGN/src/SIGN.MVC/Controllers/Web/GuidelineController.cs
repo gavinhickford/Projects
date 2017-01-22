@@ -73,12 +73,13 @@ namespace SIGN.MVC.Controllers.Web
         }
 
         [HttpPost, Authorize, ValidateAntiForgeryToken]
-        public IActionResult Edit(GuidelineViewModel guideline)
+        public async Task<IActionResult> Edit(GuidelineViewModel guideline)
         {
             if (ModelState.IsValid)
             {
-                _guidelineService.SaveGuideline(Mapper.Map<Guideline>(guideline));
-                return RedirectToAction("Details", new { id = guideline.Id });
+                guideline.Author = User.Identity.Name;
+                await _guidelineService.SaveGuideline(Mapper.Map<Guideline>(guideline));
+                return RedirectToAction("AllGuidelines");
             }
 
             return View(guideline);
