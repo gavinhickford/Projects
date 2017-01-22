@@ -9,17 +9,17 @@ namespace SIGN.MVC.Controllers.Web
 {
     public class AssessmentController : Controller
     {
-        private IGuidelineService _guidelineService;
+        private IAssessmentService _assessmentService;
 
-        public AssessmentController(IGuidelineService guidelineService)
+        public AssessmentController(IAssessmentService assessmentService)
         {
-            _guidelineService = guidelineService;
+            _assessmentService = assessmentService;
         }
 
         [Authorize]
         public IActionResult Details(int id)
         {
-            Assessment assessment = _guidelineService.GetAssessment(id);
+            Assessment assessment = _assessmentService.GetAssessment(id);
             AssessmentViewModel model = Mapper.Map<AssessmentViewModel>(assessment);
 
             return View(model);
@@ -28,39 +28,23 @@ namespace SIGN.MVC.Controllers.Web
         [Authorize]
         public IActionResult Step(int id)
         {
-            Step step = _guidelineService.GetStep(id);
+            Step step = _assessmentService.GetStep(id);
             StepViewModel model = Mapper.Map<StepViewModel>(step);
 
-            int? yesStepId = GetNextStepId(step.Id, true);
-            int? noStepId = GetNextStepId(step.Id, false);
+            Step yesStep = _assessmentService.GetNextStep(step.Id, true);
+            Step noStep = _assessmentService.GetNextStep(step.Id, false);
 
-            if (yesStepId.HasValue)
+            if (yesStep != null)
             {
-                model.YesStepId = yesStepId.Value;
+                model.YesStepId = yesStep.Id;
             };
 
-            if (noStepId.HasValue)
+            if (noStep != null)
             {
-                model.NoStepId = noStepId.Value;
+                model.NoStepId = noStep.Id;
             };
 
             return View(model);
-        }
-
-        private int? GetNextStepId(int stepId, bool condition)
-        {
-            StepAction action = _guidelineService.GetAction(stepId, condition);
-
-            if (action != null)
-            {
-                Step step = action.NextStep;
-                if (step != null)
-                {
-                    return step.Id;
-                }
-            }
-
-            return null;
         }
     }
 }

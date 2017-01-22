@@ -13,11 +13,11 @@ namespace SIGN.Angular.Controllers.Api
     public class AssessmentController : Controller
     {
         private ILogger<AssessmentController> _logger;
-        private IGuidelineService _guidelineService;
+        private IAssessmentService _assessmentService;
 
-        public AssessmentController(ISIGNRepository repository, IGuidelineService guidelineService, ILogger<AssessmentController> logger)
+        public AssessmentController(ISIGNRepository repository, IAssessmentService assessmentService, ILogger<AssessmentController> logger)
         {
-            _guidelineService = guidelineService;
+            _assessmentService = assessmentService;
             _logger = logger;
         }
 
@@ -26,7 +26,7 @@ namespace SIGN.Angular.Controllers.Api
         {
             try
             {
-                Assessment assessment = _guidelineService.GetAssessment(id);
+                Assessment assessment = _assessmentService.GetAssessment(id);
                 if (assessment != null)
                 {
                     return Ok(Mapper.Map<AssessmentViewModel>(assessment));
@@ -51,7 +51,7 @@ namespace SIGN.Angular.Controllers.Api
             {
                 Assessment newAssessment = Mapper.Map<Assessment>(assessment);
                 
-                if (await _guidelineService.AddAssessment(id, newAssessment))
+                if (await _assessmentService.AddAssessment(id, newAssessment))
                 {
                     return Created($"api/assessments/{id}/{assessment.Name}", Mapper.Map<AssessmentViewModel>(newAssessment));
                 }

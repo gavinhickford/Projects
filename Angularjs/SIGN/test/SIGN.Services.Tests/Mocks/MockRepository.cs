@@ -11,10 +11,16 @@ namespace SIGN.Services.Tests.Mocks
     public class MockRepository : ISIGNRepository
     {
         List<Guideline> _expectedGuidelines;
+        List<Assessment> _expectedAssessments;
 
         public MockRepository(List<Guideline> expectedGuidelines)
         {
             _expectedGuidelines = expectedGuidelines;
+        }
+
+        public MockRepository(List<Assessment> expectedAssessments)
+        {
+            _expectedAssessments = expectedAssessments;
         }
 
         public MockRepository(int numberOfExpectedGuidelines)
@@ -76,15 +82,8 @@ namespace SIGN.Services.Tests.Mocks
 
         public Assessment GetAssessment(int id)
         {
-            return new Assessment
-            {
-                Id = 1,
-                Name = "Test Assessment",
-                DateCreated = new DateTime(2017, 1, 1),
-                DateModified = new DateTime(2017, 1, 1),
-                Description = "Test Description",
-                Type = AssessmentType.Telephone
-            };
+            return _expectedAssessments
+                .FirstOrDefault(a => a.Id == id);
         }
 
         public Guideline GetGuideline(int id)

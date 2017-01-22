@@ -6,7 +6,7 @@ using Xunit;
 
 namespace SIGN.Services.Tests
 {
-    public class GuidelineServiceTest
+    public class GuidelineServiceTests
     {
         [Fact]
         public void GetGuidlines_WhenRepositoryHasSingleGuideline_ReturnsSingleGuideline()

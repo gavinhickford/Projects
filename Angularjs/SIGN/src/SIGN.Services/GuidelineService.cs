@@ -35,26 +35,5 @@ namespace SIGN.Services
             _repository.SaveGuideline(guideline);
             return await _repository.SaveChangesAsync();
         }
-
-        public Assessment GetAssessment(int id)
-        {
-            return _repository.GetAssessment(id);
-        }
-
-        public async Task<bool> AddAssessment(int guidelineId, Assessment assessment)
-        {
-            _repository.AddAssessment(guidelineId, assessment);
-            return await _repository.SaveChangesAsync();
-        }
-
-        public StepAction GetAction(int stepId, bool condition)
-        {
-            return _repository.GetAction(stepId, condition);
-        }
-
-        public Step GetStep(int id)
-        {
-            return _repository.GetStep(id);
-        }
     }
 }

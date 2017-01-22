@@ -46,6 +46,7 @@ namespace SIGN.MVC
             services.AddEntityFramework(_configuration["ConnectionStrings:SIGNContextConnectionString"]);
             services.AddScoped<ISIGNRepository, SIGNRepository>();
             services.AddScoped<IGuidelineService, GuidelineService>();
+            services.AddScoped<IAssessmentService, AssessmentService>();
             services.AddScoped<ISIGNContext, SIGNContext>();
             services.AddTransient<SeedData>();
             services.AddLogging();

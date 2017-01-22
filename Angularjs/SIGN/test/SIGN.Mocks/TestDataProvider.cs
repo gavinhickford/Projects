@@ -19,6 +19,29 @@ namespace SIGN.Mocks
             return testGuidelines;
         }
 
+        public static List<Assessment> CreateTestAssessments(int numberOfAssessments)
+        {
+            var testAssessments = new List<Assessment>();
+            for (int i = 1; i < numberOfAssessments + 1; i++)
+            {
+                testAssessments.Add(CreateTestAssessment(i));
+            }
+
+            return testAssessments;
+        }
+
+        public static Assessment CreateTestAssessment(int id)
+        {
+            return new Assessment
+            {
+                Id = id,
+                Name = $"TestAssessment{id}",
+                DateCreated = new DateTime(2010, 1, 1),
+                DateModified = new DateTime(2010, 1, 1),
+                Type = AssessmentType.Telephone
+            };
+        }
+
         public static List<Guideline> CreateTestGuidelines(int numberOfGuidelines, string author)
         {
             var testGuidelines = new List<Guideline>();

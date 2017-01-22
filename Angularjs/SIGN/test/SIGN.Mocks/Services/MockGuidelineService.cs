@@ -22,22 +22,12 @@ namespace SIGN.Mocks.Services
             _expectedGuidelines = expectedGuidelines;
             _returnsException = returnsException;
         }
-
-        public Task<bool> AddAssessment(int guidelineId, Assessment assessment)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public Task<bool> SaveGuideline(Guideline guideline)
         {
             return Task.FromResult<bool>(true);
         }
-
-        public Assessment GetAssessment(int id)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public Guideline GetGuideline(int id)
         {
             return _expectedGuidelines
@@ -58,16 +48,6 @@ namespace SIGN.Mocks.Services
         {
             return _expectedGuidelines
                 .Where(g => g.Author == username);
-        }
-
-        public Step GetStep(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public StepAction GetAction(int stepId, bool condition)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -12,49 +12,16 @@ namespace SIGN.MVC
     {
         private ISIGNRepository _repository;
         private UserManager<SIGNUser> _userManager;
-        private Guideline _guideline110;
-        private Guideline _guideline119;
-        private Guideline _guideline143;
-        private Guideline _guideline153;
-        private Assessment _initialAssessment110;
-        private Assessment _initialPatientAssessment110;
-        private Assessment _initialPaediatricAssessment110;
-        private Step _step1;
-        private Step _step2;
-        private Step _step3;
-        private Step _step4;
-        private Step _step5;
-        private Step _step6;
-        private Step _step7;
-        private Step _step8;
-        private StepAction _action2;
-        private StepAction _action3;
-        private StepAction _action4;
-        private StepAction _action5;
-        private StepAction _action6;
-        private StepAction _action7;
-        private StepAction _action8;
-        private Decision _decision1;
-        private Decision _decision2;
-        private Decision _decision3;
-        private Decision _decision4;
-        private Decision _decision5;
-        private Decision _decision6;
-        private Decision _decision7;
-        private Decision _decision8;
-        private Decision _decision11;
-        private Decision _decision12;
-        private Decision _decision13;
-        private Decision _decision14;
-        private Decision _decision10;
-        private Decision _decision9;
-        private RecommendationGrade _gradeA;
-        private RecommendationGrade _gradeB;
-        private RecommendationGrade _gradeC;
-        private RecommendationGrade _gradeD;
-        private StepDetail _stepDetail1;
-        private StepDetail _stepDetail2;
-        private StepDetail _stepDetail3;
+        private Guideline _guideline110, _guideline119, _guideline143, _guideline153;
+        private Assessment _initialAssessmentEmergency110, _initialPatientAssessment110, _initialPaediatricAssessment110, _initialAssessmentNonEmergency110;
+        private Step _step1_1, _step1_2, _step1_3, _step1_4, _step1_5, _step1_6, _step1_7, _step1_8;
+        private Step _step2_1, _step2_2, _step2_3, _step2_4, _step2_5, _step2_6, _step2_7, _step2_8, _step2_9, _step2_10, _step2_11, _step2_12;
+        private StepAction _action1_2, _action1_3, _action1_4, _action1_5, _action1_6, _action1_7, _action1_8;
+        private StepAction _action2_2, _action2_3, _action2_4, _action2_5, _action2_6, _action2_7, _action2_8, _action2_9, _action2_10, _action2_11, _action2_12;
+        private Decision _decision1_1, _decision1_2, _decision1_3, _decision1_4, _decision1_5, _decision1_6, _decision1_7, _decision1_8, _decision1_11, _decision1_12, _decision1_13, _decision1_14, _decision1_10, _decision9;
+        private Decision _decision2_1, _decision2_2, _decision2_3, _decision2_4, _decision2_5, _decision2_6, _decision2_7, _decision2_8, _decision2_9, _decision2_10, _decision2_11, _decision2_12, _decision2_13, _decision2_14, _decision2_15, _decision2_16, _decision2_17, _decision2_18, _decision2_19, _decision2_20;
+        private RecommendationGrade _gradeA, _gradeB, _gradeC, _gradeD;
+        private StepDetail _stepDetail1, _stepDetail2, _stepDetail3;
 
         public SeedData(ISIGNRepository repository, UserManager<SIGNUser> userManager)
         {
@@ -156,20 +123,40 @@ namespace SIGN.MVC
 
         private void AddDecisions()
         {
-            _repository.AddDecision(_decision1);
-            _repository.AddDecision(_decision2);
-            _repository.AddDecision(_decision3);
-            _repository.AddDecision(_decision4);
-            _repository.AddDecision(_decision5);
-            _repository.AddDecision(_decision6);
-            _repository.AddDecision(_decision7);
-            _repository.AddDecision(_decision8);
+            _repository.AddDecision(_decision1_1);
+            _repository.AddDecision(_decision1_2);
+            _repository.AddDecision(_decision1_3);
+            _repository.AddDecision(_decision1_4);
+            _repository.AddDecision(_decision1_5);
+            _repository.AddDecision(_decision1_6);
+            _repository.AddDecision(_decision1_7);
+            _repository.AddDecision(_decision1_8);
             _repository.AddDecision(_decision9);
-            _repository.AddDecision(_decision10);
-            _repository.AddDecision(_decision11);
-            _repository.AddDecision(_decision12);
-            _repository.AddDecision(_decision13);
-            _repository.AddDecision(_decision14);
+            _repository.AddDecision(_decision1_10);
+            _repository.AddDecision(_decision1_11);
+            _repository.AddDecision(_decision1_12);
+            _repository.AddDecision(_decision1_13);
+            _repository.AddDecision(_decision1_14);
+            _repository.AddDecision(_decision2_1);
+            _repository.AddDecision(_decision2_2);
+            _repository.AddDecision(_decision2_3);
+            _repository.AddDecision(_decision2_4);
+            _repository.AddDecision(_decision2_5);
+            _repository.AddDecision(_decision2_6);
+            _repository.AddDecision(_decision2_7);
+            _repository.AddDecision(_decision2_8);
+            _repository.AddDecision(_decision2_9);
+            _repository.AddDecision(_decision2_10);
+            _repository.AddDecision(_decision2_11);
+            _repository.AddDecision(_decision2_12);
+            _repository.AddDecision(_decision2_13);
+            _repository.AddDecision(_decision2_14);
+            _repository.AddDecision(_decision2_15);
+            _repository.AddDecision(_decision2_16);
+            _repository.AddDecision(_decision2_17);
+            _repository.AddDecision(_decision2_18);
+            _repository.AddDecision(_decision2_19);
+            _repository.AddDecision(_decision2_20);
         }
 
         private void SetupRecommendationGrades()
@@ -202,231 +189,527 @@ namespace SIGN.MVC
         private void SetUpDecisions()
         {
             // TODO - don't need these linked to an assessment
-            _decision1 = new Decision
+            _decision1_1 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = true,
-                Step = _step1,
-                Action = _action3
+                Step = _step1_1,
+                Action = _action1_3
             };
 
-            _decision2 = new Decision
+            _decision1_2 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = false,
-                Step = _step1,
-                Action = _action2
+                Step = _step1_1,
+                Action = _action1_2
             };
 
-            _decision3 = new Decision
+            _decision1_3 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = true,
-                Step = _step2,
-                Action = _action3
+                Step = _step1_2,
+                Action = _action1_3
             };
 
-            _decision4 = new Decision
+            _decision1_4 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = false,
-                Step = _step2,
-                Action = _action5
+                Step = _step1_2,
+                Action = _action1_5
             };
 
-            _decision5 = new Decision
+            _decision1_5 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = true,
-                Step = _step3,
-                Action = _action3
+                Step = _step1_3,
+                Action = _action1_3
             };
 
-            _decision6 = new Decision
+            _decision1_6 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = false,
-                Step = _step3,
-                Action = _action5
+                Step = _step1_3,
+                Action = _action1_5
             };
 
-            _decision7 = new Decision
+            _decision1_7 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = true,
-                Step = _step5,
-                Action = _action3
+                Step = _step1_5,
+                Action = _action1_3
             };
 
-            _decision8 = new Decision
+            _decision1_8 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = false,
-                Step = _step5,
-                Action = _action6
+                Step = _step1_5,
+                Action = _action1_6
             };
 
             _decision9 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = true,
-                Step = _step6,
-                Action = _action3
+                Step = _step1_6,
+                Action = _action1_3
             };
 
-            _decision10 = new Decision
+            _decision1_10 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = false,
-                Step = _step6,
-                Action = _action7
+                Step = _step1_6,
+                Action = _action1_7
             };
 
-            _decision11 = new Decision
+            _decision1_11 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = true,
-                Step = _step7,
-                Action = _action3
+                Step = _step1_7,
+                Action = _action1_3
             };
 
-            _decision12 = new Decision
+            _decision1_12 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = false,
-                Step = _step7,
-                Action = _action8
+                Step = _step1_7,
+                Action = _action1_8
             };
 
-            _decision13 = new Decision
+            _decision1_13 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = true,
-                Step = _step8,
-                Action = _action4
+                Step = _step1_8,
+                Action = _action1_4
             };
 
-            _decision14 = new Decision
+            _decision1_14 = new Decision
             {
-                Assessment = _initialAssessment110,
+                Assessment = _initialAssessmentEmergency110,
                 Condition = false,
-                Step = _step8,
-                Action = _action3
+                Step = _step1_8,
+                Action = _action1_3
+            };
+
+            _decision2_1 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = true,
+                Step = _step2_1,
+                Action = _action2_11
+            };
+
+            _decision2_2 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = false,
+                Step = _step2_1,
+                Action = _action2_2
+            };
+            
+            _decision2_3 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = true,
+                Step = _step2_2,
+                Action = _action2_11
+            };
+
+            _decision2_4 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = false,
+                Step = _step2_2,
+                Action = _action2_3
+            };
+
+            _decision2_5 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = true,
+                Step = _step2_3,
+                Action = _action2_11
+            };
+
+            _decision2_6 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = false,
+                Step = _step2_3,
+                Action = _action2_4
+            };
+
+            _decision2_7 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = true,
+                Step = _step2_4,
+                Action = _action2_11
+            };
+
+            _decision2_8 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = false,
+                Step = _step2_4,
+                Action = _action2_5
+            };
+
+            _decision2_9 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = true,
+                Step = _step2_5,
+                Action = _action2_11
+            };
+
+            _decision2_10 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = false,
+                Step = _step2_5,
+                Action = _action2_6
+            };
+
+            _decision2_11 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = true,
+                Step = _step2_6,
+                Action = _action2_11
+            };
+
+            _decision2_12 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = false,
+                Step = _step2_6,
+                Action = _action2_7
+            };
+
+            _decision2_13 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = true,
+                Step = _step2_7,
+                Action = _action2_11
+            };
+
+            _decision2_14 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = false,
+                Step = _step2_7,
+                Action = _action2_8
+            };
+
+            _decision2_15 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = true,
+                Step = _step2_8,
+                Action = _action2_11
+            };
+
+            _decision2_16 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = false,
+                Step = _step2_8,
+                Action = _action2_9
+            };
+
+            _decision2_17 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = true,
+                Step = _step2_9,
+                Action = _action2_11
+            };
+
+            _decision2_18 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = false,
+                Step = _step2_9,
+                Action = _action2_10
+            };
+
+            _decision2_19 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = true,
+                Step = _step2_10,
+                Action = _action2_11
+            };
+
+            _decision2_20 = new Decision
+            {
+                Assessment = _initialAssessmentNonEmergency110,
+                Condition = false,
+                Step = _step2_10,
+                Action = _action2_12
             };
         }
 
         private void SetUpActions()
         {
-            _action2 = new StepAction
+            _action1_2 = new StepAction
             {
-                NextStep = _step2
+                NextStep = _step1_2
             };
 
-            _action3 = new StepAction
+            _action1_3 = new StepAction
             {
-                NextStep = _step3
+                NextStep = _step1_3
             };
 
-            _action4 = new StepAction
+            _action1_4 = new StepAction
             {
-                NextStep = _step4
+                NextStep = _step1_4
             };
 
-            _action5 = new StepAction
+            _action1_5 = new StepAction
             {
-                NextStep = _step5
+                NextStep = _step1_5
             };
 
-            _action6 = new StepAction
+            _action1_6 = new StepAction
             {
-                NextStep = _step6
+                NextStep = _step1_6
             };
 
-            _action7 = new StepAction
+            _action1_7 = new StepAction
             {
-                NextStep = _step7
+                NextStep = _step1_7
             };
 
-            _action8 = new StepAction
+            _action1_8 = new StepAction
             {
-                NextStep = _step8
+                NextStep = _step1_8
+            };
+            
+            _action2_2 = new StepAction
+            {
+                NextStep = _step2_2
+            };
+
+            _action2_3 = new StepAction
+            {
+                NextStep = _step2_3
+            };
+
+            _action2_4 = new StepAction
+            {
+                NextStep = _step2_4
+            };
+
+            _action2_5 = new StepAction
+            {
+                NextStep = _step2_5
+            };
+
+            _action2_6 = new StepAction
+            {
+                NextStep = _step2_6
+            };
+
+            _action2_7 = new StepAction
+            {
+                NextStep = _step2_7
+            };
+
+            _action2_8 = new StepAction
+            {
+                NextStep = _step2_8
+            };
+
+            _action2_9 = new StepAction
+            {
+                NextStep = _step2_9
+            };
+
+            _action2_10 = new StepAction
+            {
+                NextStep = _step2_10
+            };
+
+            _action2_11 = new StepAction
+            {
+                NextStep = _step2_11
+            };
+
+            _action2_12 = new StepAction
+            {
+                NextStep = _step2_12
             };
         }
 
         private void LinkData()
         {
             //_initialAssessment110.Decisions = new Collection<Decision> { _decision1, _decision2, _decision3, _decision4 };
-            _initialAssessment110.FirstStep = _step1;
-            _initialPaediatricAssessment110.FirstStep = _step1;
-            _initialPatientAssessment110.FirstStep = _step1;
+            _initialAssessmentEmergency110.FirstStep = _step1_1;
+            _initialAssessmentNonEmergency110.FirstStep = _step2_1;
+            _initialPaediatricAssessment110.FirstStep = _step1_1;
+            _initialPatientAssessment110.FirstStep = _step1_1;
 
-            _guideline110.Assessments.Add(_initialAssessment110);
+            _guideline110.Assessments.Add(_initialAssessmentEmergency110);
+            _guideline110.Assessments.Add(_initialAssessmentNonEmergency110);
             _guideline110.Assessments.Add(_initialPatientAssessment110);
             _guideline110.Assessments.Add(_initialPaediatricAssessment110);
         }
 
         private void SetUpSteps()
         {
-            _step1 = new Step
+            _step1_1 = new Step
             {
                 Text = "Is the patient unconsciousness, or show lack of full consciousness(e.g. problems keeping eyes open)",
                 Type = StepType.Question
             };
 
-            _step2 = new Step
+            _step1_2 = new Step
             {
                 Text = "Does the patient show any focal (i.e. restricted to a particular part of the body or a particular activity) neurological deficit since the injury",
                 Type = StepType.Question,
                 Detail = _stepDetail1
             };
 
-            _step3 = new Step
+            _step1_3 = new Step
             {
                 Text = "Refer patient to the emergency ambulance services (999) for emergency transport to the emergency department",
                 Type = StepType.Recommendation
             };
 
-            _step4 = new Step
+            _step1_4 = new Step
             {
-                Text = "Assessment Complete",
-                Type = StepType.Complete
+                Text = "There is no indication to refer patient to the emergency ambulance services (999). Further assessment required to determine whether patient still requires medical attention.",
+                Type = StepType.Recommendation
             };
 
-            _step5 = new Step
+            _step1_5 = new Step
             {
                 Text = "Is there any suspicion of a skull fracture or penetrating head injury?",
                 Type = StepType.Question,
                 Detail = _stepDetail2
             };
 
-            _step6 = new Step
+            _step1_6 = new Step
             {
                 Text = "Has there been any seizure (convulsion or fit) since the injury?",
                 Type = StepType.Question
             };
 
-            _step7 = new Step
+            _step1_7 = new Step
             {
                 Text = "Was this a high energy head injury?",
                 Type = StepType.Question,
                 Detail = _stepDetail3
             };
 
-            _step8 = new Step
+            _step1_8 = new Step
             {
                 Text = "Can the injured person reach hospital safely without emergency transport?",
                 Type = StepType.Question
+            };
+
+            _step2_1 = new Step
+            {
+                Text = "Has the patient had any loss of consciousness ('knocked out') as a result of the injury, from which the injured person has now recovered?", 
+                Type = StepType.Question
+            };
+
+            _step2_2 = new Step
+            {
+                Text = "Has the patient had any amnesia for events before or after the injury(‘problems with memory’)",
+                Type = StepType.Question
+            };
+
+            _step2_3 = new Step
+            {
+                Text = "Has the patient had persistent headache since the injury?",
+                Type = StepType.Question
+            };
+
+            _step2_4 = new Step
+            {
+                Text = "Has the patient had any vomiting episodes since the injury?",
+                Type = StepType.Question
+            };
+
+            _step2_5 = new Step
+            {
+                Text = "Has the patient had any previous cranial neurosurgical interventions (brain surgery)?",
+                Type = StepType.Question
+            };
+
+            _step2_6 = new Step
+            {
+                Text = "Is there any history of bleeding or clotting disorder?0",
+                Type = StepType.Question
+            };
+
+            _step2_7 = new Step
+            {
+                Text = "Is the patient currently on anticoagulant therapy such as warfarin?",
+                Type = StepType.Question
+            };
+
+            _step2_8 = new Step
+            {
+                Text = "Is the patient currently show signs of drug or alcohol intoxication?",
+                Type = StepType.Question
+            };
+
+            _step2_9 = new Step
+            {
+                Text = "Is there suspicion of non-accidental injury?",
+                Type = StepType.Question
+            };
+
+            _step2_10 = new Step
+            {
+                Text = "Does the patient show signs of irritability or altered behaviour (‘easily distracted’, ‘not themselves’, ‘no concentration’, ‘no interest in things around them’) particularly in infants and young children (aged under five years)?",
+                Type = StepType.Question
+            };
+
+            _step2_11 = new Step
+            {
+                Text = "Patient should be referred to hospital emergency department.",
+                Type = StepType.Recommendation
+            };
+
+            _step2_12 = new Step
+            {
+                Text = "No indication to refer to hospital emergency department.",
+                Type = StepType.Recommendation
             };
         }
 
         private void SetUpAssessments()
         {
-            _initialAssessment110 = new Assessment
+            _initialAssessmentEmergency110 = new Assessment
             {
-                Name = "Initial Telephone Assessment",
+                Name = "Initial Telephone Assessment - 999 referral",
                 Type = AssessmentType.Telephone,
                 Description = "Telephone advice services should assess any patient who has sustained a head injury to determine whether the patient should be referred to the emergency ambulance services(999) for emergency transport to the emergency department"
             };
+
+            _initialAssessmentNonEmergency110 = new Assessment
+            {
+                Name = "Initial Telephone Assessment - hospital referral",
+                Type = AssessmentType.Telephone,
+                Description = "Telephone advice services should refer people who have sustained a head injury to a hospital emergency department if the history related indicates the presence of specific risk factors"
+            }; 
 
             _initialPatientAssessment110 = new Assessment
             {
