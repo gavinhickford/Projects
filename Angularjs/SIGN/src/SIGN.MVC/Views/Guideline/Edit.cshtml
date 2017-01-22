@@ -7,7 +7,7 @@
 
 <div class="col-md-10 col-md-offset-1">
     <h3>Edit Guideline</h3>
-    <form action="/guideline/edit" method="post" class="form-horizontal" asp-antiforgery="true">
+    <form action="/guideline/edit" method="post" class="form-horizontal" asp-antiforgery="true" novalidate>
         <input name="Id"
                id="Id"
                type="hidden"
@@ -33,7 +33,7 @@
                        name="name"
                        asp-for="Name"
                        required ng-minlength="10" />
-                <span asp-validation-for="Name" class="text-warning">The Name is required.</span>
+                <span asp-validation-for="Name" class="text-warning"></span>
 
                 @*<span ng-show="addGuidelineForm.name.$error.minlength"
                             class="text-warning">
@@ -49,8 +49,9 @@
                        id="datePublished"
                        name="datePublished"
                        asp-for="DatePublished"
+                       asp-format="{0:dd/MM/yyyy}"
                        required />
-                <span asp-validation-for="DatePublished" class="text-warning">The Date Published is required.</span>
+                <span asp-validation-for="DatePublished" class="text-warning"></span>
             </div>
         </div>
         <div class="form-group">
@@ -63,7 +64,7 @@
                     <option value="4">Withdrawn</option>
                     <option value="5">Recommendations being updated</option>
                 </select>
-                <span asp-validation-for="Status" class="text-warning">The Status is required.</span>
+                <span asp-validation-for="Status" class="text-warning"></span>
             </div>
         </div>
         <div>
