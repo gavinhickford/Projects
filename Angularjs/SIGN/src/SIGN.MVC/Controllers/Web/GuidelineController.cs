@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
 using SIGN.MVC.ViewModels;
+using System.Threading.Tasks;
 
 namespace SIGN.MVC.Controllers.Web
 {
@@ -47,14 +48,12 @@ namespace SIGN.MVC.Controllers.Web
         }
 
         [HttpPost, Authorize, ValidateAntiForgeryToken]
-        public IActionResult Add(GuidelineViewModel newGuideline)
+        public async Task<IActionResult> Add(GuidelineViewModel newGuideline)
         {
             if (ModelState.IsValid)
             {
-                newGuideline.Author = User.Identity.Name;
-                _guidelineService.SaveGuideline(Mapper.Map<Guideline>(newGuideline));
-                //RedirectToAction("GuidelineDetails", new { id = newGuideline.Id });
-                RedirectToAction("AllGuidelines");
+                await _guidelineService.SaveGuideline(Mapper.Map<Guideline>(newGuideline));
+                return RedirectToAction("AllGuidelines");
             }
 
             return View(newGuideline);
