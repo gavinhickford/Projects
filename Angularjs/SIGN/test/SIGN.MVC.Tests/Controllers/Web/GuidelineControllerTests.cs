@@ -8,6 +8,7 @@ using SIGN.MVC.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace SIGN.MVC.Tests.Controllers.Web
@@ -78,7 +79,7 @@ namespace SIGN.MVC.Tests.Controllers.Web
         }
 
         [Fact]
-        public void AddGuideline_RedirectsToGuidelinesPage()
+        public async void AddGuideline_RedirectsToGuidelinesPage()
         {
             // Arrange
             TestMappings.Initialise();
@@ -95,9 +96,12 @@ namespace SIGN.MVC.Tests.Controllers.Web
                 Number = 112,
                 Status = Domain.Enums.GuidelineStatus.CurrentThreeToSevenYears
             };
-            var result = controller.Add(model);
 
-            Assert.Equal("AllGuidelines", (result as ViewResult).ViewName);
+            // Act
+            var result = await controller.Add(model);
+
+            // Assert
+            Assert.Equal("AllGuidelines", (result as RedirectToActionResult).ActionName);
         }
     }
 }
