@@ -20,7 +20,7 @@ namespace SIGN.Domain.Interfaces
         Task<bool> SaveChangesAsync();
         int SaveChanges();
         IEnumerable<Guideline> GetGuidelinesByAuthor(string AuthorName);
-        StepAction GetAction(int stepId, bool choice);
+        Decision GetDecision(int stepId, bool choice);
         void AddRecommendationGrade(RecommendationGrade grade);
     }
 }

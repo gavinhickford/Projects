@@ -678,7 +678,6 @@ namespace SIGN.MVC
 
             _step2_10 = new Step
             {
-                Text = "Does the patient show signs of irritability or altered behaviour (‘easily distracted’, ‘not themselves’, ‘no concentration’, ‘no interest in things around them’) particularly in infants and young children (aged under five years)?",
                 Type = StepType.Question
             };
 
@@ -690,7 +689,7 @@ namespace SIGN.MVC
 
             _step2_12 = new Step
             {
-                Text = "No indication to refer to hospital emergency department.",
+                Text = "No indication to refer to hospital emergency department. Advise patient to contact the telephone advice service again if symptoms worsen or there are any new developments.",
                 Type = StepType.Recommendation
             };
         }

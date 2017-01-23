@@ -47,7 +47,7 @@ namespace SIGN.Services.Tests.Mocks
 
         public void AddAssessment(int guidelineId, Assessment assessment)
         {
-            return;
+            _expectedAssessments.Add(assessment); ;
         }
 
         public void AddDecision(Decision decision)
@@ -68,16 +68,6 @@ namespace SIGN.Services.Tests.Mocks
         public void AddStepAction(StepAction stepAction)
         {
             return;
-        }
-
-        public StepAction GetAction(int stepId, bool choice)
-        {
-            return new StepAction
-            {
-                Id = 1,
-                DateCreated = new DateTime(2017, 1, 1),
-                DateModified = new DateTime(2017, 1, 1)
-            };
         }
 
         public Assessment GetAssessment(int id)
@@ -130,10 +120,15 @@ namespace SIGN.Services.Tests.Mocks
 
         public Task<bool> SaveChangesAsync()
         {
-            return new Task<bool>(() => true);
+            return Task.FromResult<bool>(true);
         }
 
         public void AddRecommendationGrade(RecommendationGrade grade)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Decision GetDecision(int stepId, bool choice)
         {
             throw new NotImplementedException();
         }

@@ -47,5 +47,17 @@ namespace SIGN.Services.Tests
             // Assert
             Assert.Null(actual);
         }
+
+        [Fact]
+        public async void AddAssessment_Success_ReturnsTrue()
+        {
+            ISIGNRepository mockRepository = new MockRepository(
+                expectedAssessments: new List<Assessment>());
+
+            IAssessmentService service = new AssessmentService(mockRepository);
+            Assessment newAssessment = TestDataProvider.CreateTestAssessment(0);
+            bool result = await service.AddAssessment(1, newAssessment);
+            Assert.True(result);
+        }
     }
 }

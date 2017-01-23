@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Logging;
 using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -22,6 +21,7 @@ namespace SIGN.Data.EFCore
 
         public void AddAssessment(int guidelineId, Assessment assessment)
         {
+            _logger.LogInformation($"Adding assessment: name = {assessment.Name}");
             Guideline guideline = GetGuideline(guidelineId);
 
             if (guideline != null)
@@ -33,6 +33,7 @@ namespace SIGN.Data.EFCore
 
         public void SaveGuideline(Guideline guideline)
         {
+            _logger.LogInformation($"Saving guideline: name = {guideline.Name}");
             Guideline existingGuideline = GetGuideline(guideline.Id);
             if (existingGuideline != null)
             {
@@ -67,13 +68,15 @@ namespace SIGN.Data.EFCore
 
         public IEnumerable<Guideline> GetGuidelines()
         {
+            _logger.LogInformation("Retrieving Guidelines");
             return _context.Guidelines.ToList();
         }
 
-        public IEnumerable<Guideline> GetGuidelinesByAuthor(string AuthorName)
+        public IEnumerable<Guideline> GetGuidelinesByAuthor(string authorName)
         {
+            _logger.LogInformation($"Retrieving Guidelines by author: {authorName}");
             return _context.Guidelines
-                .Where(g => g.Author == AuthorName)
+                .Where(g => g.Author == authorName)
                 .ToList();
         }
         public async Task<bool> SaveChangesAsync()
@@ -101,21 +104,13 @@ namespace SIGN.Data.EFCore
                 .FirstOrDefault(s => s.Id == id);
         }
 
-        public StepAction GetAction(int stepId, bool choice)
+        public Decision GetDecision(int stepId, bool choice)
         {
-            var decisions = _context.Decisions
-                .Include(d => d.Step)
-                .Include(d => d.Action)
-                .Include(d => d.Action.NextStep);
-
-            Decision decision = decisions.FirstOrDefault(d => d.Step.Id == stepId && d.Condition == choice);
-
-            if (decision != null)
-            {
-                return decision.Action;
-            }
-
-            return null;
+            return _context.Decisions
+           .Include(d => d.Step)
+           .Include(d => d.Action)
+           .Include(d => d.Action.NextStep)
+           .FirstOrDefault(d => d.Step.Id == stepId && d.Condition == choice);
         }
 
         public void AddStep(Step step)

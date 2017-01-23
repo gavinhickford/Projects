@@ -21,7 +21,14 @@ namespace SIGN.Services
 
         public StepAction GetAction(int stepId, bool condition)
         {
-            return _repository.GetAction(stepId, condition);
+            Decision decision = _repository.GetDecision(stepId, condition);
+
+            if (decision != null)
+            {
+                return decision.Action;
+            }
+
+            return null;
         }
 
         public Step GetStep(int id)

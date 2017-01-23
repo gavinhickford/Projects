@@ -1,8 +1,7 @@
 #:C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\test\SIGN.Services.Tests\SIGN.Services.Tests.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\test\SIGN.Services.Tests\SIGN.Services.Tests.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
-C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\test\SIGN.Services.Tests\SIGN.Services.Tests.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Services\SIGN.Services.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\test\SIGN.Services.Tests\SIGN.Services.Tests.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\test\SIGN.Mocks\SIGN.Mocks.xproj
-C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Services\SIGN.Services.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\test\SIGN.Services.Tests\SIGN.Services.Tests.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Services\SIGN.Services.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\test\SIGN.Mocks\SIGN.Mocks.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Angular\SIGN.Angular.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\test\SIGN.Mocks\SIGN.Mocks.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\test\SIGN.Mocks\SIGN.Mocks.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.MVC\SIGN.MVC.xproj
@@ -10,6 +9,7 @@ C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Angula
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Angular\SIGN.Angular.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Angular\SIGN.Angular.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Services\SIGN.Services.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Data.EFCore\SIGN.Data.EFCore.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
+C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Services\SIGN.Services.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.MVC\SIGN.MVC.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Data.EFCore\SIGN.Data.EFCore.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.MVC\SIGN.MVC.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Domain\SIGN.Domain.xproj
 C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.MVC\SIGN.MVC.xproj|C:\Users\Gavin Hickford\Documents\GitHub\Projects\Angularjs\SIGN\src\SIGN.Services\SIGN.Services.xproj
