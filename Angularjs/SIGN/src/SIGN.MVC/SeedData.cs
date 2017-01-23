@@ -678,6 +678,7 @@ namespace SIGN.MVC
 
             _step2_10 = new Step
             {
+                Text = "Does the patient show signs of irritability or altered behaviour (‘easily distracted’, ‘not themselves’, ‘no concentration’, ‘no interest in things around them’) particularly in infants and young children (aged under five years)?",
                 Type = StepType.Question
             };
 
