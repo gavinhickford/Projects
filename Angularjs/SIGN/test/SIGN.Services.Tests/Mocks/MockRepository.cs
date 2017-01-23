@@ -26,7 +26,7 @@ namespace SIGN.Services.Tests.Mocks
             _assessments = expectedAssessments;
         }
 
-        public MockRepository(int numberOfExpectedGuidelines)
+        public MockRepository(int numberOfExpectedGuidelines, string authorName)
         {
             _guidelines = new List<Guideline>();
 
@@ -38,7 +38,7 @@ namespace SIGN.Services.Tests.Mocks
                         Id = i,
                         Name = $"TestGuideline{i}",
                         Number = 100 + i,
-                        Author = "TestUser",
+                        Author = authorName,
                         DateCreated = new DateTime(2010, 1, 1),
                         DateModified = new DateTime(2010, 1, 1),
                         DatePublished = new DateTime(2005, 1, 1),
@@ -46,6 +46,11 @@ namespace SIGN.Services.Tests.Mocks
                     }
                 );
             }
+        }
+
+
+        public MockRepository(int numberOfExpectedGuidelines) : this(numberOfExpectedGuidelines, "TestAuthor")
+        {
         }
 
         public MockRepository(IEnumerable<Step> steps, IEnumerable<StepAction> stepActions, IEnumerable<Decision> decisions)
@@ -99,16 +104,7 @@ namespace SIGN.Services.Tests.Mocks
 
         public IEnumerable<Guideline> GetGuidelinesByAuthor(string AuthorName)
         {
-            return new List<Guideline>
-            {
-                new Guideline {
-                    Id = 1,
-                    Author = AuthorName,
-                    DateCreated = new DateTime(2017, 1, 1),
-                    DateModified = new DateTime(2017, 1, 1),
-                    DatePublished = new DateTime(2017, 1, 1)
-                }
-            };
+            return _guidelines.Where(g => g.Author == AuthorName);
         }
 
         public Step GetStep(int id)

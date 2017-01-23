@@ -1,5 +1,6 @@
 ﻿using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
+using SIGN.Mocks;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
@@ -60,6 +61,26 @@ namespace SIGN.Services.Tests
         }
 
         [Fact]
+        public void GetMyGuidlines_WhenRepositoryHasFiveGuidelines_ReturnsFiveGuidelines()
+        {
+            // Arrange
+            const int numberOfExpectedGuidelines = 5;
+            const string author = "TestAuthor"; 
+
+            ISIGNRepository mockSignRepository = new Mocks.MockRepository(
+                numberOfExpectedGuidelines: numberOfExpectedGuidelines,
+                authorName: author );
+
+            IGuidelineService guidelineService = new GuidelineService(mockSignRepository);
+
+            // Act
+            IEnumerable<Guideline> actual = guidelineService.GetMyGuidelines(author);
+
+            // Assert
+            Assert.Equal(numberOfExpectedGuidelines, actual.Count());
+        }
+
+        [Fact]
         public void GetGuidline_WhenRepositoryIncludesId_ReturnsCorrectGuideline()
         {
             // Arrange
@@ -95,5 +116,21 @@ namespace SIGN.Services.Tests
             Assert.Null(actual);
         }
 
+        [Fact]
+        public async void SaveGuideline_Success_ReturnsTrue()
+        {
+            // Arrange
+            ISIGNRepository mockSignRepository = new Mocks.MockRepository(
+                numberOfExpectedGuidelines: 0);
+
+            IGuidelineService signService = new GuidelineService(mockSignRepository);
+            Guideline newGuideline = TestDataProvider.CreateTestGuideline(1);
+
+            // Act
+            bool result = await signService.SaveGuideline(newGuideline);
+
+            // Assert
+            Assert.True(result);
+        }
     }
 }
