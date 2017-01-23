@@ -22,11 +22,6 @@ namespace SIGN.Mocks.Services
             throw new NotImplementedException();
         }
 
-        public StepAction GetAction(int stepId, bool condition)
-        {
-            throw new NotImplementedException();
-        }
-
         public Step GetNextStep(int stepId, bool condition)
         {
             throw new NotImplementedException();

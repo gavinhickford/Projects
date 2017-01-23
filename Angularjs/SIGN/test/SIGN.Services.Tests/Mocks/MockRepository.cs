@@ -10,26 +10,29 @@ namespace SIGN.Services.Tests.Mocks
 {
     public class MockRepository : ISIGNRepository
     {
-        List<Guideline> _expectedGuidelines;
-        List<Assessment> _expectedAssessments;
+        List<Guideline> _guidelines;
+        List<Assessment> _assessments;
+        private IEnumerable<Step> _steps;
+        private IEnumerable<StepAction> _stepActions;
+        private IEnumerable<Decision> _decisions;
 
         public MockRepository(List<Guideline> expectedGuidelines)
         {
-            _expectedGuidelines = expectedGuidelines;
+            _guidelines = expectedGuidelines;
         }
 
         public MockRepository(List<Assessment> expectedAssessments)
         {
-            _expectedAssessments = expectedAssessments;
+            _assessments = expectedAssessments;
         }
 
         public MockRepository(int numberOfExpectedGuidelines)
         {
-            _expectedGuidelines = new List<Guideline>();
+            _guidelines = new List<Guideline>();
 
             for (int i = 1; i < numberOfExpectedGuidelines + 1; i++)
             {
-                _expectedGuidelines.Add(
+                _guidelines.Add(
                     new Guideline
                     {
                         Id = i,
@@ -45,9 +48,16 @@ namespace SIGN.Services.Tests.Mocks
             }
         }
 
+        public MockRepository(IEnumerable<Step> steps, IEnumerable<StepAction> stepActions, IEnumerable<Decision> decisions)
+        {
+            _steps = steps;
+            _stepActions = stepActions;
+            _decisions = decisions;
+        }
+
         public void AddAssessment(int guidelineId, Assessment assessment)
         {
-            _expectedAssessments.Add(assessment); ;
+            _assessments.Add(assessment); ;
         }
 
         public void AddDecision(Decision decision)
@@ -72,19 +82,19 @@ namespace SIGN.Services.Tests.Mocks
 
         public Assessment GetAssessment(int id)
         {
-            return _expectedAssessments
+            return _assessments
                 .FirstOrDefault(a => a.Id == id);
         }
 
         public Guideline GetGuideline(int id)
         {
-            return _expectedGuidelines
+            return _guidelines
                 .FirstOrDefault(g => g.Id == id);
         }
 
         public IEnumerable<Guideline> GetGuidelines()
         {
-            return _expectedGuidelines;
+            return _guidelines;
         }
 
         public IEnumerable<Guideline> GetGuidelinesByAuthor(string AuthorName)
@@ -103,14 +113,7 @@ namespace SIGN.Services.Tests.Mocks
 
         public Step GetStep(int id)
         {
-            return new Step
-            {
-                Id = id,
-                Text ="Test Text",
-                DateCreated = new DateTime(2017, 1, 1),
-                DateModified = new DateTime(2017, 1, 1),
-                Type = StepType.Question
-            };
+            return _steps.FirstOrDefault(s => s.Id == id);
         }
 
         public int SaveChanges()
@@ -130,7 +133,7 @@ namespace SIGN.Services.Tests.Mocks
 
         public Decision GetDecision(int stepId, bool choice)
         {
-            throw new NotImplementedException();
+            return _decisions.FirstOrDefault(d => d.Step.Id == stepId && d.Condition == choice);
         }
     }
 }

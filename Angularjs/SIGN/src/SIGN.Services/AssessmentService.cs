@@ -19,18 +19,6 @@ namespace SIGN.Services
             return await _repository.SaveChangesAsync();
         }
 
-        public StepAction GetAction(int stepId, bool condition)
-        {
-            Decision decision = _repository.GetDecision(stepId, condition);
-
-            if (decision != null)
-            {
-                return decision.Action;
-            }
-
-            return null;
-        }
-
         public Step GetStep(int id)
         {
             return _repository.GetStep(id);
@@ -51,6 +39,18 @@ namespace SIGN.Services
         public Assessment GetAssessment(int id)
         {
             return _repository.GetAssessment(id);
+        }
+
+        private StepAction GetAction(int stepId, bool condition)
+        {
+            Decision decision = _repository.GetDecision(stepId, condition);
+
+            if (decision != null)
+            {
+                return decision.Action;
+            }
+
+            return null;
         }
     }
 }
