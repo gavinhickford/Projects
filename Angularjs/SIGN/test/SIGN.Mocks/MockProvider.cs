@@ -1,6 +1,8 @@
-﻿using SIGN.Domain.Classes;
+﻿using Microsoft.Extensions.Logging;
+using SIGN.Domain.Classes;
 using SIGN.Domain.Interfaces;
 using SIGN.Mocks.Services;
+using SIGN.MVC.Controllers.Web;
 using System.Collections.Generic;
 
 namespace SIGN.Mocks
@@ -26,6 +28,11 @@ namespace SIGN.Mocks
         {
             List<Guideline> expectedGuidelines = TestDataProvider.CreateTestGuidelines(numberOfGuidelines: numberOfGuidelines);
             return new MockGuidelineService(expectedGuidelines, returnsException);
+        }
+
+        public static ILogger<GuidelineController> CreateMockLogger()
+        {
+            return new MVC.MockLogger();
         }
     }
 }

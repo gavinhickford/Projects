@@ -15,7 +15,9 @@ namespace SIGN.Angular.Controllers.Api
         private ILogger<AssessmentController> _logger;
         private IAssessmentService _assessmentService;
 
-        public AssessmentController(ISIGNRepository repository, IAssessmentService assessmentService, ILogger<AssessmentController> logger)
+        public AssessmentController(
+            IAssessmentService assessmentService, 
+            ILogger<AssessmentController> logger)
         {
             _assessmentService = assessmentService;
             _logger = logger;
@@ -47,19 +49,27 @@ namespace SIGN.Angular.Controllers.Api
         [HttpPost("")]
         public async Task<IActionResult> Post(int id, [FromBody]AssessmentViewModel assessment)
         {
-            if (ModelState.IsValid)
+            try
             {
-                Assessment newAssessment = Mapper.Map<Assessment>(assessment);
-                
-                if (await _assessmentService.AddAssessment(id, newAssessment))
+                if (ModelState.IsValid)
                 {
-                    return Created($"api/assessments/{id}/{assessment.Name}", Mapper.Map<AssessmentViewModel>(newAssessment));
+                    Assessment newAssessment = Mapper.Map<Assessment>(assessment);
+
+                    if (await _assessmentService.AddAssessment(id, newAssessment))
+                    {
+                        return Created($"api/assessments/{id}/{assessment.Name}", Mapper.Map<AssessmentViewModel>(newAssessment));
+                    }
+
+                    return BadRequest("Failed to save assessment.");
                 }
 
-                return BadRequest("Failed to save assessment.");
+                return BadRequest(ModelState);
             }
-
-            return BadRequest(ModelState);
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to save Assessment: {ex}");
+                return BadRequest("Error in saving Assessment.");
+            }
         }
     }
 }

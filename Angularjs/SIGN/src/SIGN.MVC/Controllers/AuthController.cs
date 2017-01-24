@@ -54,8 +54,6 @@ namespace SIGN.MVC.Controllers
                 {
                     ModelState.AddModelError("", "Username or Password is incorrect");
                 }
-
-
             }
 
             return View();

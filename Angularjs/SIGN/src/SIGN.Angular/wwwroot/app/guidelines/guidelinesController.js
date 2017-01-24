@@ -1,4 +1,5 @@
-﻿(function () {
+﻿// guidelinesController.js
+(function () {
     "use strict";
 
     angular.module("app-guidelines")

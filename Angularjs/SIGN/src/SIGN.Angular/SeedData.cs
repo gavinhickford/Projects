@@ -84,20 +84,19 @@ namespace SIGN.Angular
                 LinkData();
 
                 AddDecisions();
-
                 AddRecommendationGrades();
+                AddGuidelines();
 
-                await SaveData();
+                await _repository.SaveChangesAsync();
             }
         }
 
-        private async Task SaveData()
+        private void AddGuidelines()
         {
             _repository.SaveGuideline(_guideline110);
             _repository.SaveGuideline(_guideline119);
             _repository.SaveGuideline(_guideline143);
             _repository.SaveGuideline(_guideline153);
-            await _repository.SaveChangesAsync();
         }
 
         private void AddRecommendationGrades()

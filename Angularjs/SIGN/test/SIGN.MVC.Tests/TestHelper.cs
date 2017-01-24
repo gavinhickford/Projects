@@ -26,7 +26,7 @@ namespace SIGN.MVC.Tests
                 author: currentUser,
                 returnsException: false);
 
-            GuidelineController controller = new GuidelineController(mockGuidelineService);
+            GuidelineController controller = new GuidelineController(mockGuidelineService, MockProvider.CreateMockLogger());
             controller.ControllerContext = new ControllerContext()
             {
                 HttpContext = new DefaultHttpContext() { User = user }

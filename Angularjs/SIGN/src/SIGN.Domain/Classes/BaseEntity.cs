@@ -9,11 +9,8 @@ namespace SIGN.Domain.Classes
     public class BaseEntity : IModificationHistory
     {
         public int Id { get; set; }
-
         public DateTime DateCreated { get; set; }
-
         public DateTime DateModified { get; set; }
-
         public bool IsDirty { get; set; }
     }
 }

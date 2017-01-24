@@ -1,6 +1,4 @@
 ﻿using SIGN.Domain.Enums;
-using SIGN.Domain.Interfaces;
-using System;
 
 namespace SIGN.Domain.Classes
 {

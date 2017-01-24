@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using SIGN.Domain.Interfaces;
 using System;
 
 namespace SIGN.MVC.Controllers.Web

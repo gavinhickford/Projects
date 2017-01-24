@@ -63,47 +63,6 @@ namespace SIGN.MVC
             }
         }
 
-        private void SetupStepDetails()
-        {
-            _stepDetail1 = new StepDetail
-            {
-                Title = "Focal neurological deficit",
-                Text = "Problems understanding, speaking, reading or writing" + Environment.NewLine +
-                    "Loss of feeling in part of the body" + Environment.NewLine +
-                    "Problems balancing" + Environment.NewLine +
-                    "Unilateral weakness" + Environment.NewLine +
-                    "Any changes in eyesight" + Environment.NewLine +
-                    "Problems walking."
-            };
-
-            _stepDetail2 = new StepDetail
-            {
-                Title = "Skull fracture or penetrating head injury",
-                Text = "Fluid running from the ears or nose" + Environment.NewLine +
-                    "Black eye with no direct orbital trauma" + Environment.NewLine +
-                    "Bleeding from one or both ears" + Environment.NewLine +
-                    "New deafness in one or both ears" + Environment.NewLine +
-                    "Bruising behind one or both ears" + Environment.NewLine +
-                    "Penetrating injury" + Environment.NewLine +
-                    "Major scalp wound or skull trauma."
-            };
-
-            _stepDetail3 = new StepDetail
-            {
-                Title = "High energy head injury",
-                Text = "Pedestrian struck by motor vehicle" + Environment.NewLine +
-                    "Occupant ejected from motor vehicle" + Environment.NewLine +
-                    "A fall from a height of greater than one metre or more than five stairs" + Environment.NewLine +
-                    "Diving accident" + Environment.NewLine +
-                    "High speed motor vehicle collision" + Environment.NewLine +
-                    "Rollover motor accident" + Environment.NewLine +
-                    "Accident involving motorised recreational vehicles" + Environment.NewLine +
-                    "Bicycle collision" + Environment.NewLine +
-                    "Impact from golf club, cricket or baseball bat" + Environment.NewLine +
-                    "Any other potentially high energy mechanism."
-            };
-        }
-
         private async Task SaveData()
         {
             _repository.SaveGuideline(_guideline110);
@@ -555,6 +514,47 @@ namespace SIGN.MVC
             };
         }
 
+        private void SetupStepDetails()
+        {
+            _stepDetail1 = new StepDetail
+            {
+                Title = "Focal neurological deficit",
+                Text = "Problems understanding, speaking, reading or writing" + Environment.NewLine +
+                    "Loss of feeling in part of the body" + Environment.NewLine +
+                    "Problems balancing" + Environment.NewLine +
+                    "Unilateral weakness" + Environment.NewLine +
+                    "Any changes in eyesight" + Environment.NewLine +
+                    "Problems walking."
+            };
+
+            _stepDetail2 = new StepDetail
+            {
+                Title = "Skull fracture or penetrating head injury",
+                Text = "Fluid running from the ears or nose" + Environment.NewLine +
+                    "Black eye with no direct orbital trauma" + Environment.NewLine +
+                    "Bleeding from one or both ears" + Environment.NewLine +
+                    "New deafness in one or both ears" + Environment.NewLine +
+                    "Bruising behind one or both ears" + Environment.NewLine +
+                    "Penetrating injury" + Environment.NewLine +
+                    "Major scalp wound or skull trauma."
+            };
+
+            _stepDetail3 = new StepDetail
+            {
+                Title = "High energy head injury",
+                Text = "Pedestrian struck by motor vehicle" + Environment.NewLine +
+                    "Occupant ejected from motor vehicle" + Environment.NewLine +
+                    "A fall from a height of greater than one metre or more than five stairs" + Environment.NewLine +
+                    "Diving accident" + Environment.NewLine +
+                    "High speed motor vehicle collision" + Environment.NewLine +
+                    "Rollover motor accident" + Environment.NewLine +
+                    "Accident involving motorised recreational vehicles" + Environment.NewLine +
+                    "Bicycle collision" + Environment.NewLine +
+                    "Impact from golf club, cricket or baseball bat" + Environment.NewLine +
+                    "Any other potentially high energy mechanism."
+            };
+        }
+
         private void LinkData()
         {
             //_initialAssessment110.Decisions = new Collection<Decision> { _decision1, _decision2, _decision3, _decision4 };
@@ -654,7 +654,7 @@ namespace SIGN.MVC
 
             _step2_6 = new Step
             {
-                Text = "Is there any history of bleeding or clotting disorder?0",
+                Text = "Is there any history of bleeding or clotting disorder?",
                 Type = StepType.Question
             };
 

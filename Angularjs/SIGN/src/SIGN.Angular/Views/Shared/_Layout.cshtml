@@ -18,7 +18,6 @@
         <ul class="nav navbar">
             <li class="active"><a asp-controller="App" asp-action="Index"><i class="fa fa-home"></i> Home</a></li>
             <li><a asp-controller="App" asp-action="Guidelines"><i class="fa fa-file-o"></i> All Guidelines</a></li>
-            @*<li><a asp-controller="App" asp-action="MyGuidelines"><i class="fa fa-file-picture-o"></i> My Guidelines</a></li>*@
             <li><a asp-controller="App" asp-action="About"><i class="fa fa-question-circle-o"></i> About</a></li>
             @if (User.Identity.IsAuthenticated)
             {

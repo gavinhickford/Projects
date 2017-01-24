@@ -99,13 +99,11 @@ button.accordion {
     transition: 0.4s;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .accordion.active, .accordion:hover {
     background-color: #ddd;
 }
 
 .accordion-panel {
-    /*padding: 0 18px;*/
     background-color: white;
     max-height: 0;
     overflow: hidden;

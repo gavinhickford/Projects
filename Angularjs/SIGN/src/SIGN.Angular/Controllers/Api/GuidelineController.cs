@@ -64,19 +64,27 @@ namespace SIGN.Angular.Controllers.Api
         [HttpPost("api/guidelines")]
         public async Task<IActionResult> Post([FromBody]GuidelineViewModel guideline)
         {
-            if (ModelState.IsValid)
+            try
             {
-                Guideline newGuideline = Mapper.Map<Guideline>(guideline);
-        
-                if (await _guidelineService.SaveGuideline(newGuideline))
+                if (ModelState.IsValid)
                 {
-                    return Created($"api/guidelines/{guideline.Name}", Mapper.Map<GuidelineViewModel>(newGuideline));
+                    Guideline newGuideline = Mapper.Map<Guideline>(guideline);
+
+                    if (await _guidelineService.SaveGuideline(newGuideline))
+                    {
+                        return Created($"api/guidelines/{guideline.Name}", Mapper.Map<GuidelineViewModel>(newGuideline));
+                    }
+
+                    return BadRequest("Failed to save guideline.");
                 }
 
-                return BadRequest("Failed to save guideline.");
+                return BadRequest(ModelState);
             }
-
-            return BadRequest(ModelState);
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to save guideline: {ex}");
+                return BadRequest("Error in saving guideline");
+            }
         }
     }
 }
