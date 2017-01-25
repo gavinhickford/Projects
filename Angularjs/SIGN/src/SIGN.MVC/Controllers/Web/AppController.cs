@@ -4,6 +4,9 @@ using System;
 
 namespace SIGN.MVC.Controllers.Web
 {
+    /// <summary>
+    /// The Application controller
+    /// </summary>
     public class AppController : Controller
     {
         private ILogger<AppController> _logger;
@@ -13,6 +16,11 @@ namespace SIGN.MVC.Controllers.Web
         {
             _logger = logger;
         }
+
+        /// <summary>
+        /// Display the Index view
+        /// </summary>
+        /// <returns>Index View</returns>
         public IActionResult Index()
         {
             try
@@ -26,6 +34,10 @@ namespace SIGN.MVC.Controllers.Web
             }
         }
         
+        /// <summary>
+        /// Displays the About view
+        /// </summary>
+        /// <returns>The About View</returns>
         public IActionResult About()
         {
             try

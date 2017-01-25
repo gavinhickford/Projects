@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using SIGN.Domain.Classes;
 using SIGN.MVC.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SIGN.MVC.Controllers
 {
+    /// <summary>
+    /// Controller to handle authentication
+    /// </summary>
     public class AuthController  : Controller
     {
         private SignInManager<SIGNUser> _signInManager;
@@ -18,6 +18,10 @@ namespace SIGN.MVC.Controllers
             _signInManager = signInManager;
         }
 
+        /// <summary>
+        /// Login Action
+        /// </summary>
+        /// <returns>The Login View if not logged in</returns>
         public IActionResult Login()
         {
             if (User.Identity.IsAuthenticated)
@@ -28,6 +32,12 @@ namespace SIGN.MVC.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Posts login details 
+        /// </summary>
+        /// <param name="viewModel">Login viewmodel</param>
+        /// <param name="returnUrl">Url to redirect to when logged in</param>
+        /// <returns>Redirects after login</returns>
         [HttpPost]
         public async Task<ActionResult> Login(LoginViewModel viewModel, string returnUrl)
         {
@@ -59,6 +69,10 @@ namespace SIGN.MVC.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Logout action
+        /// </summary>
+        /// <returns>Redirect to Home page</returns>
         public async Task<IActionResult> Logout()
         {
             if (User.Identity.IsAuthenticated)

@@ -5,6 +5,9 @@ using System;
 
 namespace SIGN.Angular.Controllers.Web
 {
+    /// <summary>
+    /// The Application controller
+    /// </summary>
     public class AppController : Controller
     {
         private ILogger<AppController> _logger;
@@ -14,6 +17,11 @@ namespace SIGN.Angular.Controllers.Web
         {
             _logger = logger;
         }
+
+        /// <summary>
+        /// Display the Index view
+        /// </summary>
+        /// <returns>Index View</returns>
         public IActionResult Index()
         {
             try
@@ -27,6 +35,10 @@ namespace SIGN.Angular.Controllers.Web
             }
         }
 
+        /// <summary>
+        /// Display the Guidelines View
+        /// </summary>
+        /// <returns>Guidelines View</returns>
         [Authorize]
         public IActionResult Guidelines()
         {
@@ -41,6 +53,10 @@ namespace SIGN.Angular.Controllers.Web
             }
         }
 
+        /// <summary>
+        /// Displays the About View
+        /// </summary>
+        /// <returns>The About View</returns>
         public IActionResult About()
         {
             try

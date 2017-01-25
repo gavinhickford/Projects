@@ -9,6 +9,9 @@ using System;
 
 namespace SIGN.MVC.Controllers.Web
 {
+    /// <summary>
+    /// Assessment Controller
+    /// </summary>
     public class AssessmentController : Controller
     {
         private IAssessmentService _assessmentService;
@@ -22,6 +25,11 @@ namespace SIGN.MVC.Controllers.Web
             _logger = logger;
         }
 
+        /// <summary>
+        /// Displays the Assessments details view
+        /// </summary>
+        /// <param name="id">Assessment id</param>
+        /// <returns>Assessment details view</returns>
         [Authorize]
         public IActionResult Details(int id)
         {
@@ -39,6 +47,11 @@ namespace SIGN.MVC.Controllers.Web
             }
         }
 
+        /// <summary>
+        /// Displays the step view
+        /// </summary>
+        /// <param name="id">Step id</param>
+        /// <returns>Step View</returns>
         [Authorize]
         public IActionResult Step(int id)
         {
