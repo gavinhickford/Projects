@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace SIGN.Angular.Controllers.Api
 {
+    /// <summary>
+    /// Controller to handle requests about assessments
+    /// </summary>
     [Route("/api/assessments/{id}")]
     public class AssessmentController : Controller
     {
@@ -23,6 +26,11 @@ namespace SIGN.Angular.Controllers.Api
             _logger = logger;
         }
 
+        /// <summary>
+        /// Gets an assessment by id
+        /// </summary>
+        /// <param name="id">Assessment identifier</param>
+        /// <returns>Assessment</returns>
         [HttpGet("")]
         public IActionResult Get(int id)
         {
@@ -46,6 +54,12 @@ namespace SIGN.Angular.Controllers.Api
             }
         }
 
+        /// <summary>
+        /// Saves an assessment
+        /// </summary>
+        /// <param name="id">The associated guideline id</param>
+        /// <param name="assessment">Assessment details</param>
+        /// <returns>Created (201) response</returns>
         [HttpPost("")]
         public async Task<IActionResult> Post(int id, [FromBody]AssessmentViewModel assessment)
         {

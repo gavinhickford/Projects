@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace SIGN.Angular.Controllers.Api
 {
+    /// <summary>
+    /// Controller for handling requests about guidelines
+    /// </summary>
     public class GuidelineController : Controller
     {
         private ILogger<GuidelineController> _logger;
@@ -23,6 +26,10 @@ namespace SIGN.Angular.Controllers.Api
             _logger = logger;
         }
 
+        /// <summary>
+        /// Gets all the guidelines
+        /// </summary>
+        /// <returns>Collection of guidelines</returns>
         [HttpGet("api/guidelines")]
         public IActionResult Get()
         {
@@ -38,6 +45,11 @@ namespace SIGN.Angular.Controllers.Api
             }
         }
 
+        /// <summary>
+        /// Gets a guideline by id
+        /// </summary>
+        /// <param name="id">Guideline identifier</param>
+        /// <returns>Guideline</returns>
         [HttpGet("api/guidelines/{id}")]
         public IActionResult Get(int id)
         {
@@ -61,6 +73,11 @@ namespace SIGN.Angular.Controllers.Api
             }
         }
 
+        /// <summary>
+        /// Saves a guideline
+        /// </summary>
+        /// <param name="guideline">Guideline to be saved</param>
+        /// <returns>Created (201) response</returns>
         [HttpPost("api/guidelines")]
         public async Task<IActionResult> Post([FromBody]GuidelineViewModel guideline)
         {
