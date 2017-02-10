@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Form features</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../site.css"/>
+</head>
+<body>
+    <div>
+        <h1>Form features</h1>
+        <form novalidate>
+            <label class="form-control-label">Search:</label>
+            <input class="form-control" type="search" id="search" name="search" autofocus />
+        </form>
+        <form>
+            <div>
+                <label class="form-control-label" for="username">Name: </label>
+                <input class="form-control" 
+                       type="text" 
+                       id="username" 
+                       name="username" 
+                       placeholder="Firstname Lastname" 
+                       required />
+            </div>
+            <div>
+                <label class="form-control-label" for="email">E-mail: </label>
+                <input class="form-control" type="email" id="email" name="email" required />
+            </div>
+            <div>
+                <label class="form-control-label" for="url">URL: </label>
+                <input class="form-control" type="url" id="url" name="url" />
+            </div>
+            <div>
+                <label class="form-control-label" for="phone">Phone: </label>
+                <input class="form-control" type="tel" id="phone" name="phone" required />
+            </div>
+            <div>
+                <label class="form-control-label" for="yearsInDev">Numner of years in Developments: </label>
+                <input class="form-control" type="number" id="yearsInDev" name="yearsInDev" min="5" max="40" step="2" />
+            </div>
+            <div>
+                <label class="form-control-label" for="devExperienceRange">Development Experience range: </label>
+                <input class="form-control" type="range" id="devExperienceRange" name="devExperienceRange"
+                       min="0" max="100" step="1" value="50">
+                <span id="rangeValue">50</span>
+            </div>
+            <div>
+                <label class="form-control-label" for="tShirtColour">T-shirt colour: </label>
+                <input class="form-control" type="text" id="tShirtColour" name="tShirtColour" list="colors" />
+                <datalist id="colors">
+                    <option value="Blue"></option>
+                    <option value="Red"></option>
+                    <option value="Green"></option>
+                </datalist>
+            </div>
+            <div>
+                <label class="form-control-label" for="bgColour">Background Colour: </label>
+                <input class="form-control" type="color" id="bgColour" name="bgColour" value="rgb(128,0,0)" />
+
+            </div>
+            <div>
+                <label class="form-control-label" for="arrivalDT">Arrival Date/Time: </label>
+                <input class="form-control" type="date" id="arrivalDT" name="arrivalDT"
+                       value="2011-01-01" min="2011-01-01" max="2021-31-12" />
+            </div>
+            <div>
+                <label class="form-control-label" for="birthMonth">Birth Month: </label>
+                <input class="form-control" type="month" id="birthMonth" name="birthMonth"
+                       value="1965-08" />
+            </div>
+            <div>
+                <label class="form-control-label" for="vacationWeek">Vacation Week: </label>
+                <input class="form-control" type="week" id="vacationWeek" name="vacationWeek"
+                       value="2011-W26" />
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+    <script src="../script/rangeDisplay.js"></script>
+</body>
+</html>

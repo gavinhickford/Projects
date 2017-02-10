@@ -1,0 +1,77 @@
+﻿body {
+    margin: 20px;
+}
+
+.form-control {
+    width: 300px;
+}
+
+.hide {
+    visibility: collapse;
+}
+
+.validation-messages {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+/* email validation */
+input:valid + .invalid { /*Adjacent sibling selector*/ 
+    visibility: hidden;
+}
+
+input:invalid {
+    background-color: pink;
+}
+
+input:invalid + .invalid {
+    visibility: visible;
+}
+
+input:required {
+    border: 2px solid #900;
+}
+
+input:valid {
+    border: 2px solid #ccc;
+}
+
+.invalid {
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-size: 0.8em;
+    color: #666;
+
+}
+
+/*Canvas*/
+.sample-canvas {
+    background-color: #bbbbbb;
+}
+
+/*Drag and drop*/
+[draggable="true"] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+
+}
+
+.drag-container {
+    border: 1px solid;
+    border-color: #cccccc;
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin: 5px;
+
+}
+
+
+
+
+

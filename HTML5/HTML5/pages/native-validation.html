@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Pseudoclasses</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../site.css" />
+</head>
+<body>
+	<div>
+		<h1>Pseudo classes in css</h1>
+		<form>
+				<h4>Change Email Address</h4>
+				<input class="form-control"
+					   type="text"
+					   id="username"
+					   name="username"
+					   placeholder="Username"
+					   pattern="[a-zA-Z ]{5,}"
+					   maxlength="30"
+					   required/>
+			    <div class="invalid">
+			        The required user name may only be a series of alphabetical characters
+			    </div>
+			    <input class="form-control" 
+			           type="email" 
+			           id="email" 
+			           name="email" 
+			           required />
+			    <div class="invalid">
+			        The required email address ma not include any special characters other then the '@' sign.
+			    </div>
+			<button type="submit" id="submit" class="btn">Change</button>
+		</form>
+	</div>
+	<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+</body>
+</html>
+

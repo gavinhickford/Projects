@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Validation</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../site.css" />
+</head>
+<body>
+    <div>
+        <h1>Custom Validation with Javascript</h1>
+        <form id="change-email-form" name="change-email-form">
+            <h4>Change Email Address</h4>
+            <div>
+                <label>Username:</label>
+                <input class="form-control"
+                       type="text"
+                       id="username"
+                       name="username"
+                       pattern="[a-zA-Z ]{5,}"
+                       maxlength="30"
+                       required />
+                <div class="validation-messages">
+                    <span data-rule="valueMissing"
+                          class="hide btn btn-primary">The username is required.</span>
+                    <span data-rule="patternMismatch"
+                          class="hide btn btn-primary">Must be a series of alpha characters only (min 5, max 30).</span>
+                </div>
+            </div>
+            <label>Email:</label>
+            <input class="form-control"
+                   type="email"
+                   id="email"
+                   name="email"
+                   title="Email address is required"
+                   required />
+            <div class="validation-messages">
+                <span data-rule="valueMissing"
+                      class="hide btn btn-primary">An email address is required.</span>
+                <span data-rule="typeMismatch"
+                      class="hide btn btn-primary">Special characters are not allowed.</span>
+            </div>
+            <button type="submit" id="submit" class="btn">Change</button>
+            <button type="button" id="checkValidation" class="btn">Validate</button>
+        </form>
+    </div>
+<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../script/validation.js"></script>
+</body>
+</html>
