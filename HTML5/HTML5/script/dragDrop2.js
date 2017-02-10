@@ -3,19 +3,6 @@ forEach = Array.prototype.forEach;
 
 (function () {
     var sourceContainerId = "";
-    var dragStart = function (e) {
-        try {
-            e.dataTransfer
-                .setData("text/plain",
-                    e.target.id);
-        }
-        catch (ex) {
-            e.dataTransfer
-                .setData("Text", e.target.id);
-        }
-
-        sourceContainerId = this.parentElement.id;
-    };
 
     var cancel = function (e) {
         if (e.preventDefault) {
@@ -29,21 +16,60 @@ forEach = Array.prototype.forEach;
         return false;
     };
 
+    var dragStart = function (e) {
+        $(this).addClass("drag");
+        var dto = e.dataTransfer;
+
+        try {
+            dto.setData("text/plain", e.target.id);
+        }
+        catch (ex) {
+            dto.setData("Text", e.target.id);
+        }
+
+        sourceContainerId = this.parentElement.id;
+    };
+
+    var dragOver = function (e) {
+        cancel(e);
+        $(this).addClass("over");
+    };
+
+    var dragLeave = function (e) {
+        $(this).removeClass("over");
+    };
+
+    var dragEnd = function (e) {
+        $(".drag").removeClass("drag");
+        $(".over").removeClass("over");
+    };
+    
     var dropped = function (e) {
-        if (this.id !== sourceContainerId) {
             cancel(e);
 
-            var id;
+            var id = null;
+            var dto = e.dataTransfer;
+            var dropped = null;
 
-            try {
-                id = e.dataTransfer.getData("text/plain");
-            } catch (ex) {
-                id = e.dataTransfer("Text");
+            if (dto.types.length > 0) {
+                if (dto.types[0] === "Text") {
+                    id = dto.getData("Text");
+                } 
+                else {
+                    id = dto.getData("text/plain");
+                }
             }
 
-            e.target.appendChild(
-                document.querySelector("#" + id));
-        }
+            if (id !== null) {
+                dropped = document.querySelector("#" + id);
+            }
+
+            if (this.id !== sourceContainerId) {
+                e.target.appendChild(dropped);
+                $(dropped).removeClass("drag");
+            }
+
+        $(this).removeClass("over");
     };
 
     var selector = "[data-role='drag-drop-container']";
@@ -53,7 +79,8 @@ forEach = Array.prototype.forEach;
         function(c) {
             c.addEventListener("drop", dropped, false);
             c.addEventListener("dragenter", cancel, false);
-            c.addEventListener("dragover", cancel, false);
+            c.addEventListener("dragover", dragOver, false);
+            c.addEventListener("dragleave", dragLeave, false);
         });
 
     selector = "[draggable='true']";
@@ -62,5 +89,6 @@ forEach = Array.prototype.forEach;
     forEach.call(ds,
         function(source) {
             source.addEventListener("dragstart", dragStart, false);
+            source.addEventListener("dragend", dragEnd, false);
         });
 })();

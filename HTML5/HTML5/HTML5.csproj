@@ -248,6 +248,7 @@
     <Content Include="pages\bootstrap-validation.html" />
     <Content Include="pages\canvas.html" />
     <Content Include="pages\custom-validation.html" />
+    <Content Include="pages\drag-and-drop-ordering.html" />
     <Content Include="pages\drag-and-drop2.html" />
     <Content Include="pages\drag-and-drop.html" />
     <Content Include="pages\form.html" />
@@ -259,6 +260,7 @@
     <Content Include="script\canvas-tetris.js" />
     <Content Include="script\dragDrop.js" />
     <Content Include="script\dragDrop2.js" />
+    <Content Include="script\dragDropOrdering.js" />
     <Content Include="script\rangeDisplay.js" />
     <Content Include="script\validation.js" />
     <Content Include="site.css" />

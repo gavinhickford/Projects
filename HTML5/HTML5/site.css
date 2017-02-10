@@ -68,7 +68,34 @@ input:valid {
     height: 300px;
     float: left;
     margin: 5px;
+}
 
+.drag {
+    opacity: 0.25;
+}
+
+.over {
+    background-color: lemonchiffon;
+}
+
+ul.moveable {
+    list-style: none;
+    margin: 0;
+}
+
+ul.moveable li {
+    list-style-image: none;
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 4px;
+    border-radius: 4px;
+    color: #666;
+    cursor: move;
+}
+
+ul.moveable li:hover {
+    background-color: #eee;
+    
 }
 
 
