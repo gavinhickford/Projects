@@ -100,6 +100,8 @@
     <Content Include="lib\bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="lib\jquery-3.1.1\jquery-3.1.1.min.js" />
     <Content Include="pages\columns-layout.html" />
+    <Content Include="pages\text-styles.html" />
+    <Content Include="pages\responsive-hiding.html" />
     <Content Include="pages\simple-layout.html" />
     <Content Include="pages\plain-bootstrap.html" />
     <Content Include="styles\site.css" />

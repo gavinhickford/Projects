@@ -5,5 +5,12 @@
 .col-div {
     background-color: lightblue;
     border: white solid 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.col-img {
+    width: 100%;
 }
 
