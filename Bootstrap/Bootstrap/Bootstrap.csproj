@@ -66,6 +66,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\2112.jpg" />
+    <Content Include="img\covers.jpg" />
+    <Content Include="img\hemispheres.jpg" />
+    <Content Include="img\movingpictures.jpg" />
+    <Content Include="img\power-windows.jpg" />
+    <Content Include="img\p_waves.jpg" />
     <Content Include="packages.config" />
     <Content Include="lib\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
     <Content Include="lib\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
@@ -93,15 +99,16 @@
     <Content Include="lib\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
     <Content Include="lib\bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="lib\jquery-3.1.1\jquery-3.1.1.min.js" />
+    <Content Include="pages\columns-layout.html" />
+    <Content Include="pages\simple-layout.html" />
     <Content Include="pages\plain-bootstrap.html" />
+    <Content Include="styles\site.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="styles\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
