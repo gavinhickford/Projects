@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JQuery Selectors</title>
+    <meta charset="utf-8" />
+    <link href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../styles/site.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Elements on the page</h2>
+            <div id="SpecificDiv">Div with id 'SpecificDiv'</div>
+            <div class="div-class">Div with class 'div-class'</div>
+            <div title="This is the title text">Div with title 'This is the title text'</div>
+            <div>This div contains umbrella in the text</div>
+            <div title="Starts with the word Starts">Div with title 'Starts with the word Starts'</div>
+            <div title="Ends with the word Starts">Div with title 'Ends with the word Starts'</div>
+            <div title="Contains Starts in the middle">Div with title 'Contains Starts in the middle'</div>
+            <div><label>Text input</label><input type="text" /></div>
+            <div><label>Radio button</label><input type="radio" /></div>
+            <div><label>Text area</label><textarea></textarea></div>
+        </div>
+        <div class="col-md-6">
+            <h2>Selectors</h2>
+            <div>
+                <input type="checkbox" onclick="selectByTag(this)" />
+                <label>Select by tag ($("div"))</label>
+            </div>
+            <div>
+                <input type="checkbox" onclick="selectById(this)" />
+                <label>Select by id ($("#SpecificDiv"))</label>
+            </div>
+            <div>
+                <input type="checkbox" onclick="selectByClass(this)" />
+                <label>Select by class ($(".div-class"))</label>
+            </div>
+            <div>
+                <input type="checkbox" onclick="selectByAttribute(this)" />
+                <label>Select by title attribute ($("div[title='This is the title text']"))</label>
+            </div>
+            <div>
+                <input type="checkbox" onclick="selectByContains(this)" />
+                <label>Select div that contains text 'umbrella ($("div:contains('umbrella')"))</label>
+            </div>
+            <div>
+                <input type="checkbox" onclick="selectByStartsWith(this)" />
+                <label>Select div that starts with 'Starts'($("div[title^='Starts']"))</label>
+            </div>
+            <div>
+                <input type="checkbox" onclick="selectByEndsWith(this)" />
+                <label>Select div that ends with 'Starts' ($("div[title$='Starts']"))</label>
+            </div>
+            <div>
+                <input type="checkbox" onclick="selectByTitleContains(this)" />
+                <label>Select div that contains 'Starts' in title ($("div[title*='Starts']"))</label>
+            </div>
+            <div>
+                <input type="checkbox" onclick="selectInputs(this)" />
+                <label>Select all inputs ($(":input"))</label>
+            </div>
+        </div>
+</div>
+
+</div>
+<script src="../lib/JQuery 3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../scripts/select.js"></script>
+
+</body>
+</html>
