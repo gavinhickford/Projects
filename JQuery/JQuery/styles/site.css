@@ -2,3 +2,9 @@
     background-color: aqua;
     border: solid 1px;
 }
+
+.div-select {
+    background-color: lightblue;
+    border: solid 1px;
+    margin: 2px;
+}
