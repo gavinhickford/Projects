@@ -8,3 +8,28 @@
     border: solid 1px;
     margin: 2px;
 }
+
+.div-toggle {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+
+.add-text {
+    background-color: lightblue;
+    border: solid 1px;
+    margin: 2px;
+}
+
+.appended-text {
+    background-color: lightcoral;
+    border: solid 1px;
+    margin: 2px;
+}
+
+.prepended-text {
+    background-color: lightsteelblue;
+    border: solid 1px;
+    margin: 2px;
+    
+}

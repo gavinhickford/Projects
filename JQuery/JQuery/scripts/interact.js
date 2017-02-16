@@ -6,6 +6,10 @@ function divIterate() {
     });
 }
 
+function toggleClass() {
+    $(".div-select").toggleClass("div-toggle");
+}
+
 function divUpdateDirectly() {
     $(".div-select").each(function (index) {
         this.title = "Updated directly. Index = " + index;
@@ -28,4 +32,17 @@ function divUpdateMultipleAttributes() {
             }
         );
     });
+}
+
+function appendText() {
+    $(".add-text").append('<span class="appended-text">Appended Text</span>');
+}
+
+function prependText() {
+    $(".add-text").prepend('<span class="prepended-text">Prepended text</span>');
+}
+
+function removeText() {
+    $(".add-text .appended-text").remove();
+    $(".add-text .prepended-text").remove();
 }
