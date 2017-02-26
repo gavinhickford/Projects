@@ -23,8 +23,6 @@ namespace KatanaIntro
             {
                 return writer.WriteAsync("<h1>Hello</h1>");
             }
-
-//            await _next(environment);
         }
     }
 }
