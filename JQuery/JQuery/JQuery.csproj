@@ -94,7 +94,9 @@
     <Content Include="lib\bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="lib\JQuery 3.1.1\jquery-3.1.1.min.js" />
     <Content Include="pages\dom-interaction.html" />
+    <Content Include="pages\events.html" />
     <Content Include="pages\selectors.html" />
+    <Content Include="scripts\events.js" />
     <Content Include="scripts\interact.js" />
     <Content Include="scripts\select.js" />
     <Content Include="styles\site.css" />
