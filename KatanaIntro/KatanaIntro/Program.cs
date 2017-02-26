@@ -1,5 +1,4 @@
 ﻿using Microsoft.Owin.Hosting;
-using Owin;
 using System;
 
 namespace KatanaIntro
@@ -16,15 +15,5 @@ namespace KatanaIntro
                 Console.WriteLine("Stopping");
             }
         }
-
-    }
-    public class Startup
-    {
-        public void Configuration(IAppBuilder app)
-        {
-            app.UseWelcomePage();
-//            app.Run(ctx => ctx.Response.WriteAsync("<h1>Hello World</h1>"));
-        }
-
     }
 }
